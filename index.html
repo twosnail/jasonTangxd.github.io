@@ -223,7 +223,14 @@
 </blockquote>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9f23d0d7-d158-4302-b4f0-ed2f3a507edd.png" alt=""></p>
 <h3 id="2-【解决】"><a href="#2-【解决】" class="headerlink" title="2. 【解决】"></a>2. 【解决】</h3><blockquote>
-<p>需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址<br>修改/etc/sysconfig/network-script/eth0<br>①、修改eth0为：eth1<br>②、修改HWADDR为：01:0c:29:43:21:3c<br>③、其中无用的eth0可以删除</p>
+<p>由于网络配置中的网卡MAC地址还是之前虚拟机的，需要去复制出该虚拟机新生成的MAC地址到网络配置中</p>
+</blockquote>
+<ul>
+<li>具体步骤</li>
+</ul>
+<blockquote>
+<p>需要去 <strong>/etc/udev/rules.d/70-persistent-net.rules</strong> 复制出eth1（一般是最后一个网卡信息）的MAC地址到 <strong>/etc/sysconfig/network-script/eth0</strong> 。</p>
+<p>①、修改eth0为：eth1（一般是最后一个）<br>②、修改HWADDR为：01:0c:29:43:21:3c（此网卡是作者电脑例子）<br>③、其中无用的eth0可以删除（保留最后一个就行）</p>
 </blockquote>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png" alt=""></p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png" alt=""></p>

@@ -202,6 +202,75 @@
 
       <div class="body-wrap">
   
+    <article id="post-VMware-克隆虚拟机后网络问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" class="article-date">
+  	<time datetime="2016-03-15T12:44:35.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-【问题】"><a href="#1-【问题】" class="headerlink" title="1. 【问题】"></a>1. 【问题】</h3><pre><code>&gt; 使用VMware克隆功能后，会发现网卡有问题
+
+![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
+</code></pre><h3 id="2-【解决】"><a href="#2-【解决】" class="headerlink" title="2. 【解决】"></a>2. 【解决】</h3><pre><code>&gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址
+&gt; 修改/etc/sysconfig/network-script/eth0       
+&gt; ①、修改eth0为：eth1
+&gt; ②、修改HWADDR为：01:0c:29:43:21:3c
+&gt; ③、其中无用的eth0可以删除
+
+![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png)
+
+![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png)
+</code></pre><h3 id="3-【重启】"><a href="#3-【重启】" class="headerlink" title="3. 【重启】"></a>3. 【重启】</h3><pre><code>&gt; 重启服务即可：service network restart
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-VMware-网络配置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

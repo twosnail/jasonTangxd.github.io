@@ -4,17 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: VMware | 小小默&#39;s Blog</title>
+  <title>VMware--克隆虚拟机后网络问题 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="路途遥远 勿忘初心">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小小默's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/VMware/index.html">
+  <meta name="description" content="1. 【问题】&amp;gt; 使用VMware克隆功能后，会发现网卡有问题
+
+![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
+2. 【解决】&amp;gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VMware--克隆虚拟机后网络问题">
+<meta property="og:url" content="http://yoursite.com/2016/03/15/VMware-克隆虚拟机后网络问题/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="路途遥远 勿忘初心">
+<meta property="og:description" content="1. 【问题】&amp;gt; 使用VMware克隆功能后，会发现网卡有问题
+
+![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
+2. 【解决】&amp;gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复">
+<meta property="og:updated_time" content="2016-03-15T12:55:54.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小小默's Blog">
-<meta name="twitter:description" content="路途遥远 勿忘初心">
+<meta name="twitter:title" content="VMware--克隆虚拟机后网络问题">
+<meta name="twitter:description" content="1. 【问题】&amp;gt; 使用VMware克隆功能后，会发现网卡有问题
+
+![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
+2. 【解决】&amp;gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -200,84 +210,121 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-VMware-克隆虚拟机后网络问题" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" class="archive-article-date">
-  	<time datetime="2016-03-15T12:44:35.000Z" itemprop="datePublished">Mar 15</time>
+    <div class="article-meta">
+      <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" class="article-date">
+  	<time datetime="2016-03-15T12:44:35.000Z" itemprop="datePublished">2016-03-15</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      VMware--克隆虚拟机后网络问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/15/VMware-网络配置/" class="archive-article-date">
-  	<time datetime="2016-03-15T07:59:17.000Z" itemprop="datePublished">Mar 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-【问题】"><a href="#1-【问题】" class="headerlink" title="1. 【问题】"></a>1. 【问题】</h3><pre><code>&gt; 使用VMware克隆功能后，会发现网卡有问题
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
+![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
+</code></pre><h3 id="2-【解决】"><a href="#2-【解决】" class="headerlink" title="2. 【解决】"></a>2. 【解决】</h3><pre><code>&gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址
+&gt; 修改/etc/sysconfig/network-script/eth0       
+&gt; ①、修改eth0为：eth1
+&gt; ②、修改HWADDR为：01:0c:29:43:21:3c
+&gt; ③、其中无用的eth0可以删除
+
+![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png)
+
+![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png)
+</code></pre><h3 id="3-【重启】"><a href="#3-【重启】" class="headerlink" title="3. 【重启】"></a>3. 【重启】</h3><pre><code>&gt; 重启服务即可：service network restart
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/15/VMware-网络配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VMware--网络配置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="VMware-克隆虚拟机后网络问题" data-title="VMware--克隆虚拟机后网络问题" data-url="http://yoursite.com/2016/03/15/VMware-克隆虚拟机后网络问题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -303,9 +350,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

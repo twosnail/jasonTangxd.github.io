@@ -6,25 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>VMware--克隆虚拟机后网络问题 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 【问题】&amp;gt; 使用VMware克隆功能后，会发现网卡有问题
+  <meta name="description" content="1. 【问题】
+使用VMware克隆功能后，会发现网卡有问题
 
-![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
-2. 【解决】&amp;gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复">
+
+2. 【解决】
+需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址修改/etc/sysconfig/network-script/eth0①、修改eth0为：eth1②、修改HWADDR为：01:0c:29:43:21:3c③、其中无用的eth0可以删除
+
+
+
+3. 【">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VMware--克隆虚拟机后网络问题">
 <meta property="og:url" content="http://yoursite.com/2016/03/15/VMware-克隆虚拟机后网络问题/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="1. 【问题】&amp;gt; 使用VMware克隆功能后，会发现网卡有问题
+<meta property="og:description" content="1. 【问题】
+使用VMware克隆功能后，会发现网卡有问题
 
-![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
-2. 【解决】&amp;gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复">
-<meta property="og:updated_time" content="2016-03-15T12:55:54.154Z">
+
+2. 【解决】
+需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址修改/etc/sysconfig/network-script/eth0①、修改eth0为：eth1②、修改HWADDR为：01:0c:29:43:21:3c③、其中无用的eth0可以删除
+
+
+
+3. 【">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9f23d0d7-d158-4302-b4f0-ed2f3a507edd.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png">
+<meta property="og:updated_time" content="2016-03-15T13:00:20.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VMware--克隆虚拟机后网络问题">
-<meta name="twitter:description" content="1. 【问题】&amp;gt; 使用VMware克隆功能后，会发现网卡有问题
+<meta name="twitter:description" content="1. 【问题】
+使用VMware克隆功能后，会发现网卡有问题
 
-![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
-2. 【解决】&amp;gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复">
+
+2. 【解决】
+需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址修改/etc/sysconfig/network-script/eth0①、修改eth0为：eth1②、修改HWADDR为：01:0c:29:43:21:3c③、其中无用的eth0可以删除
+
+
+
+3. 【">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9f23d0d7-d158-4302-b4f0-ed2f3a507edd.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -247,20 +269,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-【问题】"><a href="#1-【问题】" class="headerlink" title="1. 【问题】"></a>1. 【问题】</h3><pre><code>&gt; 使用VMware克隆功能后，会发现网卡有问题
+        <h3 id="1-【问题】"><a href="#1-【问题】" class="headerlink" title="1. 【问题】"></a>1. 【问题】</h3><blockquote>
+<p>使用VMware克隆功能后，会发现网卡有问题</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9f23d0d7-d158-4302-b4f0-ed2f3a507edd.png" alt=""></p>
+<h3 id="2-【解决】"><a href="#2-【解决】" class="headerlink" title="2. 【解决】"></a>2. 【解决】</h3><blockquote>
+<p>需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址<br>修改/etc/sysconfig/network-script/eth0<br>①、修改eth0为：eth1<br>②、修改HWADDR为：01:0c:29:43:21:3c<br>③、其中无用的eth0可以删除</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png" alt=""></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png" alt=""></p>
+<h3 id="3-【使用】"><a href="#3-【使用】" class="headerlink" title="3. 【使用】"></a>3. 【使用】</h3><blockquote>
+<p>重启服务即可：service network restart</p>
+</blockquote>
 
-![](![error](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png))
-</code></pre><h3 id="2-【解决】"><a href="#2-【解决】" class="headerlink" title="2. 【解决】"></a>2. 【解决】</h3><pre><code>&gt; 需要去/etc/udev/rules.d/70-persistent-net.rules复制出eth1的MAC地址
-&gt; 修改/etc/sysconfig/network-script/eth0       
-&gt; ①、修改eth0为：eth1
-&gt; ②、修改HWADDR为：01:0c:29:43:21:3c
-&gt; ③、其中无用的eth0可以删除
-
-![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png)
-
-![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png)
-</code></pre><h3 id="3-【重启】"><a href="#3-【重启】" class="headerlink" title="3. 【重启】"></a>3. 【重启】</h3><pre><code>&gt; 重启服务即可：service network restart
-</code></pre>
       
     </div>
     

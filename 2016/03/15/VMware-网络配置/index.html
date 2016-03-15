@@ -6,9 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>VMware--网络配置 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##VMware–网络连接##
-###一、三种网络连接模式###
-
+  <meta name="description" content="VMware–网络连接一、三种网络连接模式
 Host-only连接方式
 
  相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信
@@ -16,14 +14,12 @@ Host-only连接方式
 
 Bridge（桥接）连接方式
 
-让虚机具有">
+让虚机具有与宿主机不同的各自独立I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VMware--网络配置">
 <meta property="og:url" content="http://yoursite.com/2016/03/15/VMware-网络配置/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="##VMware–网络连接##
-###一、三种网络连接模式###
-
+<meta property="og:description" content="VMware–网络连接一、三种网络连接模式
 Host-only连接方式
 
  相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信
@@ -31,14 +27,12 @@ Host-only连接方式
 
 Bridge（桥接）连接方式
 
-让虚机具有">
+让虚机具有与宿主机不同的各自独立I">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
-<meta property="og:updated_time" content="2016-03-15T08:30:02.627Z">
+<meta property="og:updated_time" content="2016-03-15T08:35:30.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VMware--网络配置">
-<meta name="twitter:description" content="##VMware–网络连接##
-###一、三种网络连接模式###
-
+<meta name="twitter:description" content="VMware–网络连接一、三种网络连接模式
 Host-only连接方式
 
  相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信
@@ -46,7 +40,7 @@ Host-only连接方式
 
 Bridge（桥接）连接方式
 
-让虚机具有">
+让虚机具有与宿主机不同的各自独立I">
 <meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
@@ -270,9 +264,7 @@ Bridge（桥接）连接方式
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##VMware–网络连接##</p>
-<p>###一、三种网络连接模式###</p>
-<ol>
+        <h2 id="VMware–网络连接"><a href="#VMware–网络连接" class="headerlink" title="VMware–网络连接"></a>VMware–网络连接</h2><h3 id="一、三种网络连接模式"><a href="#一、三种网络连接模式" class="headerlink" title="一、三种网络连接模式"></a>一、三种网络连接模式</h3><ol>
 <li><p>Host-only连接方式</p>
 <blockquote>
 <p> 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信</p>
@@ -289,8 +281,7 @@ Bridge（桥接）连接方式
 </blockquote>
 </li>
 </ol>
-<p>###二、常见连接模式###</p>
-<ol>
+<h3 id="二、常见连接模式"><a href="#二、常见连接模式" class="headerlink" title="二、常见连接模式"></a>二、常见连接模式</h3><ol>
 <li><p>Bridge模式</p>
 <ul>
 <li>①、设置虚拟机网络为桥接<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png" alt="桥接"></li>
@@ -298,6 +289,7 @@ Bridge（桥接）连接方式
 </li>
 </ol>
 <pre><code>- ②、修改网卡地址
+
 
     &gt; ①、ONBOOT  修改为yes(表示一直生效，不然下次启动，就会无效)
 
@@ -315,6 +307,7 @@ Bridge（桥接）连接方式
     ![重启](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png)
 
 
+
 - ④、ping 本机网关、本机ip、baiduIP(域名一般是无法解析的)
 </code></pre><ol>
 <li>自定义模式</li>
@@ -322,9 +315,12 @@ Bridge（桥接）连接方式
 <pre><code>- ①、通过虚拟网卡，然后修改虚拟网卡VMnet1
     ![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png)
 
+
     ![](http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png)
 
+
     只需要添加IP地址和子网掩码。 登录虚拟机，修改网卡ip地址
+
 
     &gt; ①、ONBOOT 修改为yes(表示一直生效，不然下次启动，就会无效)
 

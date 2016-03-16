@@ -9,7 +9,7 @@
   <meta name="description" content="一、文本查看命令cat、tac、more、less、head、tail
 12cat  #链接并显示,一次显示整个文件tac  #和cat相反，倒着显示
 
-cat fileName : 一次显示所有文件cat &amp;gt; fileName : 从键盘创建一个文件cat f1 f2 &amp;gt; fileNmae : 合并文件内容cat -n：在显示的时候给每一个行编号cat -E：显示每一行的行结束符有，">
+cat fileName : 一次显示所有文件内容cat &amp;gt; fileName : 从键盘创建一个文件（ctrl+c，保存代码）cat f1 f2 &amp;gt; fileNmae : 合并文件内容（技巧）cat -n：在显示的时候给每一个行编号">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux--文本管理类命令">
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/16/Linux-文本管理类命令/index.html">
@@ -17,17 +17,17 @@ cat fileName : 一次显示所有文件cat &amp;gt; fileName : 从键盘创建�
 <meta property="og:description" content="一、文本查看命令cat、tac、more、less、head、tail
 12cat  #链接并显示,一次显示整个文件tac  #和cat相反，倒着显示
 
-cat fileName : 一次显示所有文件cat &amp;gt; fileName : 从键盘创建一个文件cat f1 f2 &amp;gt; fileNmae : 合并文件内容cat -n：在显示的时候给每一个行编号cat -E：显示每一行的行结束符有，">
+cat fileName : 一次显示所有文件内容cat &amp;gt; fileName : 从键盘创建一个文件（ctrl+c，保存代码）cat f1 f2 &amp;gt; fileNmae : 合并文件内容（技巧）cat -n：在显示的时候给每一个行编号">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160316160346.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F42190026-98ac-43aa-a690-f9122f44df3f.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160316161803.png">
-<meta property="og:updated_time" content="2016-03-16T09:51:42.434Z">
+<meta property="og:updated_time" content="2016-03-16T15:52:22.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--文本管理类命令">
 <meta name="twitter:description" content="一、文本查看命令cat、tac、more、less、head、tail
 12cat  #链接并显示,一次显示整个文件tac  #和cat相反，倒着显示
 
-cat fileName : 一次显示所有文件cat &amp;gt; fileName : 从键盘创建一个文件cat f1 f2 &amp;gt; fileNmae : 合并文件内容cat -n：在显示的时候给每一个行编号cat -E：显示每一行的行结束符有，">
+cat fileName : 一次显示所有文件内容cat &amp;gt; fileName : 从键盘创建一个文件（ctrl+c，保存代码）cat f1 f2 &amp;gt; fileNmae : 合并文件内容（技巧）cat -n：在显示的时候给每一个行编号">
 <meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160316160346.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
@@ -262,12 +262,12 @@ var _hmt = _hmt || [];
         <h3 id="一、文本查看命令"><a href="#一、文本查看命令" class="headerlink" title="一、文本查看命令"></a><strong>一、文本查看命令</strong></h3><p><code>cat</code>、<code>tac</code>、<code>more</code>、<code>less</code>、<code>head</code>、<code>tail</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat  <span class="comment">#链接并显示,一次显示整个文件</span></span><br><span class="line">tac  <span class="comment">#和cat相反，倒着显示</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>cat fileName : 一次显示所有文件<br>cat &gt; fileName : 从键盘创建一个文件<br>cat f1 f2 &gt; fileNmae : 合并文件内容<br>cat -n：在显示的时候给每一个行编号<br>cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）</p>
+<p>cat fileName : 一次显示所有文件内容<br>cat &gt; fileName : 从键盘创建一个文件（ctrl+c，保存代码）<br>cat f1 f2 &gt; fileNmae : 合并文件内容（技巧）<br>cat -n：在显示的时候给每一个行编号<br>cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">more  <span class="comment">#分屏翻页（支持向后翻，不支持向前翻），常常配合管道命令使用</span></span><br><span class="line">less  <span class="comment">#和more相似，可前后翻。eg：ps -ef|less，（#使用q退出）</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head  <span class="comment">#查看文件前n行（默认10行）</span></span><br><span class="line">tail  <span class="comment">#查看文件后n行（默认10行）</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>tail -n num fileName : 查看文件前num行。<br>tail -f：查看文件尾部，不退出，等待文件追加内容。</p>
+<p>tail -n num fileName : 查看文件前num行。<br>tail -f：查看文件尾部，不退出，等待文件追加内容。常用于查看日志！</p>
 </blockquote>
 <h3 id="二、文本处理"><a href="#二、文本处理" class="headerlink" title="二、文本处理"></a><strong>二、文本处理</strong></h3><p><code>cut</code>、 <code>join</code>、<code>sed</code>、<code>awk</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut ：剪切命令，一般配合管道命令使用，</span><br></pre></td></tr></table></figure>

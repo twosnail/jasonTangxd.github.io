@@ -239,12 +239,12 @@ var _hmt = _hmt || [];
         <h3 id="一、文本查看命令"><a href="#一、文本查看命令" class="headerlink" title="一、文本查看命令"></a><strong>一、文本查看命令</strong></h3><p><code>cat</code>、<code>tac</code>、<code>more</code>、<code>less</code>、<code>head</code>、<code>tail</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat  <span class="comment">#链接并显示,一次显示整个文件</span></span><br><span class="line">tac  <span class="comment">#和cat相反，倒着显示</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>cat fileName : 一次显示所有文件<br>cat &gt; fileName : 从键盘创建一个文件<br>cat f1 f2 &gt; fileNmae : 合并文件内容<br>cat -n：在显示的时候给每一个行编号<br>cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）</p>
+<p>cat fileName : 一次显示所有文件内容<br>cat &gt; fileName : 从键盘创建一个文件（ctrl+c，保存代码）<br>cat f1 f2 &gt; fileNmae : 合并文件内容（技巧）<br>cat -n：在显示的时候给每一个行编号<br>cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">more  <span class="comment">#分屏翻页（支持向后翻，不支持向前翻），常常配合管道命令使用</span></span><br><span class="line">less  <span class="comment">#和more相似，可前后翻。eg：ps -ef|less，（#使用q退出）</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head  <span class="comment">#查看文件前n行（默认10行）</span></span><br><span class="line">tail  <span class="comment">#查看文件后n行（默认10行）</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>tail -n num fileName : 查看文件前num行。<br>tail -f：查看文件尾部，不退出，等待文件追加内容。</p>
+<p>tail -n num fileName : 查看文件前num行。<br>tail -f：查看文件尾部，不退出，等待文件追加内容。常用于查看日志！</p>
 </blockquote>
 <h3 id="二、文本处理"><a href="#二、文本处理" class="headerlink" title="二、文本处理"></a><strong>二、文本处理</strong></h3><p><code>cut</code>、 <code>join</code>、<code>sed</code>、<code>awk</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut ：剪切命令，一般配合管道命令使用，</span><br></pre></td></tr></table></figure>
@@ -337,12 +337,12 @@ var _hmt = _hmt || [];
         
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、目录：文件，路径映射"><span class="toc-number">1.</span> <span class="toc-text">一、目录：文件，路径映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、列出指定路径下的文件"><span class="toc-number">2.</span> <span class="toc-text">二、列出指定路径下的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、环境变量"><span class="toc-number">3.</span> <span class="toc-text">五、环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、时间"><span class="toc-number">4.</span> <span class="toc-text">六、时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、获取命令帮助-待整理"><span class="toc-number">5.</span> <span class="toc-text">七、获取命令帮助(待整理)</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目录：文件，路径映射"><span class="toc-number">1.</span> <span class="toc-text">目录：文件，路径映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出指定路径下的文件"><span class="toc-number">2.</span> <span class="toc-text">列出指定路径下的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-number">3.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间"><span class="toc-number">4.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取命令帮助-待整理"><span class="toc-number">5.</span> <span class="toc-text">获取命令帮助(待整理)</span></a></li></ol>
         </div>
-        <h3 id="一、目录：文件，路径映射"><a href="#一、目录：文件，路径映射" class="headerlink" title="一、目录：文件，路径映射"></a><strong>一、目录：文件，路径映射</strong></h3><blockquote>
+        <h3 id="目录：文件，路径映射"><a href="#目录：文件，路径映射" class="headerlink" title="目录：文件，路径映射"></a><strong>目录：文件，路径映射</strong></h3><blockquote>
 <p>路径：从指定起始点到目的地的所经过的位置。<br>文件系统：file system</p>
 </blockquote>
-<h3 id="二、列出指定路径下的文件"><a href="#二、列出指定路径下的文件" class="headerlink" title="二、列出指定路径下的文件"></a><strong>二、列出指定路径下的文件</strong></h3><blockquote>
+<h3 id="列出指定路径下的文件"><a href="#列出指定路径下的文件" class="headerlink" title="列出指定路径下的文件"></a><strong>列出指定路径下的文件</strong></h3><blockquote>
 <p>查看目录文件 ls：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="_">-l</span> 长格式</span><br></pre></td></tr></table></figure>
@@ -374,12 +374,12 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-h 做单位换算（human can readable）</span><br><span class="line"><span class="_">-a</span> 以点开头的文件（隐藏文件）</span><br><span class="line">	<span class="comment">#.  表示当前目录</span></span><br><span class="line">	<span class="comment">#.. 表示上级目录</span></span><br><span class="line"></span><br><span class="line">-A 显示全部文件（不包括.和..）</span><br><span class="line"><span class="_">-d</span> 显示自身属性</span><br><span class="line">-i  index node，inode(显示文件唯一序号)</span><br><span class="line">-r  逆序显示</span><br><span class="line">-R 递归显示（recursive）</span><br></pre></td></tr></table></figure>
-<h3 id="五、环境变量"><a href="#五、环境变量" class="headerlink" title="五、环境变量"></a><strong>五、环境变量</strong></h3><blockquote>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a><strong>环境变量</strong></h3><blockquote>
 <p>命令的内存空间，env<br>变量赋值<br>eg：NAME=Tom(在内存中着一段空间，起名叫NAME,空间放的数据叫Tom),申请变量的过程，就是申请内存使用的过程。<br>path：以冒号隔开的一对路径。<br>hash：查看缓存</p>
 </blockquote>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png" alt=""></p>
 <p><code>缓存，catch is king.保存的是hash列表。在key,value中的查找速度是O(1).O(1):表示查找时间，不会随着，数据的增加而递增。</code></p>
-<h3 id="六、时间"><a href="#六、时间" class="headerlink" title="六、时间"></a><strong>六、时间</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data：</span><br></pre></td></tr></table></figure>
+<h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a><strong>时间</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data：</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>硬件主板的震荡器，rtc<br>硬件时钟：clock<br>系统时钟：date</p>
 </blockquote>
@@ -388,11 +388,11 @@ var _hmt = _hmt || [];
 <p>-w：读取系统时间到硬件中<br>-s ：读取硬件时间到系统中</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cal：日历</span><br></pre></td></tr></table></figure>
-<h3 id="七、获取命令帮助-待整理"><a href="#七、获取命令帮助-待整理" class="headerlink" title="七、获取命令帮助(待整理)"></a><strong>七、获取命令帮助(待整理)</strong></h3><p>在线文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info COMMAND(主要讲历史等)</span><br><span class="line">文档：/usr/share/doc</span><br></pre></td></tr></table></figure></p>
+<h3 id="获取命令帮助-待整理"><a href="#获取命令帮助-待整理" class="headerlink" title="获取命令帮助(待整理)"></a><strong>获取命令帮助(待整理)</strong></h3><p>在线文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info COMMAND(主要讲历史等)</span><br><span class="line">文档：/usr/share/doc</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>内部命令：help COMMAND<br>外部命令：COMMAND –help<br>命令手册：manual<br>man COMMAND<br>whatis COMMAND<br>分章节<br>    1、用户命令（/bin , /usr/bin , /usr/local）<br>    2、系统调用<br>    3、库用户<br>    4、特殊文件（设备文件）<br>    5、文件格式（配置文件的语法）<br>    6、游戏<br>    7、杂项（Miscellaneous）<br>    8、管理命令（/sbin,  /usr/sbin  , /usr/local/sbin），管理员，会修改硬件相关的信息</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man:</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man 命令:</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>[]   ：可选<br>&lt;&gt;：必须有<br>…  ：可以出现多次<br>|   ：多选一<br>{}  ：分组<br>NAME：命令名称及功能简要说明<br>SYNAPOSIS：用户说明，包括可用的选项<br>DESCREPTION：命令功能的详细说明， 可能包括没一个选项的意义<br>OPTIONS：选项<br>FILES：此命令的相关配置<br>BUGS：<br>Examples：使用示例<br>SEE ALSO：另外参考</p>
 </blockquote>

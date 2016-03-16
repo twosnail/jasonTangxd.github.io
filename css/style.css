@@ -610,11 +610,11 @@ a {
   margin-right: 0;
 }
 #header .header-nav .social a.weibo {
-  background: url("/img/weibo.png") center no-repeat #aaf;
-  border: 1px solid #aaf;
+  background: url("/img/weibo.png") center no-repeat #eb0578;
+  border: 1px solid #eb0578;
 }
 #header .header-nav .social a.weibo:hover {
-  border: 1px solid #aaf;
+  border: 1px solid #eb0578;
 }
 #header .header-nav .social a.rss {
   background: url("/img/rss.png") center no-repeat #ef7522;
@@ -624,11 +624,11 @@ a {
   border: 1px solid #cf5d0f;
 }
 #header .header-nav .social a.github {
-  background: url("/img/github.png") center no-repeat #afb6ca;
-  border: 1px solid #afb6ca;
+  background: url("/img/github.png") center no-repeat #860589;
+  border: 1px solid #860589;
 }
 #header .header-nav .social a.github:hover {
-  border: 1px solid #909ab6;
+  border: 1px solid #860589;
 }
 #header .header-nav .social a.facebook {
   background: url("/img/facebook.png") center no-repeat #3b5998;

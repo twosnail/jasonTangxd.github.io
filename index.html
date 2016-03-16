@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/VMware/" style="font-size: 10px;">VMware</a>
+						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VMware/" style="font-size: 10px;">VMware</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,119 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Linux-操作系统及常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/Linux-操作系统及常用命令/" class="article-date">
+  	<time datetime="2016-03-16T06:10:57.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、目录：文件，路径映射"><a href="#一、目录：文件，路径映射" class="headerlink" title="一、目录：文件，路径映射"></a><strong>一、目录：文件，路径映射</strong></h3><blockquote>
+<p>路径：从指定起始点到目的地的所经过的位置。<br>文件系统：file system</p>
+</blockquote>
+<h3 id="二、列出指定路径下的文件"><a href="#二、列出指定路径下的文件" class="headerlink" title="二、列出指定路径下的文件"></a><strong>二、列出指定路径下的文件</strong></h3><blockquote>
+<p>查看目录文件 ls：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="_">-l</span> 长格式</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png" alt=""></p>
+<ol>
+<li><p><strong>文件类型</strong></p>
+<ul>
+<li>-：普通文件（f）</li>
+<li>d：目录文件</li>
+<li>b：块设备文件（block）</li>
+<li>c：字节设备文件（character）</li>
+<li>l ：符号链接文件（sysbolic link ）</li>
+<li>p：管道命令（pipe）</li>
+<li>s：套接字文件（socket）</li>
+</ul>
+</li>
+<li><p><strong>文件权限</strong>：9位，没三位一组，每一组（rwx）r：可读，w：可写：x:可执行</p>
+</li>
+<li><strong>文件硬链接次数</strong></li>
+<li><strong>文件的属主</strong>（owner）</li>
+<li><strong>文件的所属组</strong>（group）</li>
+<li><strong>文件的大小</strong>（size）,单位字节</li>
+<li><p><strong>时间戳</strong>（timestamp）:最近一次被修改的时间（文件内容）</p>
+<ul>
+<li>访问：access</li>
+<li>修改：modify（修改，指的是修改了文件的内容）</li>
+<li>改变：change，metadata(元数据)（改变，指的是改变了文件的属性，或者说元数据）</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-h 做单位换算（human can readable）</span><br><span class="line"><span class="_">-a</span> 以点开头的文件（隐藏文件）</span><br><span class="line">	<span class="comment">#.  表示当前目录</span></span><br><span class="line">	<span class="comment">#.. 表示上级目录</span></span><br><span class="line"></span><br><span class="line">-A 显示全部文件（不包括.和..）</span><br><span class="line"><span class="_">-d</span> 显示自身属性</span><br><span class="line">-i  index node，inode(显示文件唯一序号)</span><br><span class="line">-r  逆序显示</span><br><span class="line">-R 递归显示（recursive）</span><br></pre></td></tr></table></figure>
+<h3 id="五、环境变量"><a href="#五、环境变量" class="headerlink" title="五、环境变量"></a><strong>五、环境变量</strong></h3><blockquote>
+<p>命令的内存空间，env<br>变量赋值<br>eg：NAME=Tom(在内存中着一段空间，起名叫NAME,空间放的数据叫Tom),申请变量的过程，就是申请内存使用的过程。<br>path：以冒号隔开的一对路径。<br>hash：查看缓存</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png" alt=""></p>
+<p><code>缓存，catch is king.保存的是hash列表。在key,value中的查找速度是O(1).O(1):表示查找时间，不会随着，数据的增加而递增。</code></p>
+<h3 id="六、时间"><a href="#六、时间" class="headerlink" title="六、时间"></a><strong>六、时间</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data：</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>硬件主板的震荡器，rtc<br>硬件时钟：clock<br>系统时钟：date</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock   <span class="comment">#（写入时间）</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>-w：读取系统时间到硬件中<br>-s ：读取硬件时间到系统中</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cal：日历</span><br></pre></td></tr></table></figure>
+<h3 id="七、获取命令帮助-待整理"><a href="#七、获取命令帮助-待整理" class="headerlink" title="七、获取命令帮助(待整理)"></a><strong>七、获取命令帮助(待整理)</strong></h3><p>在线文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info COMMAND(主要讲历史等)</span><br><span class="line">文档：/usr/share/doc</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>内部命令：help COMMAND<br>外部命令：COMMAND –help<br>命令手册：manual<br>man COMMAND<br>whatis COMMAND<br>分章节<br>    1、用户命令（/bin , /usr/bin , /usr/local）<br>    2、系统调用<br>    3、库用户<br>    4、特殊文件（设备文件）<br>    5、文件格式（配置文件的语法）<br>    6、游戏<br>    7、杂项（Miscellaneous）<br>    8、管理命令（/sbin,  /usr/sbin  , /usr/local/sbin），管理员，会修改硬件相关的信息</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man:</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>[]   ：可选<br>&lt;&gt;：必须有<br>…  ：可以出现多次<br>|   ：多选一<br>{}  ：分组<br>NAME：命令名称及功能简要说明<br>SYNAPOSIS：用户说明，包括可用的选项<br>DESCREPTION：命令功能的详细说明， 可能包括没一个选项的意义<br>OPTIONS：选项<br>FILES：此命令的相关配置<br>BUGS：<br>Examples：使用示例<br>SEE ALSO：另外参考</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Linux-跟文件系统" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -328,6 +441,10 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
       
 
       

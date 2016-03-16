@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/VMware/" style="font-size: 10px;">VMware</a>
+						<a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/VMware/" style="font-size: 10px;">VMware</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,84 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Linux-文本管理类命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/Linux-文本管理类命令/" class="article-date">
+  	<time datetime="2016-03-16T07:05:48.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/Linux-文本管理类命令/">Linux--文本管理类命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、文本查看命令"><a href="#一、文本查看命令" class="headerlink" title="一、文本查看命令"></a><strong>一、文本查看命令</strong></h3><p><code>cat</code>、<code>tac</code>、<code>more</code>、<code>less</code>、<code>head</code>、<code>tail</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat  <span class="comment">#链接并显示</span></span><br><span class="line">tac  <span class="comment">#和cat相反，倒着显示</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>cat -n：在显示的时候给每一个行编号<br>cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">more  <span class="comment">#分屏翻页（支持向后翻，不支持向前翻）</span></span><br><span class="line">less  <span class="comment">#和more相反</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head  <span class="comment">#查看文件前n行（默认10行）</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail  <span class="comment">#查看文件后n行（默认10行）</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>tail -n<br>tail -f：查看文件尾部，不退出，等待文件追加内容。</p>
+</blockquote>
+<h3 id="二、文本处理"><a href="#二、文本处理" class="headerlink" title="二、文本处理"></a><strong>二、文本处理</strong></h3><p><code>cut</code>、 <code>join</code>、<code>sed</code>、<code>awk</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut ：</span><br></pre></td></tr></table></figure>
+<p>-d：指定字段分隔符（默认为一个空格）。<br>-f：指定要显示的字段<br>    -f 1：显示第一个字段<br>    -f 1,3：显示第一个和第三个字段（离散表示法）<br>    -f 1-3：显示一到三的字段（连续表示法）</p>
+<h3 id="三、文本排序"><a href="#三、文本排序" class="headerlink" title="三、文本排序"></a><strong>三、文本排序</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort（默认字母升序）</span><br></pre></td></tr></table></figure>
+<p>-n 排序数字<br>-r 逆向排序<br>-t  ：以什么为分隔符<br>-k    :从哪个字段开始<br>-u：排序后相同的行只显示一次<br>-f：忽略字符大小写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uniq报告重复行（相邻并相同才算做向同行）</span><br></pre></td></tr></table></figure>
+<p>-d：只显示重复行<br>-D：显示所有重复行<br>-c：把所有行取出来，并显示次数</p>
+<h3 id="四、文本统计"><a href="#四、文本统计" class="headerlink" title="四、文本统计"></a><strong>四、文本统计</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc(word count)</span><br></pre></td></tr></table></figure>
+<p>分别为：行 单词数 字节/字符数<br>-l：行<br>-w：单次数<br>-c：字节<br>-m：字符<br>-L：最长的一段包含了多少字符</p>
+<h3 id="五、字符处理"><a href="#五、字符处理" class="headerlink" title="五、字符处理"></a><strong>五、字符处理</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr：转换或三处字符</span><br></pre></td></tr></table></figure>
+<p>tr [OPTION] SET1 [SET2]<br>    eg：tr ‘a-z’ ‘A-Z’ &lt; /etc/passwd<br>tr -d ‘ab’</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Linux-操作系统及常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   

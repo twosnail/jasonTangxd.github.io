@@ -4,48 +4,33 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>VMware--网络配置 | 小小默&#39;s Blog</title>
+  <title>Linux--文本管理类命令 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、三种网络连接模式
-Host-only连接方式
+  <meta name="description" content="一、文本查看命令cat、tac、more、less、head、tail
+12cat  #链接并显示tac  #和cat相反，倒着显示
 
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。
+cat -n：在显示的时候给每一个行编号cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）
 
-
-Bridge（桥接）连接方式
-
-让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保">
+12more  #分屏翻页（支持向后翻，不支持向前翻）less  #和mor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VMware--网络配置">
-<meta property="og:url" content="http://xiaoxiaomo.com/2016/03/15/VMware-网络配置/index.html">
+<meta property="og:title" content="Linux--文本管理类命令">
+<meta property="og:url" content="http://xiaoxiaomo.com/2016/03/16/Linux-文本管理类命令/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="一、三种网络连接模式
-Host-only连接方式
+<meta property="og:description" content="一、文本查看命令cat、tac、more、less、head、tail
+12cat  #链接并显示tac  #和cat相反，倒着显示
 
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。
+cat -n：在显示的时候给每一个行编号cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）
 
-
-Bridge（桥接）连接方式
-
-让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png">
-<meta property="og:updated_time" content="2016-03-15T08:41:26.319Z">
+12more  #分屏翻页（支持向后翻，不支持向前翻）less  #和mor">
+<meta property="og:updated_time" content="2016-03-16T07:29:40.866Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VMware--网络配置">
-<meta name="twitter:description" content="一、三种网络连接模式
-Host-only连接方式
+<meta name="twitter:title" content="Linux--文本管理类命令">
+<meta name="twitter:description" content="一、文本查看命令cat、tac、more、less、head、tail
+12cat  #链接并显示tac  #和cat相反，倒着显示
 
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。
+cat -n：在显示的时候给每一个行编号cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）
 
-
-Bridge（桥接）连接方式
-
-让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保">
-<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
+12more  #分屏翻页（支持向后翻，不支持向前翻）less  #和mor">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -221,11 +206,11 @@ Bridge（桥接）连接方式
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-VMware-网络配置" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-文本管理类命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/15/VMware-网络配置/" class="article-date">
-  	<time datetime="2016-03-15T07:59:17.000Z" itemprop="datePublished">2016-03-15</time>
+      <a href="/2016/03/16/Linux-文本管理类命令/" class="article-date">
+  	<time datetime="2016-03-16T07:05:48.000Z" itemprop="datePublished">2016-03-16</time>
 </a>
     </div>
   
@@ -238,7 +223,7 @@ Bridge（桥接）连接方式
         
   
     <h1 class="article-title" itemprop="name">
-      VMware--网络配置
+      Linux--文本管理类命令
     </h1>
   
 
@@ -247,7 +232,7 @@ Bridge（桥接）连接方式
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
         
@@ -258,60 +243,28 @@ Bridge（桥接）连接方式
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、三种网络连接模式"><a href="#一、三种网络连接模式" class="headerlink" title="一、三种网络连接模式"></a><strong>一、三种网络连接模式</strong></h3><ol>
-<li><p>Host-only连接方式</p>
+        <h3 id="一、文本查看命令"><a href="#一、文本查看命令" class="headerlink" title="一、文本查看命令"></a><strong>一、文本查看命令</strong></h3><p><code>cat</code>、<code>tac</code>、<code>more</code>、<code>less</code>、<code>head</code>、<code>tail</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat  <span class="comment">#链接并显示</span></span><br><span class="line">tac  <span class="comment">#和cat相反，倒着显示</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p> 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。</p>
+<p>cat -n：在显示的时候给每一个行编号<br>cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）</p>
 </blockquote>
-</li>
-<li><p>Bridge（桥接）连接方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">more  <span class="comment">#分屏翻页（支持向后翻，不支持向前翻）</span></span><br><span class="line">less  <span class="comment">#和more相反</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head  <span class="comment">#查看文件前n行（默认10行）</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail  <span class="comment">#查看文件后n行（默认10行）</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保持在同一网段，最终结果是所有虚机都加入宿主主机所在的局域网，这与在该局域网中添加入其他宿主主机在效果上没什么区别。</p>
+<p>tail -n<br>tail -f：查看文件尾部，不退出，等待文件追加内容。</p>
 </blockquote>
-</li>
-<li><p>NAT连接方式</p>
-<blockquote>
-<p>虽然从表面现象看，虚机无自己的IP地址，而是共享宿主主机的IP地址，使得虚拟局域网内的虚机在对外访问时，完全“冒用”宿主主机的IP地址，这样从外部网络来看，只能看到宿主主机，完全看不到新建的虚拟局域网。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="二、常见连接模式"><a href="#二、常见连接模式" class="headerlink" title="二、常见连接模式"></a><strong>二、常见连接模式</strong></h3><ol>
-<li><p>Bridge模式</p>
-<ul>
-<li><p>①、设置虚拟机网络为桥接<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png" alt="桥接"></p>
-</li>
-<li><p>②、修改网卡地址</p>
-<blockquote>
-<p>①、ONBOOT  修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO   删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR    设置为192.168.1.*（注：修改为本机网卡同段落IP地址，不要配置ip冲突）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-<p>⑤、设置GATEWAY 192,168.1.1(本机相同网关)</p>
-</blockquote>
-</li>
-<li><p>③、重启<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png" alt="重启"></p>
-</li>
-<li><p>④、ping 本机网关、本机ip、baiduIP(域名一般是无法解析的)</p>
-</li>
-</ul>
-</li>
-<li><p>自定义模式</p>
-<ul>
-<li><p>①、通过虚拟网卡，然后修改虚拟网卡VMnet1<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png" alt=""></p>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png" alt=""></p>
-<p>  只需要添加IP地址和子网掩码。 登录虚拟机，修改网卡ip地址</p>
-<blockquote>
-<p>①、ONBOOT 修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO 删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR 设置为192.168.8.*（注：修改为虚拟网卡同段落IP地址）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-</blockquote>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png" alt=""></p>
-<p>重启网络：service network restart。</p>
-</li>
-</ul>
-</li>
-</ol>
+<h3 id="二、文本处理"><a href="#二、文本处理" class="headerlink" title="二、文本处理"></a><strong>二、文本处理</strong></h3><p><code>cut</code>、 <code>join</code>、<code>sed</code>、<code>awk</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut ：</span><br></pre></td></tr></table></figure>
+<p>-d：指定字段分隔符（默认为一个空格）。<br>-f：指定要显示的字段<br>    -f 1：显示第一个字段<br>    -f 1,3：显示第一个和第三个字段（离散表示法）<br>    -f 1-3：显示一到三的字段（连续表示法）</p>
+<h3 id="三、文本排序"><a href="#三、文本排序" class="headerlink" title="三、文本排序"></a><strong>三、文本排序</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort（默认字母升序）</span><br></pre></td></tr></table></figure>
+<p>-n 排序数字<br>-r 逆向排序<br>-t  ：以什么为分隔符<br>-k    :从哪个字段开始<br>-u：排序后相同的行只显示一次<br>-f：忽略字符大小写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uniq报告重复行（相邻并相同才算做向同行）</span><br></pre></td></tr></table></figure>
+<p>-d：只显示重复行<br>-D：显示所有重复行<br>-c：把所有行取出来，并显示次数</p>
+<h3 id="四、文本统计"><a href="#四、文本统计" class="headerlink" title="四、文本统计"></a><strong>四、文本统计</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc(word count)</span><br></pre></td></tr></table></figure>
+<p>分别为：行 单词数 字节/字符数<br>-l：行<br>-w：单次数<br>-c：字节<br>-m：字符<br>-L：最长的一段包含了多少字符</p>
+<h3 id="五、字符处理"><a href="#五、字符处理" class="headerlink" title="五、字符处理"></a><strong>五、字符处理</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr：转换或三处字符</span><br></pre></td></tr></table></figure>
+<p>tr [OPTION] SET1 [SET2]<br>    eg：tr ‘a-z’ ‘A-Z’ &lt; /etc/passwd<br>tr -d ‘ab’</p>
 
       
     </div>
@@ -321,18 +274,9 @@ Bridge（桥接）连接方式
     
 <nav id="article-nav">
   
-    <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          VMware--克隆虚拟机后网络问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2016/03/16/Linux-操作系统及常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux--操作系统及常用命令</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -367,7 +311,7 @@ Bridge（桥接）连接方式
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="VMware-网络配置" data-title="VMware--网络配置" data-url="http://xiaoxiaomo.com/2016/03/15/VMware-网络配置/"></div>
+	<div class="ds-thread" data-thread-key="Linux-文本管理类命令" data-title="Linux--文本管理类命令" data-url="http://xiaoxiaomo.com/2016/03/16/Linux-文本管理类命令/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

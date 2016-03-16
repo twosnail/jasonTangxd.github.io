@@ -4,17 +4,53 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>小小默&#39;s Blog</title>
+  <title>Linux--跟文件系统 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="路途遥远 勿忘初心">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小小默's Blog">
-<meta property="og:url" content="http://xiaoxiaomo.com/index.html">
+  <meta name="description" content="根文件系统rootfs(Root File System),而Linux是一种树形结构组织文件FHS（FileSystem Hierarchy Standard）。“/”是所有文件的跟。
+一、Linux目录简介
+
+/boot：
+存放引导系统启动的相关文件，如内核，initrd ， 以及grub(bootloader)。
+
+
+
+
+/dev：
+
+设备文件,存放着相关配置的1、设备文件：2、块设备：随机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux--跟文件系统">
+<meta property="og:url" content="http://xiaoxiaomo.com/2016/03/16/Linux-跟文件系统/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="路途遥远 勿忘初心">
+<meta property="og:description" content="根文件系统rootfs(Root File System),而Linux是一种树形结构组织文件FHS（FileSystem Hierarchy Standard）。“/”是所有文件的跟。
+一、Linux目录简介
+
+/boot：
+存放引导系统启动的相关文件，如内核，initrd ， 以及grub(bootloader)。
+
+
+
+
+/dev：
+
+设备文件,存放着相关配置的1、设备文件：2、块设备：随机">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Frootfs.png">
+<meta property="og:updated_time" content="2016-03-16T03:19:30.748Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小小默's Blog">
-<meta name="twitter:description" content="路途遥远 勿忘初心">
+<meta name="twitter:title" content="Linux--跟文件系统">
+<meta name="twitter:description" content="根文件系统rootfs(Root File System),而Linux是一种树形结构组织文件FHS（FileSystem Hierarchy Standard）。“/”是所有文件的跟。
+一、Linux目录简介
+
+/boot：
+存放引导系统启动的相关文件，如内核，initrd ， 以及grub(bootloader)。
+
+
+
+
+/dev：
+
+设备文件,存放着相关配置的1、设备文件：2、块设备：随机">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Frootfs.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -190,9 +226,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-Linux-跟文件系统" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-跟文件系统" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/03/16/Linux-跟文件系统/" class="article-date">
@@ -208,12 +242,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a>
+    <h1 class="article-title" itemprop="name">
+      Linux--跟文件系统
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -325,275 +366,68 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VMware--克隆虚拟机后网络问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-VMware-克隆虚拟机后网络问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" class="article-date">
-  	<time datetime="2016-03-15T12:44:35.000Z" itemprop="datePublished">2016-03-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-【问题】"><a href="#1-【问题】" class="headerlink" title="1. 【问题】"></a>1. 【问题】</h3><blockquote>
-<p>使用VMware克隆功能后，会发现网卡有问题</p>
-</blockquote>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9f23d0d7-d158-4302-b4f0-ed2f3a507edd.png" alt=""></p>
-<h3 id="2-【解决】"><a href="#2-【解决】" class="headerlink" title="2. 【解决】"></a>2. 【解决】</h3><blockquote>
-<p>由于网络配置中的网卡MAC地址还是之前虚拟机的，需要去复制出该虚拟机新生成的MAC地址到网络配置中</p>
-</blockquote>
-<ul>
-<li>具体步骤</li>
-</ul>
-<blockquote>
-<p>需要去 <strong>/etc/udev/rules.d/70-persistent-net.rules</strong> 复制出eth1（一般是最后一个网卡信息）的MAC地址到 <strong>/etc/sysconfig/network-script/eth0</strong> 。</p>
-<p>①、修改eth0为：eth1（一般是最后一个）<br>②、修改HWADDR为：01:0c:29:43:21:3c（此网卡是作者电脑例子）<br>③、其中无用的eth0可以删除（保留最后一个就行）</p>
-</blockquote>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png" alt=""></p>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png" alt=""></p>
-<h3 id="3-【使用】"><a href="#3-【使用】" class="headerlink" title="3. 【使用】"></a>3. 【使用】</h3><blockquote>
-<p>重启服务即可：service network restart</p>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
-
-
-
-  
-    <article id="post-VMware-网络配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/15/VMware-网络配置/" class="article-date">
-  	<time datetime="2016-03-15T07:59:17.000Z" itemprop="datePublished">2016-03-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、三种网络连接模式"><a href="#一、三种网络连接模式" class="headerlink" title="一、三种网络连接模式"></a><strong>一、三种网络连接模式</strong></h3><ol>
-<li><p>Host-only连接方式</p>
-<blockquote>
-<p> 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。</p>
-</blockquote>
-</li>
-<li><p>Bridge（桥接）连接方式</p>
-<blockquote>
-<p>让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保持在同一网段，最终结果是所有虚机都加入宿主主机所在的局域网，这与在该局域网中添加入其他宿主主机在效果上没什么区别。</p>
-</blockquote>
-</li>
-<li><p>NAT连接方式</p>
-<blockquote>
-<p>虽然从表面现象看，虚机无自己的IP地址，而是共享宿主主机的IP地址，使得虚拟局域网内的虚机在对外访问时，完全“冒用”宿主主机的IP地址，这样从外部网络来看，只能看到宿主主机，完全看不到新建的虚拟局域网。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="二、常见连接模式"><a href="#二、常见连接模式" class="headerlink" title="二、常见连接模式"></a><strong>二、常见连接模式</strong></h3><ol>
-<li><p>Bridge模式</p>
-<ul>
-<li><p>①、设置虚拟机网络为桥接<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png" alt="桥接"></p>
-</li>
-<li><p>②、修改网卡地址</p>
-<blockquote>
-<p>①、ONBOOT  修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO   删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR    设置为192.168.1.*（注：修改为本机网卡同段落IP地址，不要配置ip冲突）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-<p>⑤、设置GATEWAY 192,168.1.1(本机相同网关)</p>
-</blockquote>
-</li>
-<li><p>③、重启<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png" alt="重启"></p>
-</li>
-<li><p>④、ping 本机网关、本机ip、baiduIP(域名一般是无法解析的)</p>
-</li>
-</ul>
-</li>
-<li><p>自定义模式</p>
-<ul>
-<li><p>①、通过虚拟网卡，然后修改虚拟网卡VMnet1<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png" alt=""></p>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png" alt=""></p>
-<p>  只需要添加IP地址和子网掩码。 登录虚拟机，修改网卡ip地址</p>
-<blockquote>
-<p>①、ONBOOT 修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO 删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR 设置为192.168.8.*（注：修改为虚拟网卡同段落IP地址）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-</blockquote>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png" alt=""></p>
-<p>重启网络：service network restart。</p>
-</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Linux-跟文件系统" data-title="Linux--跟文件系统" data-url="http://xiaoxiaomo.com/2016/03/16/Linux-跟文件系统/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/15/hello-world/" class="article-date">
-  	<time datetime="2016-03-14T16:42:46.733Z" itemprop="datePublished">2016-03-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/jasonTangxd/jasonTangxd.github.io" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -617,8 +451,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -4,81 +4,35 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Linux--操作系统及常用命令 | 小小默&#39;s Blog</title>
+  <title>Linux--grep和正则表达式 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
-
-列出指定路径下的文件
-查看目录文件 ls：
-
-1-l 长格式
-
-
-文件类型
-
--：普通文件（f）
-d：目录文件
-b：块设备文件（block）
-c：字节设备文件（character）
-l ：符号链接文件（sysbolic link ）
-p：管道命令（pipe）
-s：套接字文件（socket）
-
-
-文件">
+  <meta name="description" content="grep（Global search REgular expression and Print out the line）英文有点长，全局搜索正则表达式并打印出匹配的行。从字面意思就知道一个很强大的文本匹配工具，可以通过正则来匹配，并且把匹配的行打印出来。
+grep语法1grep [-acinv] [--color=auto] [-A n] [-B n] &apos;匹配字符串&apos; 匹配文件
+常用参数说明">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux--操作系统及常用命令">
-<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/index.html">
+<meta property="og:title" content="Linux--grep和正则表达式">
+<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/17/Linux-grep和正则表达式/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
-
-列出指定路径下的文件
-查看目录文件 ls：
-
-1-l 长格式
-
-
-文件类型
-
--：普通文件（f）
-d：目录文件
-b：块设备文件（block）
-c：字节设备文件（character）
-l ：符号链接文件（sysbolic link ）
-p：管道命令（pipe）
-s：套接字文件（socket）
-
-
-文件">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png">
-<meta property="og:updated_time" content="2016-03-16T16:03:40.322Z">
+<meta property="og:description" content="grep（Global search REgular expression and Print out the line）英文有点长，全局搜索正则表达式并打印出匹配的行。从字面意思就知道一个很强大的文本匹配工具，可以通过正则来匹配，并且把匹配的行打印出来。
+grep语法1grep [-acinv] [--color=auto] [-A n] [-B n] &apos;匹配字符串&apos; 匹配文件
+常用参数说明">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317154131.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317163701.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317163525.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317165905.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317170706.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317170841.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317165437.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317164242.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317171543.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317172007.png">
+<meta property="og:updated_time" content="2016-03-17T09:25:42.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux--操作系统及常用命令">
-<meta name="twitter:description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
-
-列出指定路径下的文件
-查看目录文件 ls：
-
-1-l 长格式
-
-
-文件类型
-
--：普通文件（f）
-d：目录文件
-b：块设备文件（block）
-c：字节设备文件（character）
-l ：符号链接文件（sysbolic link ）
-p：管道命令（pipe）
-s：套接字文件（socket）
-
-
-文件">
-<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png">
+<meta name="twitter:title" content="Linux--grep和正则表达式">
+<meta name="twitter:description" content="grep（Global search REgular expression and Print out the line）英文有点长，全局搜索正则表达式并打印出匹配的行。从字面意思就知道一个很强大的文本匹配工具，可以通过正则来匹配，并且把匹配的行打印出来。
+grep语法1grep [-acinv] [--color=auto] [-A n] [-B n] &apos;匹配字符串&apos; 匹配文件
+常用参数说明">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317154131.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -268,11 +222,11 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-Linux-操作系统及常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-grep和正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/16/Linux-操作系统及常用命令/" class="article-date">
-  	<time datetime="2016-03-16T06:10:57.000Z" itemprop="datePublished">2016-03-16</time>
+      <a href="/2016/03/17/Linux-grep和正则表达式/" class="article-date">
+  	<time datetime="2016-03-17T06:50:55.000Z" itemprop="datePublished">2016-03-17</time>
 </a>
     </div>
   
@@ -285,7 +239,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Linux--操作系统及常用命令
+      Linux--grep和正则表达式
     </h1>
   
 
@@ -307,65 +261,65 @@ var _hmt = _hmt || [];
         
         <div id="toc" class="toc-article">
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目录：文件，路径映射"><span class="toc-number">1.</span> <span class="toc-text">目录：文件，路径映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出指定路径下的文件"><span class="toc-number">2.</span> <span class="toc-text">列出指定路径下的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-number">3.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间"><span class="toc-number">4.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取命令帮助-待整理"><span class="toc-number">5.</span> <span class="toc-text">获取命令帮助(待整理)</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#grep"><span class="toc-number">1.</span> <span class="toc-text">grep</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式"><span class="toc-number">2.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用正则表达式"><span class="toc-number">2.1.</span> <span class="toc-text">常用正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展正则表达式"><span class="toc-number">2.2.</span> <span class="toc-text">扩展正则表达式</span></a></li></ol></li></ol>
         </div>
-        <h3 id="目录：文件，路径映射"><a href="#目录：文件，路径映射" class="headerlink" title="目录：文件，路径映射"></a><strong>目录：文件，路径映射</strong></h3><blockquote>
-<p>路径：从指定起始点到目的地的所经过的位置。<br>文件系统：file system</p>
+        <p><code>grep</code>（Global search REgular expression and Print out the line）英文有点长，<code>全局搜索正则表达式并打印出匹配的行</code>。从字面意思就知道一个很强大的文本匹配工具，可以通过正则来匹配，并且把匹配的行打印出来。</p>
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a><strong>grep</strong></h2><p>语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [-acinv] [--color=auto] [-A n] [-B n] <span class="string">'匹配字符串'</span> 匹配文件</span><br></pre></td></tr></table></figure></p>
+<p>常用参数说明</p>
+<blockquote>
+<p><strong>-c</strong> ：#统计匹配次数<br><strong>-i</strong> ：#忽略大小写<br><strong>-n</strong> ：#显示行号<br><strong>-v</strong> ：#反选<br><strong>–color</strong> :#高亮匹配字段，可自定义<br><strong>-A</strong> ：#显示匹配行之后n行的信息，After,必须指定n<br><strong>-B</strong> ：#显示匹配行之前n行的信息，Before,必须指定n<br>注意：匹配的字段最好用’’单引号，避免和shell元字符冲突。</p>
 </blockquote>
-<h3 id="列出指定路径下的文件"><a href="#列出指定路径下的文件" class="headerlink" title="列出指定路径下的文件"></a><strong>列出指定路径下的文件</strong></h3><blockquote>
-<p>查看目录文件 ls：</p>
+<p>eg.</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317154131.png" alt=""></p>
+<p>在当前目录下（以“.class”结尾的文件），匹配‘Thread’字符串，并显示出行号，高亮以及匹配字符后两行。</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a><strong>正则表达式</strong></h2><h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a><strong>常用正则表达式</strong></h3><blockquote>
+<p><strong>.</strong> 匹配任意一个字符 #eg：grep ‘a.r’text，会匹配arr,不会匹配ar。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="_">-l</span> 长格式</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png" alt=""></p>
-<ol>
-<li><p><strong>文件类型</strong></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317163701.png" alt=""></p>
+<blockquote>
+<p><strong>*</strong> 前面字符出现0-n次。</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317163525.png" alt=""></p>
+<blockquote>
+<p><strong>[]</strong> 匹配括号中的任意一个 </p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317165905.png" alt=""></p>
 <ul>
-<li>-：普通文件（f）</li>
-<li>d：目录文件</li>
-<li>b：块设备文件（block）</li>
-<li>c：字节设备文件（character）</li>
-<li>l ：符号链接文件（sysbolic link ）</li>
-<li>p：管道命令（pipe）</li>
-<li>s：套接字文件（socket）</li>
+<li>[0-9]会匹配0-9</li>
+<li>[a-z]会匹配a-z</li>
+<li>[A-Z]会匹配A-Z</li>
+<li>[0-9A-Z]会匹配0-9和A-Z</li>
+<li>[[:space:]]会匹配空格</li>
+<li>[[:punct:]]会匹配标点符号</li>
 </ul>
-</li>
-<li><p><strong>文件权限</strong>：9位，没三位一组，每一组（rwx）r：可读，w：可写：x:可执行</p>
-</li>
-<li><strong>文件硬链接次数</strong></li>
-<li><strong>文件的属主</strong>（owner）</li>
-<li><strong>文件的所属组</strong>（group）</li>
-<li><strong>文件的大小</strong>（size）,单位字节</li>
-<li><p><strong>时间戳</strong>（timestamp）:最近一次被修改的时间（文件内容）</p>
-<ul>
-<li>访问：access</li>
-<li>修改：modify（修改，指的是修改了文件的内容）</li>
-<li>改变：change，metadata(元数据)（改变，指的是改变了文件的属性，或者说元数据）</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-h 做单位换算（human can readable）</span><br><span class="line"><span class="_">-a</span> 以点开头的文件（隐藏文件）</span><br><span class="line">	<span class="comment">#.  表示当前目录</span></span><br><span class="line">	<span class="comment">#.. 表示上级目录</span></span><br><span class="line"></span><br><span class="line">-A 显示全部文件（不包括.和..）</span><br><span class="line"><span class="_">-d</span> 显示自身属性</span><br><span class="line">-i  index node，inode(显示文件唯一序号)</span><br><span class="line">-r  逆序显示</span><br><span class="line">-R 递归显示（recursive）</span><br></pre></td></tr></table></figure>
-<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a><strong>环境变量</strong></h3><blockquote>
-<p>命令的内存空间，env<br>变量赋值<br>eg：NAME=Tom(在内存中着一段空间，起名叫NAME,空间放的数据叫Tom),申请变量的过程，就是申请内存使用的过程。<br>path：以冒号隔开的一对路径。<br>hash：查看缓存</p>
-</blockquote>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png" alt=""></p>
-<p><code>缓存，catch is king.保存的是hash列表。在key,value中的查找速度是O(1).O(1):表示查找时间，不会随着，数据的增加而递增。</code></p>
-<h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a><strong>时间</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data：</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>硬件主板的震荡器，rtc<br>硬件时钟：clock<br>系统时钟：date</p>
+<p><strong>{n,m}</strong> 匹配前面字符重复n,m,次</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock   <span class="comment">#（写入时间）</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317170706.png" alt=""></p>
 <blockquote>
-<p>-w：读取系统时间到硬件中<br>-s ：读取硬件时间到系统中</p>
+<p><strong>[^]</strong> 匹配非字符串，#eg：grep ‘[^java]’ text,匹配非java字符串。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cal：日历</span><br></pre></td></tr></table></figure>
-<h3 id="获取命令帮助-待整理"><a href="#获取命令帮助-待整理" class="headerlink" title="获取命令帮助(待整理)"></a><strong>获取命令帮助(待整理)</strong></h3><p>在线文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info COMMAND(主要讲历史等)</span><br><span class="line">文档：/usr/share/doc</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317170841.png" alt=""></p>
 <blockquote>
-<p>内部命令：help COMMAND<br>外部命令：COMMAND –help<br>命令手册：manual<br>man COMMAND<br>whatis COMMAND<br>分章节<br>    1、用户命令（/bin , /usr/bin , /usr/local）<br>    2、系统调用<br>    3、库用户<br>    4、特殊文件（设备文件）<br>    5、文件格式（配置文件的语法）<br>    6、游戏<br>    7、杂项（Miscellaneous）<br>    8、管理命令（/sbin,  /usr/sbin  , /usr/local/sbin），管理员，会修改硬件相关的信息</p>
+<p><strong>^</strong> 匹配以什么开头的行<br><strong>\$</strong> 匹配以什么结尾的行 #eg：grep -n ‘sleep\$’ text。<br><strong>\&lt;</strong> 匹配以什么开头的单词<br><strong>></strong> 匹配以什么结尾的单词</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man 命令:</span><br></pre></td></tr></table></figure>
+<h3 id="扩展正则表达式"><a href="#扩展正则表达式" class="headerlink" title="扩展正则表达式"></a><strong>扩展正则表达式</strong></h3><p>可以通过-E参数使用grep的扩展正则表达式，等于egrep.</p>
 <blockquote>
-<p>[]   ：可选<br>&lt;&gt;：必须有<br>…  ：可以出现多次<br>|   ：多选一<br>{}  ：分组<br>NAME：命令名称及功能简要说明<br>SYNAPOSIS：用户说明，包括可用的选项<br>DESCREPTION：命令功能的详细说明， 可能包括没一个选项的意义<br>OPTIONS：选项<br>FILES：此命令的相关配置<br>BUGS：<br>Examples：使用示例<br>SEE ALSO：另外参考</p>
+<p><strong>?</strong> 匹配前面字符，0，1次。</p>
 </blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317165437.png" alt=""></p>
+<blockquote>
+<p><strong>+</strong> 匹配前面字符，1-n次。eg：grep -E ‘a+r’ text。会匹配ar,aar等。</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317164242.png" alt=""></p>
+<blockquote>
+<p><strong>|</strong> 匹配多个字符串</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317171543.png" alt=""></p>
+<blockquote>
+<p><strong>()</strong> 匹配括号中的字符串</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317172007.png" alt=""></p>
 
       
     </div>
@@ -375,18 +329,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/03/16/Linux-文本管理类命令/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Linux--文本管理类命令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/16/Linux-跟文件系统/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux--跟文件系统</div>
+    <a href="/2016/03/16/Linux-文本管理类命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux--文本管理类命令</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -421,7 +366,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Linux-操作系统及常用命令" data-title="Linux--操作系统及常用命令" data-url="http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/"></div>
+	<div class="ds-thread" data-thread-key="Linux-grep和正则表达式" data-title="Linux--grep和正则表达式" data-url="http://blog.xiaoxiaomo.com/2016/03/17/Linux-grep和正则表达式/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

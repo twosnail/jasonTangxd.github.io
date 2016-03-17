@@ -149,7 +149,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">一名坚持梦想，信仰爱与自由的程序员！</div>
+					<div id="js-aboutme">坚持梦想，信仰爱与自由！</div>
 				</section>
 				
 			</div>
@@ -205,6 +205,123 @@ var _hmt = _hmt || [];
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Linux-grep和正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/17/Linux-grep和正则表达式/" class="article-date">
+  	<time datetime="2016-03-17T06:50:55.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/Linux-grep和正则表达式/">Linux--grep和正则表达式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+        
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#grep"><span class="toc-number">1.</span> <span class="toc-text">grep</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式"><span class="toc-number">2.</span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用正则表达式"><span class="toc-number">2.1.</span> <span class="toc-text">常用正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展正则表达式"><span class="toc-number">2.2.</span> <span class="toc-text">扩展正则表达式</span></a></li></ol></li></ol>
+        </div>
+        <p><code>grep</code>（Global search REgular expression and Print out the line）英文有点长，<code>全局搜索正则表达式并打印出匹配的行</code>。从字面意思就知道一个很强大的文本匹配工具，可以通过正则来匹配，并且把匹配的行打印出来。</p>
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a><strong>grep</strong></h2><p>语法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [-acinv] [--color=auto] [-A n] [-B n] <span class="string">'匹配字符串'</span> 匹配文件</span><br></pre></td></tr></table></figure></p>
+<p>常用参数说明</p>
+<blockquote>
+<p><strong>-c</strong> ：#统计匹配次数<br><strong>-i</strong> ：#忽略大小写<br><strong>-n</strong> ：#显示行号<br><strong>-v</strong> ：#反选<br><strong>–color</strong> :#高亮匹配字段，可自定义<br><strong>-A</strong> ：#显示匹配行之后n行的信息，After,必须指定n<br><strong>-B</strong> ：#显示匹配行之前n行的信息，Before,必须指定n<br>注意：匹配的字段最好用’’单引号，避免和shell元字符冲突。</p>
+</blockquote>
+<p>eg.</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317154131.png" alt=""></p>
+<p>在当前目录下（以“.class”结尾的文件），匹配‘Thread’字符串，并显示出行号，高亮以及匹配字符后两行。</p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a><strong>正则表达式</strong></h2><h3 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a><strong>常用正则表达式</strong></h3><blockquote>
+<p><strong>.</strong> 匹配任意一个字符 #eg：grep ‘a.r’text，会匹配arr,不会匹配ar。</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317163701.png" alt=""></p>
+<blockquote>
+<p><strong>*</strong> 前面字符出现0-n次。</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317163525.png" alt=""></p>
+<blockquote>
+<p><strong>[]</strong> 匹配括号中的任意一个 </p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317165905.png" alt=""></p>
+<ul>
+<li>[0-9]会匹配0-9</li>
+<li>[a-z]会匹配a-z</li>
+<li>[A-Z]会匹配A-Z</li>
+<li>[0-9A-Z]会匹配0-9和A-Z</li>
+<li>[[:space:]]会匹配空格</li>
+<li>[[:punct:]]会匹配标点符号</li>
+</ul>
+<blockquote>
+<p><strong>{n,m}</strong> 匹配前面字符重复n,m,次</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317170706.png" alt=""></p>
+<blockquote>
+<p><strong>[^]</strong> 匹配非字符串，#eg：grep ‘[^java]’ text,匹配非java字符串。</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317170841.png" alt=""></p>
+<blockquote>
+<p><strong>^</strong> 匹配以什么开头的行<br><strong>\$</strong> 匹配以什么结尾的行 #eg：grep -n ‘sleep\$’ text。<br><strong>\&lt;</strong> 匹配以什么开头的单词<br><strong>></strong> 匹配以什么结尾的单词</p>
+</blockquote>
+<h3 id="扩展正则表达式"><a href="#扩展正则表达式" class="headerlink" title="扩展正则表达式"></a><strong>扩展正则表达式</strong></h3><p>可以通过-E参数使用grep的扩展正则表达式，等于egrep.</p>
+<blockquote>
+<p><strong>?</strong> 匹配前面字符，0，1次。</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317165437.png" alt=""></p>
+<blockquote>
+<p><strong>+</strong> 匹配前面字符，1-n次。eg：grep -E ‘a+r’ text。会匹配ar,aar等。</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317164242.png" alt=""></p>
+<blockquote>
+<p><strong>|</strong> 匹配多个字符串</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317171543.png" alt=""></p>
+<blockquote>
+<p><strong>()</strong> 匹配括号中的字符串</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317172007.png" alt=""></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Linux-文本管理类命令" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -638,120 +755,6 @@ var _hmt = _hmt || [];
 <h3 id="3-【使用】"><a href="#3-【使用】" class="headerlink" title="3. 【使用】"></a>3. 【使用】</h3><blockquote>
 <p>重启服务即可：service network restart</p>
 </blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-VMware-网络配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/15/VMware-网络配置/" class="article-date">
-  	<time datetime="2016-03-15T07:59:17.000Z" itemprop="datePublished">2016-03-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-        
-        <div id="toc" class="toc-article">
-          <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、三种网络连接模式"><span class="toc-number">1.</span> <span class="toc-text">一、三种网络连接模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、常见连接模式"><span class="toc-number">2.</span> <span class="toc-text">二、常见连接模式</span></a></li></ol>
-        </div>
-        <h3 id="一、三种网络连接模式"><a href="#一、三种网络连接模式" class="headerlink" title="一、三种网络连接模式"></a><strong>一、三种网络连接模式</strong></h3><ol>
-<li><p>Host-only连接方式</p>
-<blockquote>
-<p> 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。</p>
-</blockquote>
-</li>
-<li><p>Bridge（桥接）连接方式</p>
-<blockquote>
-<p>让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保持在同一网段，最终结果是所有虚机都加入宿主主机所在的局域网，这与在该局域网中添加入其他宿主主机在效果上没什么区别。</p>
-</blockquote>
-</li>
-<li><p>NAT连接方式</p>
-<blockquote>
-<p>虽然从表面现象看，虚机无自己的IP地址，而是共享宿主主机的IP地址，使得虚拟局域网内的虚机在对外访问时，完全“冒用”宿主主机的IP地址，这样从外部网络来看，只能看到宿主主机，完全看不到新建的虚拟局域网。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="二、常见连接模式"><a href="#二、常见连接模式" class="headerlink" title="二、常见连接模式"></a><strong>二、常见连接模式</strong></h3><ol>
-<li><p>Bridge模式</p>
-<ul>
-<li><p>①、设置虚拟机网络为桥接<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png" alt="桥接"></p>
-</li>
-<li><p>②、修改网卡地址</p>
-<blockquote>
-<p>①、ONBOOT  修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO   删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR    设置为192.168.1.*（注：修改为本机网卡同段落IP地址，不要配置ip冲突）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-<p>⑤、设置GATEWAY 192,168.1.1(本机相同网关)</p>
-</blockquote>
-</li>
-<li><p>③、重启<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png" alt="重启"></p>
-</li>
-<li><p>④、ping 本机网关、本机ip、baiduIP(域名一般是无法解析的)</p>
-</li>
-</ul>
-</li>
-<li><p>自定义模式</p>
-<ul>
-<li><p>①、通过虚拟网卡，然后修改虚拟网卡VMnet1<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png" alt=""></p>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png" alt=""></p>
-<p>  只需要添加IP地址和子网掩码。 登录虚拟机，修改网卡ip地址</p>
-<blockquote>
-<p>①、ONBOOT 修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO 删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR 设置为192.168.8.*（注：修改为虚拟网卡同段落IP地址）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-</blockquote>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png" alt=""></p>
-<p>重启网络：service network restart。</p>
-</li>
-</ul>
-</li>
-</ol>
 
       
     </div>

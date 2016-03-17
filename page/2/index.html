@@ -206,6 +206,85 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
+    <article id="post-VMware-克隆虚拟机后网络问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" class="article-date">
+  	<time datetime="2016-03-15T12:44:35.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+        
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-【问题】"><span class="toc-number">1.</span> <span class="toc-text">1. 【问题】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-【解决】"><span class="toc-number">2.</span> <span class="toc-text">2. 【解决】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-【使用】"><span class="toc-number">3.</span> <span class="toc-text">3. 【使用】</span></a></li></ol>
+        </div>
+        <h3 id="1-【问题】"><a href="#1-【问题】" class="headerlink" title="1. 【问题】"></a>1. 【问题】</h3><blockquote>
+<p>使用VMware克隆功能后，会发现网卡有问题</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9f23d0d7-d158-4302-b4f0-ed2f3a507edd.png" alt=""></p>
+<h3 id="2-【解决】"><a href="#2-【解决】" class="headerlink" title="2. 【解决】"></a>2. 【解决】</h3><blockquote>
+<p>由于网络配置中的网卡MAC地址还是之前虚拟机的，需要去复制出该虚拟机新生成的MAC地址到网络配置中</p>
+</blockquote>
+<ul>
+<li>具体步骤</li>
+</ul>
+<blockquote>
+<p>需要去 <strong>/etc/udev/rules.d/70-persistent-net.rules</strong> 复制出eth1（一般是最后一个网卡信息）的MAC地址到 <strong>/etc/sysconfig/network-script/eth0</strong> 。</p>
+<p>①、修改eth0为：eth1（一般是最后一个）<br>②、修改HWADDR为：01:0c:29:43:21:3c（此网卡是作者电脑例子）<br>③、其中无用的eth0可以删除（保留最后一个就行）</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F06295951-0670-4a7a-b633-a9f35a0166c3.png" alt=""></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F8ab829c9-afb6-41a7-875d-5d3dae6bd05c.png" alt=""></p>
+<h3 id="3-【使用】"><a href="#3-【使用】" class="headerlink" title="3. 【使用】"></a>3. 【使用】</h3><blockquote>
+<p>重启服务即可：service network restart</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-VMware-网络配置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

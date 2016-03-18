@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linux--文本管理类命令 | 小小默&#39;s Blog</title>
+  <title>Linux--用户和组管理 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文件信息文本统计信息ls命令可以查看，以及批量查看文件的某些信息，但是文件的状态信息还是无法查看。stat,可以查看文件的状态信息。">
+  <meta name="description" content="在Linux系统中，用户信息及密码，组信息及其密码，都保存在不同的文件中，1.用户信息（/etc/passwd），2.用户密码（/etc/shadow），3.用户组帐号（/etc/group），4.用户组密码（/etc/gshadow）。用户和组是多对多的关系，即一个用户可以属于多个组，一个组也可以包含多个用户。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux--文本管理类命令">
-<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/16/Linux-文本管理类命令/index.html">
+<meta property="og:title" content="Linux--用户和组管理">
+<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/18/Linux-用户和组管理/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="文件信息文本统计信息ls命令可以查看，以及批量查看文件的某些信息，但是文件的状态信息还是无法查看。stat,可以查看文件的状态信息。">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317185329.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160316160346.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F42190026-98ac-43aa-a690-f9122f44df3f.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160316161803.png">
-<meta property="og:updated_time" content="2016-03-18T02:01:00.974Z">
+<meta property="og:description" content="在Linux系统中，用户信息及密码，组信息及其密码，都保存在不同的文件中，1.用户信息（/etc/passwd），2.用户密码（/etc/shadow），3.用户组帐号（/etc/group），4.用户组密码（/etc/gshadow）。用户和组是多对多的关系，即一个用户可以属于多个组，一个组也可以包含多个用户。">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155129.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155130.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155131.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155132.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155133.png">
+<meta property="og:updated_time" content="2016-03-18T08:31:09.657Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux--文本管理类命令">
-<meta name="twitter:description" content="文件信息文本统计信息ls命令可以查看，以及批量查看文件的某些信息，但是文件的状态信息还是无法查看。stat,可以查看文件的状态信息。">
-<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317185329.png">
+<meta name="twitter:title" content="Linux--用户和组管理">
+<meta name="twitter:description" content="在Linux系统中，用户信息及密码，组信息及其密码，都保存在不同的文件中，1.用户信息（/etc/passwd），2.用户密码（/etc/shadow），3.用户组帐号（/etc/group），4.用户组密码（/etc/gshadow）。用户和组是多对多的关系，即一个用户可以属于多个组，一个组也可以包含多个用户。">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155129.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -247,11 +248,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Linux-文本管理类命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-用户和组管理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/16/Linux-文本管理类命令/" class="article-date">
-      <time datetime="2016-03-16T07:05:48.000Z" itemprop="datePublished">2016-03-16</time>
+      <a href="/2016/03/18/Linux-用户和组管理/" class="article-date">
+      <time datetime="2016-03-18T07:00:36.000Z" itemprop="datePublished">2016-03-18</time>
 </a>
     </div>
   
@@ -264,7 +265,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux--文本管理类命令
+      Linux--用户和组管理
     </h1>
   
 
@@ -285,58 +286,59 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="文件信息"><a href="#文件信息" class="headerlink" title="文件信息"></a><strong>文件信息</strong></h2><h3 id="文本统计信息"><a href="#文本统计信息" class="headerlink" title="文本统计信息"></a><strong>文本统计信息</strong></h3><p>ls命令可以查看，以及批量查看文件的某些信息，但是文件的状态信息还是无法查看。stat,可以查看文件的状态信息。</p>
+        <p>在Linux系统中，用户信息及密码，组信息及其密码，都保存在不同的文件中，1.用户信息（<code>/etc/passwd</code>），2.用户密码（<code>/etc/shadow</code>），3.用户组帐号（<code>/etc/group</code>），4.用户组密码（<code>/etc/gshadow</code>）。用户和组是多对多的关系，即一个用户可以属于多个组，一个组也可以包含多个用户。</p>
 <a id="more"></a>
-<p><code>stat</code></p>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317185329.png" alt="stat"></p>
-<ul>
-<li>访问：access</li>
-<li>修改：modify（修改，指的是修改了文件的内容）</li>
-<li>改变：change，metadata(元数据)（改变，指的是改变了文件的属性，或者说元数据）</li>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><h4 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h4><p>保存则着所有用户信息，密码使用了x表示，</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155129.png" alt=""></p>
+<p>分别表示：用户帐号 用户密码 用户ID 用户组ID 用户名全称 用户主目录 用户所使用的shell。<br>该文件默认就会初始化很多用，当shell等于/sbin/nologin时就表示该用户不能登陆。</p>
+<h4 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h4><p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155130.png" alt=""></p>
+<p>第二位为用户密码，使用了MD5加密算法。</p>
+<h4 id="etc-group"><a href="#etc-group" class="headerlink" title="/etc/group"></a>/etc/group</h4><p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155131.png" alt=""></p>
+<p>分表表示：用户组名称 x 用户组ID 用户组成员列表 </p>
+<h4 id="etc-gshadow"><a href="#etc-gshadow" class="headerlink" title="/etc/gshadow"></a>/etc/gshadow</h4><p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155132.png" alt=""></p>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><ul>
+<li>添加用户</li>
 </ul>
-<h3 id="文本查看命令"><a href="#文本查看命令" class="headerlink" title="文本查看命令"></a><strong>文本查看命令</strong></h3><p><code>cat</code>、<code>tac</code>、<code>more</code>、<code>less</code>、<code>head</code>、<code>tail</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat  <span class="comment">#链接并显示,一次显示整个文件</span></span><br><span class="line">tac  <span class="comment">#和cat相反，倒着显示</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>cat fileName : 一次显示所有文件内容<br>cat &gt; fileName : 从键盘创建一个文件（ctrl+c，保存代码）<br>cat f1 f2 &gt; fileNmae : 合并文件内容（技巧）<br>cat -n：在显示的时候给每一个行编号<br>cat -E：显示每一行的行结束符有，linux的文本行结束符为“$”，和windows有区别。(如果想翻屏，就shift+PaUp/PaDn）</p>
+<p>useradd [option] userName<br>-d dir ：#指定目录，默认目录/home/userName<br>-n ： #不为用户创建私有用户组<br>-g groupName : #指定用户组，该用户组必须存在,eg：useradd -g blogger xiaoxiaomo<br>-G groupName1,groupName2 ： #指定多个组<br>-p passWord ： #指定用户密码，eg：usreadd -p 123456 xiaoxiaomo</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">more  <span class="comment">#分屏翻页（支持向后翻，不支持向前翻），常常配合管道命令使用</span></span><br><span class="line">less  <span class="comment">#和more相似，可前后翻。eg：ps -ef|less，（#使用q退出）</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head  <span class="comment">#查看文件前n行（默认10行）</span></span><br><span class="line">tail  <span class="comment">#查看文件后n行（默认10行）</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>tail -n num fileName : 查看文件前num行。<br>tail -f：查看文件尾部，不退出，等待文件追加内容。常用于查看日志！</p>
-</blockquote>
-<h2 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a><strong>文本处理</strong></h2><h3 id="文本处理-1"><a href="#文本处理-1" class="headerlink" title="文本处理"></a><strong>文本处理</strong></h3><p><code>cut</code>、 <code>join</code>、<code>sed</code>、<code>awk</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut ：剪切命令，一般配合管道命令使用，</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>-d：字节，指定字段分隔符（默认为一个空格）。<br>-c：字符，<br>-f：区域，指定要显示的字段</p>
-</blockquote>
-<p>eg.</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155133.png" alt=""></p>
 <ul>
-<li>-f 1：显示第一个字段</li>
-<li>-f 1,3：显示第一个和第三个字段（离散表示法）</li>
-<li>-f 1-3：显示一到三的字段（连续表示法）<br><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160316160346.png" alt=""></li>
+<li>修改用户</li>
 </ul>
-<h3 id="文本排序"><a href="#文本排序" class="headerlink" title="文本排序"></a><strong>文本排序</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort：（默认字母升序）</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>-n 排序数字<br>-r 逆向排序<br>-t  ：以什么为分隔符<br>-k    :从哪个字段开始<br>-u：排序后相同的行只显示一次<br>-f：忽略字符大小写</p>
+<p>usermod [option] userName<br>usermod -l newUserName userName #修改用户名。<br>usermod -d 原目录 新目录名称 #修改用户目录，eg：usermod -d /home/xiaoxiaomo momo。<br>usermod -L userName #锁定用户，锁定后用户密码前会有感叹号，解锁使用-U，可用-S查看状态。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uniq：报告重复行（相邻并相同才算做向同行）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置密码</li>
+</ul>
 <blockquote>
-<p>-d：只显示重复行<br>-D：显示所有重复行<br>-c：把所有行取出来，并显示次数</p>
+<p>passwd [userName] #带参数修改某用户密码（一般root用户才有权限），不带参数修改自己的密码。<br>passwd -l userName #锁定用户密码，解锁使用-u。<br>passwd -d userName #删除用户密码。</p>
 </blockquote>
-<h3 id="文本统计"><a href="#文本统计" class="headerlink" title="文本统计"></a><strong>文本统计</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc(word count)</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F42190026-98ac-43aa-a690-f9122f44df3f.png" alt=""></p>
-<p>分别为：行 单词数 字节/字符数</p>
+<ul>
+<li>删除用户</li>
+</ul>
 <blockquote>
-<p>-l：行<br>-w：单次数<br>-c：字节<br>-m：字符<br>-L：最长的一段包含了多少字符</p>
+<p>userdel userName   #删除用户保留文件夹<br>userdel - userName #删除用户不保留文件夹</p>
 </blockquote>
-<p>eg.</p>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160316161803.png" alt=""></p>
-<h3 id="字符处理"><a href="#字符处理" class="headerlink" title="字符处理"></a><strong>字符处理</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr  <span class="comment">#转换或删除字符，可以实现set的基本功能，替换，删除，去重</span></span><br></pre></td></tr></table></figure>
+<h3 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h3><ul>
+<li>添加组</li>
+</ul>
 <blockquote>
-<p>tr [OPTION] SET1 [SET2]</p>
+<p>groupadd [-r] groupName #创建用户组，带-r,会创建系统组GID<500,不带-r,gid>=500.<br>groupmod -n newGroupName groupName #修改组名称.<br>groupmod -g newGroupId groupId #修改组GID，不可与已有Id重复。</500,不带-r,gid></p>
 </blockquote>
-<p>eg.</p>
-<p><code>tr &#39;a-z&#39; &#39;A-Z&#39; &lt; /etc/passwd</code>  #把passwd中所有信息转成大写。<br><code>tr -d &#39;ab&#39; &lt; fileName</code>        #把文件中包含a和b的删除掉。</p>
+<ul>
+<li><p>删除组</p>
+<blockquote>
+<p>groupdel groupName #注：删除组是应先删除用户，被删除的组不能是某个账户的私有用户组。</p>
+</blockquote>
+</li>
+<li><p>用户和组</p>
+</li>
+</ul>
+<blockquote>
+<p>gpasswd -a userName groupName #添加用户到某个组（root用户和改组管理员又该权限）。<br>gpasswd -d userName groupName #把某个用户从组中删除（root用户和改组管理员又该权限）。<br>gpasswd -A userName groupName #设置userName为组管理员。<br>groups userName #查看用户所属组</p>
+</blockquote>
 
       
     </div>
@@ -345,13 +347,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/16/Linux-文本管理类命令/">Linux--文本管理类命令</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/18/Linux-用户和组管理/">Linux--用户和组管理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
-        <p><span>发布时间:</span>2016年03月16日 - 15时05分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 10时01分</p>
+        <p><span>发布时间:</span>2016年03月18日 - 15时00分</p>
+        <p><span>最后更新:</span>2016年03月18日 - 16时31分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/16/Linux-文本管理类命令/" title="Linux--文本管理类命令">http://blog.xiaoxiaomo.com/2016/03/16/Linux-文本管理类命令/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/16/Linux-文本管理类命令/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-用户和组管理/" title="Linux--用户和组管理">http://blog.xiaoxiaomo.com/2016/03/18/Linux-用户和组管理/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-用户和组管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -364,16 +366,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/17/Linux-grep和正则表达式/">
-                    Linux--grep和正则表达式
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/16/Linux-操作系统及常用命令/">
-                    Linux--操作系统及常用命令
+                <a href="/2016/03/18/Linux-系统进程管理/">
+                    Linux--系统进程管理
                 </a>
             </div>
         
@@ -384,7 +380,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件信息"><span class="toc-number">1.</span> <span class="toc-text">文件信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本统计信息"><span class="toc-number">1.1.</span> <span class="toc-text">文本统计信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本查看命令"><span class="toc-number">1.2.</span> <span class="toc-text">文本查看命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本处理"><span class="toc-number">2.</span> <span class="toc-text">文本处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文本处理-1"><span class="toc-number">2.1.</span> <span class="toc-text">文本处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本排序"><span class="toc-number">2.2.</span> <span class="toc-text">文本排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本统计"><span class="toc-number">2.3.</span> <span class="toc-text">文本统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符处理"><span class="toc-number">2.4.</span> <span class="toc-text">字符处理</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">1.</span> <span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#etc-passwd"><span class="toc-number">1.1.</span> <span class="toc-text">/etc/passwd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#etc-shadow"><span class="toc-number">1.2.</span> <span class="toc-text">/etc/shadow</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#etc-group"><span class="toc-number">1.3.</span> <span class="toc-text">/etc/group</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#etc-gshadow"><span class="toc-number">1.4.</span> <span class="toc-text">/etc/gshadow</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户管理"><span class="toc-number">2.</span> <span class="toc-text">用户管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户组管理"><span class="toc-number">3.</span> <span class="toc-text">用户组管理</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -446,7 +442,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/16/Linux-文本管理类命令/" data-title="Linux--文本管理类命令" data-url="http://blog.xiaoxiaomo.com/2016/03/16/Linux-文本管理类命令/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/18/Linux-用户和组管理/" data-title="Linux--用户和组管理" data-url="http://blog.xiaoxiaomo.com/2016/03/18/Linux-用户和组管理/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -470,15 +466,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/17/Linux-grep和正则表达式/" title="上一篇: Linux--grep和正则表达式">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/16/Linux-操作系统及常用命令/" title="下一篇: Linux--操作系统及常用命令">
+            <a href="/2016/03/18/Linux-系统进程管理/" title="下一篇: Linux--系统进程管理">
                 <i class="fa fa-angle-right"></i>
             </a>
         

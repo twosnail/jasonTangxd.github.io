@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Linux | 小小默&#39;s Blog</title>
+  <title>Linux--系统进程管理 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小小默&apos;s Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小小默's Blog">
-<meta property="og:url" content="http://blog.xiaoxiaomo.com/tags/Linux/page/2/index.html">
+  <meta name="description" content="计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，
+系统进程对于计算机来讲，只有CUP和内存，
+程序，由指令+数据组成，
+相关管理工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux--系统进程管理">
+<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="小小默&apos;s Blog">
+<meta property="og:description" content="计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，
+系统进程对于计算机来讲，只有CUP和内存，
+程序，由指令+数据组成，
+相关管理工具">
+<meta property="og:updated_time" content="2016-03-18T06:34:10.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小小默's Blog">
-<meta name="twitter:description" content="小小默&apos;s Blog">
+<meta name="twitter:title" content="Linux--系统进程管理">
+<meta name="twitter:description" content="计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，
+系统进程对于计算机来讲，只有CUP和内存，
+程序，由指令+数据组成，
+相关管理工具">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -40,9 +50,9 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
-          isTag: true,
+          isTag: false,
           isCategory: false,
           open_in_new: false,
       }
@@ -241,120 +251,202 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Linux-系统进程管理" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/03/18/Linux-系统进程管理/" class="article-date">
+      <time datetime="2016-03-18T06:15:15.000Z" itemprop="datePublished">2016-03-18</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux--系统进程管理
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/03/16/Linux-文本管理类命令/" class="archive-article-date">
-      <time datetime="2016-03-16T07:05:48.000Z" itemprop="datePublished">03-16</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/Linux-文本管理类命令/">Linux--文本管理类命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+        <p>计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，</p>
+<h3 id="系统进程"><a href="#系统进程" class="headerlink" title="系统进程"></a>系统进程</h3><pre><code>对于计算机来讲，只有CUP和内存，
+程序，由指令+数据组成，
+</code></pre><h3 id="相关管理工具"><a href="#相关管理工具" class="headerlink" title="相关管理工具"></a>相关管理工具</h3>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
+        <p><span>发布时间:</span>2016年03月18日 - 14时15分</p>
+        <p><span>最后更新:</span>2016年03月18日 - 14时34分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-系统进程管理/" title="Linux--系统进程管理">http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/03/16/Linux-操作系统及常用命令/" class="archive-article-date">
-      <time datetime="2016-03-16T06:10:57.000Z" itemprop="datePublished">03-16</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/03/16/Linux-跟文件系统/" class="archive-article-date">
-      <time datetime="2016-03-16T01:24:50.000Z" itemprop="datePublished">03-16</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/Linux/">&laquo; Prev</a><a class="page-number" href="/tags/Linux/">1</a><span class="page-number current">2</span>
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/18/Linux-用户和组管理/">
+                    Linux--用户和组管理
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/18/Linux-常用VI-VIM命令/">
+                    Linux--常用VI/VIM命令
+                </a>
+            </div>
+        
     </nav>
-  
 
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统进程"><span class="toc-number">1.</span> <span class="toc-text">系统进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关管理工具"><span class="toc-number">2.</span> <span class="toc-text">相关管理工具</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/18/Linux-系统进程管理/" data-title="Linux--系统进程管理" data-url="http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaoxiaomo"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/03/18/Linux-用户和组管理/" title="上一篇: Linux--用户和组管理">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/03/18/Linux-常用VI-VIM命令/" title="下一篇: Linux--常用VI/VIM命令">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-用户和组管理/">Linux--用户和组管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-压缩及归档/">Linux--压缩及归档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-grep和正则表达式/">Linux--grep和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-文本管理类命令/">Linux--文本管理类命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

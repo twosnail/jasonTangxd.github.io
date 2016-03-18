@@ -835,12 +835,12 @@ a {
 #header .header-nav .social #豆瓣 {
   background: url("/img/豆瓣.png") center no-repeat #06c611;
 }
-#header .header-nav .social .GitHub:before {
+#header .header-nav .social .github:before {
   content: '\f18a';
   color: transparent;
 }
-#header .header-nav .social #GitHub {
-  background: url("/img/GitHub.png") center no-repeat #fff;
+#header .header-nav .social #github {
+  background: url("/img/github.png") center no-repeat #fff;
 }
 #header .header-nav .social .V2EX:before {
   content: '\f18a';

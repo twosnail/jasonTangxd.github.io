@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155131.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155132.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155133.png">
-<meta property="og:updated_time" content="2016-03-18T08:35:14.540Z">
+<meta property="og:updated_time" content="2016-03-18T08:56:42.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--用户和组管理">
 <meta name="twitter:description" content="在Linux系统中，用户信息及密码，组信息及其密码，都保存在不同的文件中，1.用户信息（/etc/passwd），2.用户密码（/etc/shadow），3.用户组帐号（/etc/group），4.用户组密码（/etc/gshadow）。用户和组是多对多的关系，即一个用户可以属于多个组，一个组也可以包含多个用户。">
@@ -322,22 +322,23 @@
 <p>userdel userName   #删除用户保留文件夹<br>userdel - userName #删除用户不保留文件夹</p>
 </blockquote>
 <h3 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h3><ul>
-<li><p>添加组</p>
+<li>添加组</li>
+</ul>
 <blockquote>
-<p>groupadd [-r] groupName #创建用户组，带-r,会创建系统组GID<500,不带-r,gid>=500.<br>groupmod -n newGroupName groupName #修改组名称.<br>groupmod -g newGroupId groupId #修改组GID，不可与已有Id重复。</500,不带-r,gid></p>
+<p>groupadd [-r] groupName #创建用户组，带-r,会创建系统组GID<500,不带-r,gid>=500。<br>groupmod -n newGroupName groupName #修改组名称。<br>groupmod -g newGroupId groupId #修改组GID，不可与已有Id重复。</500,不带-r,gid></p>
 </blockquote>
-</li>
-<li><p>删除组</p>
+<ul>
+<li>删除组</li>
+</ul>
 <blockquote>
 <p>groupdel groupName #注：删除组是应先删除用户，被删除的组不能是某个账户的私有用户组。</p>
 </blockquote>
-</li>
-<li><p>用户和组</p>
+<ul>
+<li>用户和组</li>
+</ul>
 <blockquote>
 <p>gpasswd -a userName groupName #添加用户到某个组（root用户和改组管理员又该权限）。<br>gpasswd -d userName groupName #把某个用户从组中删除（root用户和改组管理员又该权限）。<br>gpasswd -A userName groupName #设置userName为组管理员。<br>groups userName #查看用户所属组</p>
 </blockquote>
-</li>
-</ul>
 
       
     </div>
@@ -349,7 +350,7 @@
         <p><span>本文标题:</span><a href="/2016/03/18/Linux-用户和组管理/">Linux--用户和组管理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月18日 - 15时00分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 16时35分</p>
+        <p><span>最后更新:</span>2016年03月18日 - 16时56分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-用户和组管理/" title="Linux--用户和组管理">http://blog.xiaoxiaomo.com/2016/03/18/Linux-用户和组管理/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-用户和组管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

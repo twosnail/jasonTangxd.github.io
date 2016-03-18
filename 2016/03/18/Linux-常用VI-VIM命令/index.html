@@ -5,34 +5,16 @@
   
   <title>Linux--常用VI/VIM命令 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：
-三种模式
-三种模式： 1，命令模式   2，输入模式   3，末行模式
-
-
-命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。
-输入模式 ：就是在命">
+  <meta name="description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux--常用VI/VIM命令">
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：
-三种模式
-三种模式： 1，命令模式   2，输入模式   3，末行模式
-
-
-命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。
-输入模式 ：就是在命">
-<meta property="og:updated_time" content="2016-03-18T02:59:53.309Z">
+<meta property="og:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：">
+<meta property="og:updated_time" content="2016-03-18T03:57:55.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--常用VI/VIM命令">
-<meta name="twitter:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：
-三种模式
-三种模式： 1，命令模式   2，输入模式   3，末行模式
-
-
-命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。
-输入模式 ：就是在命">
+<meta name="twitter:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -299,6 +281,7 @@
       
           
         <p>VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：</p>
+<a id="more"></a>
 <h3 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h3><blockquote>
 <p>三种模式： 1，命令模式   2，输入模式   3，末行模式</p>
 </blockquote>
@@ -322,30 +305,17 @@
 <h3 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h3><ul>
 <li>查找：   </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/：  <span class="comment">#（向下查找）</span></span><br><span class="line">？：  <span class="comment">#（向上查找）。==&gt;（n继续向下，N继续向上）</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/：  <span class="comment">#（向下查找）</span></span><br><span class="line">？： <span class="comment">#（向上查找）。==&gt;（n继续向下，N继续向上）</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>替换：   </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r：替换单个字符，[<span class="built_in">exit</span>]推出。</span><br><span class="line">R：连续替换单个字符。</span><br><span class="line">:n1,n2s/word1/word2/g[c]：在第n1行和n2（n2-&gt;$可以用来表示最后一行）行之间查找word1并替换为word2。</span><br><span class="line">(c,提示用户确认confirm)。</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">①、删除字符：[n]x，表示向后删除n个字符（用X向前删除）。（x=[Del]，X=[Backspace]）</span><br><span class="line">②、删除某行：[n]dd，删除光标所在行的n行。（例如，dd删除当前行）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>复制/粘贴</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">①、复制字符：y0：复制光标所在字符到行首所有数据。</span><br><span class="line">                         y$：复制光标所在字符到行末所有数据。</span><br><span class="line">②、复制某行：[n]yy：向下复制n行，（yy复制当前行）。</span><br><span class="line">③、粘贴       ：p：粘贴数据到下一行。</span><br><span class="line">                             P：粘贴数据到上一行。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>撤销/重复</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、撤销：u：撤销前一个操作。[n]u撤销最近几次。</span><br><span class="line">②、重做：[Ctrl]+r：撤销最后一次撤销操作。（常和u组合使用）</span><br><span class="line">              ：.    :重复前一个操作。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>选择（可视化模式）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、字符选择：v   </span><br><span class="line">②、行选择    ：V   </span><br><span class="line">③、块选择    ：[Ctrl]+v（长方形方式）</span><br></pre></td></tr></table></figure>
-<ul>
-<li>命令模式，扩展几个命令</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、ZZ：文件已改动保存后离开，未改动不保存离开。</span><br><span class="line">②、:w [fileName]：将编辑的文件另存为。(:n1 n2 w [fileName],n1到n2行的数据另存为新文件)。</span><br><span class="line">③、:<span class="built_in">set</span> nu：设置行号（:<span class="built_in">set</span> nonu取消设置）。</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r：  <span class="comment">#替换单个字符，[exit]推出。</span></span><br><span class="line">R：  <span class="comment">#连续替换单个字符。</span></span><br><span class="line">:n1,n2s/word1/word2/g[c]：<span class="comment">#在第n1行和n2（n2-&gt;$可以用来表示最后一行）行之间查找word1并替换为word2。 (c,提示用户确认confirm)。</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">删除字符：[n]x，  <span class="comment">#表示向后删除n个字符（用X向前删除）。（x=[Del]，X=[Backspace]）</span></span><br><span class="line">删除某行：[n]dd， <span class="comment">#删除光标所在行的n行。（例如，dd删除当前行）</span></span><br></pre></td></tr></table></figure>
+<h3 id="复制-粘贴"><a href="#复制-粘贴" class="headerlink" title="复制/粘贴"></a>复制/粘贴</h3><h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">复制字符：</span><br><span class="line">y0：    <span class="comment">#复制光标所在字符到行首所有数据。</span></span><br><span class="line">y$：    <span class="comment">#复制光标所在字符到行末所有数据。</span></span><br><span class="line">复制某行：</span><br><span class="line">[n]yy： <span class="comment">#向下复制n行，（yy复制当前行）。</span></span><br></pre></td></tr></table></figure>
+<h4 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p：   <span class="comment">#粘贴数据到下一行。</span></span><br><span class="line">P：   <span class="comment">#粘贴数据到上一行。</span></span><br></pre></td></tr></table></figure>
+<h3 id="撤销-重复"><a href="#撤销-重复" class="headerlink" title="撤销/重复"></a>撤销/重复</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">撤销：u：   <span class="comment">#撤销前一个操作。[n]u撤销最近几次。</span></span><br><span class="line">重做：[Ctrl]+r： <span class="comment">#撤销最后一次撤销操作。（常和u组合使用）</span></span><br><span class="line">重复：.    <span class="comment">#:重复前一个操作。</span></span><br></pre></td></tr></table></figure>
+<h3 id="选择（可视化模式）"><a href="#选择（可视化模式）" class="headerlink" title="选择（可视化模式）"></a>选择（可视化模式）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字符选择：v   </span><br><span class="line">行选择 ： V   </span><br><span class="line">块选择 ：[Ctrl]+v  <span class="comment">#（长方形方式）</span></span><br></pre></td></tr></table></figure>
+<h3 id="命令模式，扩展几个命令"><a href="#命令模式，扩展几个命令" class="headerlink" title="命令模式，扩展几个命令"></a>命令模式，扩展几个命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ZZ：   <span class="comment">#文件已改动保存后离开，未改动不保存离开。</span></span><br><span class="line">:w [fileName]：  <span class="comment">#将编辑的文件另存为。(:n1 n2 w [fileName],n1到n2行的数据另存为新文件)。</span></span><br><span class="line">:<span class="built_in">set</span> nu：   <span class="comment">#设置行号（:set nonu取消设置）。</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>例子：选某字符后删除/复制 :v d/y</p>
 </blockquote>
@@ -360,7 +330,7 @@
         <p><span>本文标题:</span><a href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月18日 - 10时22分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 10时59分</p>
+        <p><span>最后更新:</span>2016年03月18日 - 11时57分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-常用VI-VIM命令/" title="Linux--常用VI/VIM命令">http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -390,7 +360,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三种模式"><span class="toc-number">1.</span> <span class="toc-text">三种模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#光标的移动"><span class="toc-number">2.</span> <span class="toc-text">光标的移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找和替换"><span class="toc-number">3.</span> <span class="toc-text">查找和替换</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三种模式"><span class="toc-number">1.</span> <span class="toc-text">三种模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#光标的移动"><span class="toc-number">2.</span> <span class="toc-text">光标的移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找和替换"><span class="toc-number">3.</span> <span class="toc-text">查找和替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除"><span class="toc-number">4.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制-粘贴"><span class="toc-number">5.</span> <span class="toc-text">复制/粘贴</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#复制"><span class="toc-number">5.1.</span> <span class="toc-text">复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#粘贴"><span class="toc-number">5.2.</span> <span class="toc-text">粘贴</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销-重复"><span class="toc-number">6.</span> <span class="toc-text">撤销/重复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择（可视化模式）"><span class="toc-number">7.</span> <span class="toc-text">选择（可视化模式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令模式，扩展几个命令"><span class="toc-number">8.</span> <span class="toc-text">命令模式，扩展几个命令</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

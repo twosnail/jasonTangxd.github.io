@@ -248,6 +248,113 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Linux-常用VI-VIM命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/18/Linux-常用VI-VIM命令/" class="article-date">
+      <time datetime="2016-03-18T02:22:30.000Z" itemprop="datePublished">2016-03-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：</p>
+<h3 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h3><blockquote>
+<p>三种模式： 1，命令模式   2，输入模式   3，末行模式</p>
+</blockquote>
+<ul>
+<li>命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。</li>
+<li>输入模式 ：就是在命令模式通过”Insert”进入的模式。该模式下可进行键盘输入等操作。</li>
+<li>末行模式 ：在底端进行命令输入的模式，该模式下可进行文件保存，退出，查找，替换等操作。</li>
+</ul>
+<h3 id="光标的移动"><a href="#光标的移动" class="headerlink" title="光标的移动"></a>光标的移动</h3><ul>
+<li>屏幕移动：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ctrl]+f：(向下PgDn)、[ctrl]+b：(向上PgUp)</span><br><span class="line">H：  <span class="comment">#移动到当前屏幕第一个字符</span></span><br><span class="line">M：  <span class="comment">#移动到当前屏幕中间第一个字符</span></span><br><span class="line">L：  <span class="comment">#移动到当前屏幕最后一个字符</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>行的移动：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[n]G： <span class="comment">#移动到第n行，不写n移动到最后一行。 eg：移动到第一行，相当于1G。</span></span><br><span class="line">n[Enter]：<span class="comment">#光标向下移动多少行。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>字符移动：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">↑上、↓下、左←、右→：<span class="comment">#（前面加数字n,表示移动多少字符，例如：20→向右移动20个字符=n&lt;apace&gt;）。</span></span><br><span class="line">0或^或功能键[Home]：<span class="comment">#当前行开始字符。</span></span><br><span class="line">$或功能键[End]：<span class="comment">#当前行结尾字符。</span></span><br></pre></td></tr></table></figure>
+<h3 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h3><ul>
+<li>查找：   </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/：  <span class="comment">#（向下查找）</span></span><br><span class="line">？：  <span class="comment">#（向上查找）。==&gt;（n继续向下，N继续向上）</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>替换：   </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r：替换单个字符，[<span class="built_in">exit</span>]推出。</span><br><span class="line">R：连续替换单个字符。</span><br><span class="line">:n1,n2s/word1/word2/g[c]：在第n1行和n2（n2-&gt;$可以用来表示最后一行）行之间查找word1并替换为word2。</span><br><span class="line">(c,提示用户确认confirm)。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">①、删除字符：[n]x，表示向后删除n个字符（用X向前删除）。（x=[Del]，X=[Backspace]）</span><br><span class="line">②、删除某行：[n]dd，删除光标所在行的n行。（例如，dd删除当前行）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制/粘贴</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">①、复制字符：y0：复制光标所在字符到行首所有数据。</span><br><span class="line">                         y$：复制光标所在字符到行末所有数据。</span><br><span class="line">②、复制某行：[n]yy：向下复制n行，（yy复制当前行）。</span><br><span class="line">③、粘贴       ：p：粘贴数据到下一行。</span><br><span class="line">                             P：粘贴数据到上一行。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤销/重复</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、撤销：u：撤销前一个操作。[n]u撤销最近几次。</span><br><span class="line">②、重做：[Ctrl]+r：撤销最后一次撤销操作。（常和u组合使用）</span><br><span class="line">              ：.    :重复前一个操作。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>选择（可视化模式）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、字符选择：v   </span><br><span class="line">②、行选择    ：V   </span><br><span class="line">③、块选择    ：[Ctrl]+v（长方形方式）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>命令模式，扩展几个命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、ZZ：文件已改动保存后离开，未改动不保存离开。</span><br><span class="line">②、:w [fileName]：将编辑的文件另存为。(:n1 n2 w [fileName],n1到n2行的数据另存为新文件)。</span><br><span class="line">③、:<span class="built_in">set</span> nu：设置行号（:<span class="built_in">set</span> nonu取消设置）。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>例子：选某字符后删除/复制 :v d/y</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Linux-压缩及归档" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -486,67 +593,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/16/Linux-操作系统及常用命令/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux-跟文件系统" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/16/Linux-跟文件系统/" class="article-date">
-      <time datetime="2016-03-16T01:24:50.000Z" itemprop="datePublished">2016-03-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>根文件系统<strong>rootfs</strong>(Root File System),而Linux是一种树形结构组织文件<strong>FHS</strong>（FileSystem Hierarchy Standard）。“/”是所有文件的跟。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/16/Linux-跟文件系统/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

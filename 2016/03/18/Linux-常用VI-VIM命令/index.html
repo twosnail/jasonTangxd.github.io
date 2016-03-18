@@ -3,33 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linux--操作系统及常用命令 | 小小默&#39;s Blog</title>
+  <title>Linux--常用VI/VIM命令 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
+  <meta name="description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：
+三种模式
+三种模式： 1，命令模式   2，输入模式   3，末行模式
 
-列出指定路径下的文件
-查看目录文件 ls：">
+
+命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。
+输入模式 ：就是在命">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux--操作系统及常用命令">
-<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/index.html">
+<meta property="og:title" content="Linux--常用VI/VIM命令">
+<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
+<meta property="og:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：
+三种模式
+三种模式： 1，命令模式   2，输入模式   3，末行模式
 
-列出指定路径下的文件
-查看目录文件 ls：">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png">
-<meta property="og:updated_time" content="2016-03-17T16:30:38.563Z">
+
+命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。
+输入模式 ：就是在命">
+<meta property="og:updated_time" content="2016-03-18T02:59:53.309Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux--操作系统及常用命令">
-<meta name="twitter:description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
+<meta name="twitter:title" content="Linux--常用VI/VIM命令">
+<meta name="twitter:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：
+三种模式
+三种模式： 1，命令模式   2，输入模式   3，末行模式
 
-列出指定路径下的文件
-查看目录文件 ls：">
-<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png">
+
+命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。
+输入模式 ：就是在命">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -257,11 +260,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Linux-操作系统及常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-常用VI-VIM命令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/16/Linux-操作系统及常用命令/" class="article-date">
-      <time datetime="2016-03-16T06:10:57.000Z" itemprop="datePublished">2016-03-16</time>
+      <a href="/2016/03/18/Linux-常用VI-VIM命令/" class="article-date">
+      <time datetime="2016-03-18T02:22:30.000Z" itemprop="datePublished">2016-03-18</time>
 </a>
     </div>
   
@@ -274,7 +277,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux--操作系统及常用命令
+      Linux--常用VI/VIM命令
     </h1>
   
 
@@ -295,57 +298,56 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="目录：文件，路径映射"><a href="#目录：文件，路径映射" class="headerlink" title="目录：文件，路径映射"></a><strong>目录：文件，路径映射</strong></h3><blockquote>
-<p>路径：从指定起始点到目的地的所经过的位置。<br>文件系统：file system</p>
+        <p>VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：</p>
+<h3 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h3><blockquote>
+<p>三种模式： 1，命令模式   2，输入模式   3，末行模式</p>
 </blockquote>
-<h3 id="列出指定路径下的文件"><a href="#列出指定路径下的文件" class="headerlink" title="列出指定路径下的文件"></a><strong>列出指定路径下的文件</strong></h3><blockquote>
-<p>查看目录文件 ls：</p>
-</blockquote>
-<a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="_">-l</span> 长格式</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png" alt=""></p>
-<ol>
-<li><p><strong>文件类型</strong></p>
 <ul>
-<li>-：普通文件（f）</li>
-<li>d：目录文件</li>
-<li>b：块设备文件（block）</li>
-<li>c：字节设备文件（character）</li>
-<li>l ：符号链接文件（sysbolic link ）</li>
-<li>p：管道命令（pipe）</li>
-<li>s：套接字文件（socket）</li>
+<li>命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。</li>
+<li>输入模式 ：就是在命令模式通过”Insert”进入的模式。该模式下可进行键盘输入等操作。</li>
+<li>末行模式 ：在底端进行命令输入的模式，该模式下可进行文件保存，退出，查找，替换等操作。</li>
 </ul>
+<h3 id="光标的移动"><a href="#光标的移动" class="headerlink" title="光标的移动"></a>光标的移动</h3><ul>
+<li>屏幕移动：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ctrl]+f：(向下PgDn)、[ctrl]+b：(向上PgUp)</span><br><span class="line">H：  <span class="comment">#移动到当前屏幕第一个字符</span></span><br><span class="line">M：  <span class="comment">#移动到当前屏幕中间第一个字符</span></span><br><span class="line">L：  <span class="comment">#移动到当前屏幕最后一个字符</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>行的移动：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[n]G： <span class="comment">#移动到第n行，不写n移动到最后一行。 eg：移动到第一行，相当于1G。</span></span><br><span class="line">n[Enter]：<span class="comment">#光标向下移动多少行。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>字符移动：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">↑上、↓下、左←、右→：<span class="comment">#（前面加数字n,表示移动多少字符，例如：20→向右移动20个字符=n&lt;apace&gt;）。</span></span><br><span class="line">0或^或功能键[Home]：<span class="comment">#当前行开始字符。</span></span><br><span class="line">$或功能键[End]：<span class="comment">#当前行结尾字符。</span></span><br></pre></td></tr></table></figure>
+<h3 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h3><ul>
+<li>查找：   </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/：  <span class="comment">#（向下查找）</span></span><br><span class="line">？：  <span class="comment">#（向上查找）。==&gt;（n继续向下，N继续向上）</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>替换：   </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">r：替换单个字符，[<span class="built_in">exit</span>]推出。</span><br><span class="line">R：连续替换单个字符。</span><br><span class="line">:n1,n2s/word1/word2/g[c]：在第n1行和n2（n2-&gt;$可以用来表示最后一行）行之间查找word1并替换为word2。</span><br><span class="line">(c,提示用户确认confirm)。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>删除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">①、删除字符：[n]x，表示向后删除n个字符（用X向前删除）。（x=[Del]，X=[Backspace]）</span><br><span class="line">②、删除某行：[n]dd，删除光标所在行的n行。（例如，dd删除当前行）</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>文件权限</strong>：9位，没三位一组，每一组（rwx）r：可读，w：可写：x:可执行</p>
+<li><p>复制/粘贴</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">①、复制字符：y0：复制光标所在字符到行首所有数据。</span><br><span class="line">                         y$：复制光标所在字符到行末所有数据。</span><br><span class="line">②、复制某行：[n]yy：向下复制n行，（yy复制当前行）。</span><br><span class="line">③、粘贴       ：p：粘贴数据到下一行。</span><br><span class="line">                             P：粘贴数据到上一行。</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>文件硬链接次数</strong></li>
-<li><strong>文件的属主</strong>（owner）</li>
-<li><strong>文件的所属组</strong>（group）</li>
-<li><strong>文件的大小</strong>（size）,单位字节</li>
-<li><strong>时间戳</strong>（timestamp）:最近一次被修改的时间（文件内容）</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-h 做单位换算（human can readable）</span><br><span class="line"><span class="_">-a</span> 以点开头的文件（隐藏文件）</span><br><span class="line">	<span class="comment">#.  表示当前目录</span></span><br><span class="line">	<span class="comment">#.. 表示上级目录</span></span><br><span class="line"></span><br><span class="line">-A 显示全部文件（不包括.和..）</span><br><span class="line"><span class="_">-d</span> 显示自身属性</span><br><span class="line">-i  index node，inode(显示文件唯一序号)</span><br><span class="line">-r  逆序显示</span><br><span class="line">-R 递归显示（recursive）</span><br></pre></td></tr></table></figure>
-<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a><strong>环境变量</strong></h3><blockquote>
-<p>命令的内存空间，env<br>变量赋值<br>eg：NAME=Tom(在内存中着一段空间，起名叫NAME,空间放的数据叫Tom),申请变量的过程，就是申请内存使用的过程。<br>path：以冒号隔开的一对路径。<br>hash：查看缓存</p>
-</blockquote>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png" alt=""></p>
-<p><code>缓存，catch is king.保存的是hash列表。在key,value中的查找速度是O(1).O(1):表示查找时间，不会随着，数据的增加而递增。</code></p>
-<h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a><strong>时间</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data：</span><br></pre></td></tr></table></figure>
+<li><p>撤销/重复</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、撤销：u：撤销前一个操作。[n]u撤销最近几次。</span><br><span class="line">②、重做：[Ctrl]+r：撤销最后一次撤销操作。（常和u组合使用）</span><br><span class="line">              ：.    :重复前一个操作。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>选择（可视化模式）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、字符选择：v   </span><br><span class="line">②、行选择    ：V   </span><br><span class="line">③、块选择    ：[Ctrl]+v（长方形方式）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>命令模式，扩展几个命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">①、ZZ：文件已改动保存后离开，未改动不保存离开。</span><br><span class="line">②、:w [fileName]：将编辑的文件另存为。(:n1 n2 w [fileName],n1到n2行的数据另存为新文件)。</span><br><span class="line">③、:<span class="built_in">set</span> nu：设置行号（:<span class="built_in">set</span> nonu取消设置）。</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>硬件主板的震荡器，rtc<br>硬件时钟：clock<br>系统时钟：date</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock   <span class="comment">#（写入时间）</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>-w：读取系统时间到硬件中<br>-s ：读取硬件时间到系统中</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cal：日历</span><br></pre></td></tr></table></figure>
-<h3 id="获取命令帮助-待整理"><a href="#获取命令帮助-待整理" class="headerlink" title="获取命令帮助(待整理)"></a><strong>获取命令帮助(待整理)</strong></h3><p>在线文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info COMMAND(主要讲历史等)</span><br><span class="line">文档：/usr/share/doc</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>内部命令：help COMMAND<br>外部命令：COMMAND –help<br>命令手册：manual<br>man COMMAND<br>whatis COMMAND<br>分章节<br>    1、用户命令（/bin , /usr/bin , /usr/local）<br>    2、系统调用<br>    3、库用户<br>    4、特殊文件（设备文件）<br>    5、文件格式（配置文件的语法）<br>    6、游戏<br>    7、杂项（Miscellaneous）<br>    8、管理命令（/sbin,  /usr/sbin  , /usr/local/sbin），管理员，会修改硬件相关的信息</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man 命令:</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>[]   ：可选<br>&lt;&gt;：必须有<br>…  ：可以出现多次<br>|   ：多选一<br>{}  ：分组<br>NAME：命令名称及功能简要说明<br>SYNAPOSIS：用户说明，包括可用的选项<br>DESCREPTION：命令功能的详细说明， 可能包括没一个选项的意义<br>OPTIONS：选项<br>FILES：此命令的相关配置<br>BUGS：<br>Examples：使用示例<br>SEE ALSO：另外参考</p>
+<p>例子：选某字符后删除/复制 :v d/y</p>
 </blockquote>
 
       
@@ -355,13 +357,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
-        <p><span>发布时间:</span>2016年03月16日 - 14时10分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 00时30分</p>
+        <p><span>发布时间:</span>2016年03月18日 - 10时22分</p>
+        <p><span>最后更新:</span>2016年03月18日 - 10时59分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/16/Linux-操作系统及常用命令/" title="Linux--操作系统及常用命令">http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-常用VI-VIM命令/" title="Linux--常用VI/VIM命令">http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -374,16 +376,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/16/Linux-文本管理类命令/">
-                    Linux--文本管理类命令
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/16/Linux-跟文件系统/">
-                    Linux--跟文件系统
+                <a href="/2016/03/17/Linux-压缩及归档/">
+                    Linux--压缩及归档
                 </a>
             </div>
         
@@ -394,7 +390,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目录：文件，路径映射"><span class="toc-number">1.</span> <span class="toc-text">目录：文件，路径映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出指定路径下的文件"><span class="toc-number">2.</span> <span class="toc-text">列出指定路径下的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-number">3.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间"><span class="toc-number">4.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取命令帮助-待整理"><span class="toc-number">5.</span> <span class="toc-text">获取命令帮助(待整理)</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三种模式"><span class="toc-number">1.</span> <span class="toc-text">三种模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#光标的移动"><span class="toc-number">2.</span> <span class="toc-text">光标的移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找和替换"><span class="toc-number">3.</span> <span class="toc-text">查找和替换</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -456,7 +452,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/16/Linux-操作系统及常用命令/" data-title="Linux--操作系统及常用命令" data-url="http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/18/Linux-常用VI-VIM命令/" data-title="Linux--常用VI/VIM命令" data-url="http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -480,15 +476,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/16/Linux-文本管理类命令/" title="上一篇: Linux--文本管理类命令">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/16/Linux-跟文件系统/" title="下一篇: Linux--跟文件系统">
+            <a href="/2016/03/17/Linux-压缩及归档/" title="下一篇: Linux--压缩及归档">
                 <i class="fa fa-angle-right"></i>
             </a>
         

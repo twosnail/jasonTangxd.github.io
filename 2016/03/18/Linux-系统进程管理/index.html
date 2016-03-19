@@ -11,13 +11,13 @@
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/index.html">
 <meta property="og:site_name" content="小小默's Blog">
 <meta property="og:description" content="在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319115428.png">
-<meta property="og:updated_time" content="2016-03-19T03:57:32.907Z">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.jpg">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319115428.jpg">
+<meta property="og:updated_time" content="2016-03-19T06:20:27.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--系统进程管理">
 <meta name="twitter:description" content="在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。">
-<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.png">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.jpg">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -307,7 +307,7 @@
 <li>基本命令</li>
 </ul>
 <pre><code class="bash">ps        <span class="comment">#查看静态的进程统计信息（processes statistic），当前控制台下该属于该用户的进程</span>
-            <span class="comment">#ps -ef #可以显示出所有用户的进程</span>
+          <span class="comment">#ps -ef #可以显示出所有用户的进程</span>
 top       <span class="comment">#查看进程动态信息</span>
 htop      <span class="comment">#查看进程动态信息，top的升级版</span>
 pgrep     <span class="comment">#查询进程信息</span>
@@ -316,15 +316,15 @@ pstree    <span class="comment">#查看进程</span>
 <ul>
 <li>ps</li>
 </ul>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.png" alt=""></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.jpg" alt=""></p>
 <p>说明：</p>
 <blockquote>
-<p>PID ：    #进程号<br>PPLD：    #父进程的进程号<br>TTY：     #进程启动的终端<br>STAT：    #进程当前状态（S休眠状态，D不可中断的休眠状态，R运行状态，Z僵死状态，T停止）<br>NI ：     #进程优先级<br>TIME：    #进程自从启动以后启用CPU的总时间<br>COMMAND/CMD：#进程的命令名<br>USER：    #用户名<br>%CPU：    #占用CPU时间和总时间的百分比<br>%MEM：    #占用内存与系统内存总量的百分比</p>
+<p>UID：     #用户Id<br>PID ：    #进程号<br>PPLD：    #父进程的进程号<br>STIME：   #创建进程时间<br>TTY：     #进程启动的终端<br>STAT：    #进程当前状态（S休眠状态，D不可中断的休眠状态，R运行状态，Z僵死状态，T停止）<br>NI ：     #进程优先级<br>TIME：    #进程运行时间<br>COMMAND/CMD：#进程的命令<br>%CPU：    #占用CPU时间和总时间的百分比<br>%MEM：    #占用内存与系统内存总量的百分比</p>
 </blockquote>
 <ul>
 <li>pstree</li>
 </ul>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319115428.png" alt=""></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319115428.jpg" alt=""></p>
 <p>除init进程以外，其他进程都有父进程，init是伴随着系统的启动。</p>
 <h4 id="管理进程"><a href="#管理进程" class="headerlink" title="管理进程"></a>管理进程</h4><ul>
 <li>启动进程</li>
@@ -362,7 +362,7 @@ pstree    <span class="comment">#查看进程</span>
         <p><span>本文标题:</span><a href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月18日 - 14时15分</p>
-        <p><span>最后更新:</span>2016年03月19日 - 11时57分</p>
+        <p><span>最后更新:</span>2016年03月19日 - 14时20分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-系统进程管理/" title="Linux--系统进程管理">http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

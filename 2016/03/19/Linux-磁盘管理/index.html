@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linux--常用VI/VIM命令 | 小小默&#39;s Blog</title>
+  <title>Linux--磁盘管理 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：">
+  <meta name="description" content="硬盘，IO设备，设备名称IDE硬盘为hdx（x为从a—d硬盘最多四个），SCSI，SATA，USB硬盘为sdx（x为a—z））。硬盘主分区最多为4个（sdb1-sdb4），逻辑分区从sdb5开始。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux--常用VI/VIM命令">
-<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/index.html">
+<meta property="og:title" content="Linux--磁盘管理">
+<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/19/Linux-磁盘管理/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：">
-<meta property="og:updated_time" content="2016-03-18T03:57:55.905Z">
+<meta property="og:description" content="硬盘，IO设备，设备名称IDE硬盘为hdx（x为从a—d硬盘最多四个），SCSI，SATA，USB硬盘为sdx（x为a—z））。硬盘主分区最多为4个（sdb1-sdb4），逻辑分区从sdb5开始。">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155228.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155228.png">
+<meta property="og:updated_time" content="2016-03-19T08:33:06.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux--常用VI/VIM命令">
-<meta name="twitter:description" content="VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：">
+<meta name="twitter:title" content="Linux--磁盘管理">
+<meta name="twitter:description" content="硬盘，IO设备，设备名称IDE硬盘为hdx（x为从a—d硬盘最多四个），SCSI，SATA，USB硬盘为sdx（x为a—z））。硬盘主分区最多为4个（sdb1-sdb4），逻辑分区从sdb5开始。">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155228.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -242,11 +245,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Linux-常用VI-VIM命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-磁盘管理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/18/Linux-常用VI-VIM命令/" class="article-date">
-      <time datetime="2016-03-18T02:22:30.000Z" itemprop="datePublished">2016-03-18</time>
+      <a href="/2016/03/19/Linux-磁盘管理/" class="article-date">
+      <time datetime="2016-03-19T06:46:59.000Z" itemprop="datePublished">2016-03-19</time>
 </a>
     </div>
   
@@ -259,7 +262,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux--常用VI/VIM命令
+      Linux--磁盘管理
     </h1>
   
 
@@ -280,44 +283,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>VI编辑器是Unix和Linux系统下标准的编辑器，VIM就是VI的升级版，多了高亮，等特性。VI和VIM是比较常用的文本编辑工具，是必须要使用的，需要记住常用的命令。下面内容主要使用VIM来表示：</p>
+        <p>硬盘，IO设备，设备名称<code>IDE硬盘为hdx（x为从a—d硬盘最多四个）</code>，SCSI，SATA，USB硬盘为sdx（x为a—z））。<code>硬盘主分区最多为4个（sdb1-sdb4），逻辑分区从sdb5开始</code>。</p>
 <a id="more"></a>
-<h3 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h3><blockquote>
-<p>三种模式： 1，命令模式   2，输入模式   3，末行模式</p>
-</blockquote>
-<ul>
-<li>命令模式 ：就是使用”vim打开文本”后进入的模式。该模式下不可直接输入，可以进行光标移动删除等操作。</li>
-<li>输入模式 ：就是在命令模式通过”Insert”进入的模式。该模式下可进行键盘输入等操作。</li>
-<li>末行模式 ：在底端进行命令输入的模式，该模式下可进行文件保存，退出，查找，替换等操作。</li>
-</ul>
-<h3 id="光标的移动"><a href="#光标的移动" class="headerlink" title="光标的移动"></a>光标的移动</h3><ul>
-<li>屏幕移动：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ctrl]+f：(向下PgDn)、[ctrl]+b：(向上PgUp)</span><br><span class="line">H：  <span class="comment">#移动到当前屏幕第一个字符</span></span><br><span class="line">M：  <span class="comment">#移动到当前屏幕中间第一个字符</span></span><br><span class="line">L：  <span class="comment">#移动到当前屏幕最后一个字符</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>行的移动：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[n]G： <span class="comment">#移动到第n行，不写n移动到最后一行。 eg：移动到第一行，相当于1G。</span></span><br><span class="line">n[Enter]：<span class="comment">#光标向下移动多少行。</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>字符移动：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">↑上、↓下、左←、右→：<span class="comment">#（前面加数字n,表示移动多少字符，例如：20→向右移动20个字符=n&lt;apace&gt;）。</span></span><br><span class="line">0或^或功能键[Home]：<span class="comment">#当前行开始字符。</span></span><br><span class="line">$或功能键[End]：<span class="comment">#当前行结尾字符。</span></span><br></pre></td></tr></table></figure>
-<h3 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h3><ul>
-<li>查找：   </li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/：  <span class="comment">#（向下查找）</span></span><br><span class="line">？： <span class="comment">#（向上查找）。==&gt;（n继续向下，N继续向上）</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>替换：   </li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r：  <span class="comment">#替换单个字符，[exit]推出。</span></span><br><span class="line">R：  <span class="comment">#连续替换单个字符。</span></span><br><span class="line">:n1,n2s/word1/word2/g[c]：<span class="comment">#在第n1行和n2（n2-&gt;$可以用来表示最后一行）行之间查找word1并替换为word2。 (c,提示用户确认confirm)。</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">删除字符：[n]x，  <span class="comment">#表示向后删除n个字符（用X向前删除）。（x=[Del]，X=[Backspace]）</span></span><br><span class="line">删除某行：[n]dd， <span class="comment">#删除光标所在行的n行。（例如，dd删除当前行）</span></span><br></pre></td></tr></table></figure>
-<h3 id="复制-粘贴"><a href="#复制-粘贴" class="headerlink" title="复制/粘贴"></a>复制/粘贴</h3><h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">复制字符：</span><br><span class="line">y0：    <span class="comment">#复制光标所在字符到行首所有数据。</span></span><br><span class="line">y$：    <span class="comment">#复制光标所在字符到行末所有数据。</span></span><br><span class="line">复制某行：</span><br><span class="line">[n]yy： <span class="comment">#向下复制n行，（yy复制当前行）。</span></span><br></pre></td></tr></table></figure>
-<h4 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p：   <span class="comment">#粘贴数据到下一行。</span></span><br><span class="line">P：   <span class="comment">#粘贴数据到上一行。</span></span><br></pre></td></tr></table></figure>
-<h3 id="撤销-重复"><a href="#撤销-重复" class="headerlink" title="撤销/重复"></a>撤销/重复</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">撤销：u：   <span class="comment">#撤销前一个操作。[n]u撤销最近几次。</span></span><br><span class="line">重做：[Ctrl]+r： <span class="comment">#撤销最后一次撤销操作。（常和u组合使用）</span></span><br><span class="line">重复：.    <span class="comment">#:重复前一个操作。</span></span><br></pre></td></tr></table></figure>
-<h3 id="选择（可视化模式）"><a href="#选择（可视化模式）" class="headerlink" title="选择（可视化模式）"></a>选择（可视化模式）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字符选择：v   </span><br><span class="line">行选择 ： V   </span><br><span class="line">块选择 ：[Ctrl]+v  <span class="comment">#（长方形方式）</span></span><br></pre></td></tr></table></figure>
-<h3 id="命令模式，扩展几个命令"><a href="#命令模式，扩展几个命令" class="headerlink" title="命令模式，扩展几个命令"></a>命令模式，扩展几个命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ZZ：   <span class="comment">#文件已改动保存后离开，未改动不保存离开。</span></span><br><span class="line">:w [fileName]：  <span class="comment">#将编辑的文件另存为。(:n1 n2 w [fileName],n1到n2行的数据另存为新文件)。</span></span><br><span class="line">:<span class="built_in">set</span> nu：   <span class="comment">#设置行号（:set nonu取消设置）。</span></span><br></pre></td></tr></table></figure>
+<h3 id="查看磁盘信息"><a href="#查看磁盘信息" class="headerlink" title="查看磁盘信息"></a>查看磁盘信息</h3><h4 id="df命令"><a href="#df命令" class="headerlink" title="df命令"></a>df命令</h4><p>查看已挂载磁盘的总容量、使用容量、剩余容量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">df -i <span class="comment">#使用inodes 显示结果</span></span><br><span class="line">df -h <span class="comment">#用合适的单位显示,G,M等</span></span><br><span class="line">df -k <span class="comment">#显示单位K</span></span><br><span class="line">df –m <span class="comment">#显示单位M</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155228.png" alt=""></p>
+<p>说明：</p>
 <blockquote>
-<p>例子：选某字符后删除/复制 :v d/y</p>
+<p>Filesystem #表示扇区,划分磁盘时所分的区<br>Used #已使用<br>Available #剩余<br>Use% #已经使用的百分比<br>Mounted on #扇区挂载点</p>
+</blockquote>
+<h4 id="du命令"><a href="#du命令" class="headerlink" title="du命令"></a>du命令</h4><p>查看某个文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">du [-abckmsh] [文件或者目录名]</span><br><span class="line">du <span class="_">-a</span> <span class="comment">#全部文件与目录大小都列出来,如果不加参数列出目录（包含子目录）。</span></span><br><span class="line">du -h <span class="comment">#用合适的单位显示, 还有单位-b -k –m。</span></span><br><span class="line">du <span class="_">-s</span> <span class="comment">#只显示总和。</span></span><br><span class="line">du -c <span class="comment">#最后显示总和。</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160314155228.png" alt=""></p>
+<h3 id="磁盘挂载"><a href="#磁盘挂载" class="headerlink" title="磁盘挂载"></a>磁盘挂载</h3><p>硬盘分区及挂载操作步骤：</p>
+<blockquote>
+<ol>
+<li><strong><code>fdisk -l</code></strong>#查看未挂载的硬盘（名称为/dev/xvdb）<br>Disk /dev/xvdb doesn’t contain a valid partition table</li>
+<li><strong><code>fdisk /dev/xvdb</code></strong>  # 创建分区</li>
+<li>输入n<br>Command (m for help):n</li>
+<li>输入p<br>Command action<br>e extended<br>p primary partition (1-4)<br>p</li>
+<li>输入1<br>Partition number (1-4): 1</li>
+<li>回车<br>First cylinder (1-2610, default 1):<br>Using default value 1</li>
+<li>回车<br>Last cylinder, +cylinders or +size{K,M,G} (1-2610, default 2610):<br>Using default value 2610</li>
+<li>输入w<br>Command (m for help): w<br>The partition table has been altered!</li>
+<li><strong><code>mkfs.ext3 /dev/xvdb1</code></strong> #格式化分区</li>
+<li><strong><code>mkdir /data</code></strong> #建立挂载目录</li>
+<li><strong><code>mount /dev/xvdb1</code></strong> /data  #挂载分区</li>
+<li><strong><code>vi /etc/fstab</code></strong>  #设置开机自动挂载<br>在vi中输入i进入INERT模式，将光标移至文件结尾处并回车，将下面的内容复制/粘贴，然后按Esc键，输入:x保存并退出<br>/dev/xvdb               /data                   ext3    defaults        0 0</li>
+<li><strong><code>reboot</code></strong> #重启服务器</li>
+<li><strong><code>df</code></strong> #查看硬盘分区<br>/dev/xvdb             20635700    176196  19411268   1% /data</li>
+</ol>
 </blockquote>
 
       
@@ -327,13 +322,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/19/Linux-磁盘管理/">Linux--磁盘管理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
-        <p><span>发布时间:</span>2016年03月18日 - 10时22分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 11时57分</p>
+        <p><span>发布时间:</span>2016年03月19日 - 14时46分</p>
+        <p><span>最后更新:</span>2016年03月19日 - 16时33分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-常用VI-VIM命令/" title="Linux--常用VI/VIM命令">http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/19/Linux-磁盘管理/" title="Linux--磁盘管理">http://blog.xiaoxiaomo.com/2016/03/19/Linux-磁盘管理/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/19/Linux-磁盘管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -346,16 +341,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/18/Linux-系统进程管理/">
-                    Linux--系统进程管理
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/17/Linux-压缩及归档/">
-                    Linux--压缩及归档
+                <a href="/2016/03/18/Linux-用户和组管理/">
+                    Linux--用户和组管理
                 </a>
             </div>
         
@@ -366,7 +355,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三种模式"><span class="toc-number">1.</span> <span class="toc-text">三种模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#光标的移动"><span class="toc-number">2.</span> <span class="toc-text">光标的移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找和替换"><span class="toc-number">3.</span> <span class="toc-text">查找和替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除"><span class="toc-number">4.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制-粘贴"><span class="toc-number">5.</span> <span class="toc-text">复制/粘贴</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#复制"><span class="toc-number">5.1.</span> <span class="toc-text">复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#粘贴"><span class="toc-number">5.2.</span> <span class="toc-text">粘贴</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销-重复"><span class="toc-number">6.</span> <span class="toc-text">撤销/重复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择（可视化模式）"><span class="toc-number">7.</span> <span class="toc-text">选择（可视化模式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令模式，扩展几个命令"><span class="toc-number">8.</span> <span class="toc-text">命令模式，扩展几个命令</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看磁盘信息"><span class="toc-number">1.</span> <span class="toc-text">查看磁盘信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#df命令"><span class="toc-number">1.1.</span> <span class="toc-text">df命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#du命令"><span class="toc-number">1.2.</span> <span class="toc-text">du命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘挂载"><span class="toc-number">2.</span> <span class="toc-text">磁盘挂载</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -428,7 +417,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/18/Linux-常用VI-VIM命令/" data-title="Linux--常用VI/VIM命令" data-url="http://blog.xiaoxiaomo.com/2016/03/18/Linux-常用VI-VIM命令/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/19/Linux-磁盘管理/" data-title="Linux--磁盘管理" data-url="http://blog.xiaoxiaomo.com/2016/03/19/Linux-磁盘管理/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -452,15 +441,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/18/Linux-系统进程管理/" title="上一篇: Linux--系统进程管理">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/17/Linux-压缩及归档/" title="下一篇: Linux--压缩及归档">
+            <a href="/2016/03/18/Linux-用户和组管理/" title="下一篇: Linux--用户和组管理">
                 <i class="fa fa-angle-right"></i>
             </a>
         

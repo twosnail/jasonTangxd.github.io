@@ -13,7 +13,7 @@
 <meta property="og:description" content="在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.jpg">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319115428.jpg">
-<meta property="og:updated_time" content="2016-03-19T06:20:27.995Z">
+<meta property="og:updated_time" content="2016-03-19T06:38:20.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--系统进程管理">
 <meta name="twitter:description" content="在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。">
@@ -307,7 +307,7 @@
 <li>基本命令</li>
 </ul>
 <pre><code class="bash">ps        <span class="comment">#查看静态的进程统计信息（processes statistic），当前控制台下该属于该用户的进程</span>
-          <span class="comment">#ps -ef #可以显示出所有用户的进程</span>
+          <span class="comment">#ps -ef #可以显示出所有用户的进程System V风格,ps aux是BSD风格</span>
 top       <span class="comment">#查看进程动态信息</span>
 htop      <span class="comment">#查看进程动态信息，top的升级版</span>
 pgrep     <span class="comment">#查询进程信息</span>
@@ -319,7 +319,7 @@ pstree    <span class="comment">#查看进程</span>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.jpg" alt=""></p>
 <p>说明：</p>
 <blockquote>
-<p>UID：     #用户Id<br>PID ：    #进程号<br>PPLD：    #父进程的进程号<br>STIME：   #创建进程时间<br>TTY：     #进程启动的终端<br>STAT：    #进程当前状态（S休眠状态，D不可中断的休眠状态，R运行状态，Z僵死状态，T停止）<br>NI ：     #进程优先级<br>TIME：    #进程运行时间<br>COMMAND/CMD：#进程的命令<br>%CPU：    #占用CPU时间和总时间的百分比<br>%MEM：    #占用内存与系统内存总量的百分比</p>
+<p><strong>UID</strong>：     #用户Id<br><strong>PID</strong> ：    #进程号<br><strong>PPLD</strong>：    #父进程的进程号<br><strong>STIME</strong>：   #创建进程时间<br><strong>TTY</strong>：     #进程启动的终端<br><strong>STAT</strong>：    #进程当前状态（<code>S休眠状态，D不可中断的休眠状态，R运行状态，Z僵死状态，T停止</code>）<br><strong>NI</strong> ：     #进程优先级<br><strong>TIME</strong>：    #进程运行时间<br><strong>COMMAND/CMD</strong>：#进程的命令<br><strong>%CPU</strong>：    #占用CPU时间和总时间的百分比<br><strong>%MEM</strong>：    #占用内存与系统内存总量的百分比</p>
 </blockquote>
 <ul>
 <li>pstree</li>
@@ -334,7 +334,7 @@ pstree    <span class="comment">#查看进程</span>
 <li>前台启动：使用<code>service 程序 start</code>，eg：service network start。</li>
 <li>后台程序：使用<code>service 程序 start $</code>，eg：service network start $。</li>
 <li>前台启动，放入后台：正在运行的程序，按Ctrl+Z组合键。</li>
-<li>后台进程，调回前台：使用job -l”选项显示进程的PID，后通过fg或fg PID 命令讲后台进程调入前台执行。</li>
+<li>后台进程，调回前台：使用”job -l”选项显示进程的PID，后通过fg或fg PID 命令讲后台进程调入前台执行。</li>
 </ol>
 </blockquote>
 <ul>
@@ -342,13 +342,13 @@ pstree    <span class="comment">#查看进程</span>
 </ul>
 <blockquote>
 <ol>
-<li>kill -1 PID  #终端断线</li>
-<li>kill -2 PID  #中断正在执行的程序,等于Ctrl + c</li>
-<li>kill -3 PID  #退出（同 Ctrl + \）</li>
-<li>kill -9 PID  #强制、尽快终止进程</li>
-<li>kill -15 PID #终止进程</li>
-<li>kill -18 PID #继续（与STOP相反， fg/bg命令）</li>
-<li>kill -19 PID #暂停（同 Ctrl + Z）</li>
+<li><strong>kill -1 PID </strong> #终端断线</li>
+<li><strong>kill -2 PID</strong>  #中断正在执行的程序,等于Ctrl + c</li>
+<li><strong>kill -3 PID</strong>  #退出（同 Ctrl + \）</li>
+<li><strong>kill -9 PID</strong>  #强制、尽快终止进程</li>
+<li><strong>kill -15 PID</strong> #终止进程</li>
+<li><strong>kill -18 PID</strong> #继续（与STOP相反， fg/bg命令）</li>
+<li><strong>kill -19 PID</strong> #暂停（同 Ctrl + Z）</li>
 </ol>
 </blockquote>
 
@@ -362,7 +362,7 @@ pstree    <span class="comment">#查看进程</span>
         <p><span>本文标题:</span><a href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月18日 - 14时15分</p>
-        <p><span>最后更新:</span>2016年03月19日 - 14时20分</p>
+        <p><span>最后更新:</span>2016年03月19日 - 14时38分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-系统进程管理/" title="Linux--系统进程管理">http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -498,7 +498,7 @@ pstree    <span class="comment">#查看进程</span>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-用户和组管理/">Linux--用户和组管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-压缩及归档/">Linux--压缩及归档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-grep和正则表达式/">Linux--grep和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-文本管理类命令/">Linux--文本管理类命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/19/Linux-磁盘管理/">Linux--磁盘管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-用户和组管理/">Linux--用户和组管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-压缩及归档/">Linux--压缩及归档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-grep和正则表达式/">Linux--grep和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-文本管理类命令/">Linux--文本管理类命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/hello-world/">Hello World</a></li></ul>
 
 
 

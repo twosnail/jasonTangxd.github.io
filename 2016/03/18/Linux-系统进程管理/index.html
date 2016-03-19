@@ -5,16 +5,19 @@
   
   <title>Linux--系统进程管理 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，">
+  <meta name="description" content="在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux--系统进程管理">
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，">
-<meta property="og:updated_time" content="2016-03-18T09:33:46.095Z">
+<meta property="og:description" content="在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319115428.png">
+<meta property="og:updated_time" content="2016-03-19T03:57:32.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--系统进程管理">
-<meta name="twitter:description" content="计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，">
+<meta name="twitter:description" content="在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -280,11 +283,75 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>计算机的核心是CPU，就像人的大脑，调度和管理则有工作。对于计算机来讲，只有CUP和内存。对于早期计算机而言，一台电脑只运行了一个程序，就是一个CPU只为一个程序服务，</p>
+        <p>在早期的计算机中不包含操作系统，从头到位一台计算机只运行了一个程序，并且这个程序能访问计算机中的所有资源，只做一件事情。操作系统的出现使得计算机能运行多个程序，并且不同的程序都在单独的进程中运行，进程又可以启动多个线程。</p>
 <a id="more"></a>
-<h3 id="系统进程"><a href="#系统进程" class="headerlink" title="系统进程"></a>系统进程</h3><pre><code>对于计算机来讲，只有CUP和内存，
-程序，由指令+数据组成，
-</code></pre><h3 id="相关管理工具"><a href="#相关管理工具" class="headerlink" title="相关管理工具"></a>相关管理工具</h3>
+<h3 id="系统进程"><a href="#系统进程" class="headerlink" title="系统进程"></a>系统进程</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><blockquote>
+<ol>
+<li><code>计算机</code>，主要是由<code>内核（Kernel）</code>和运行在内核之上的众多<code>进程（Process）</code>来实现的。（内核也是一个程序）</li>
+<li><code>内核</code>，主要负责管理系统的进程，内存，设备驱动和网络等</li>
+<li><code>程序</code>是静态概念，本身作为一种软件资源长期保存；而进程是程序的执行过程，是动态概念，有一定的生命周期，动态产生和消亡的。</li>
+<li><code>进程</code>是指一个在内存中运行的应用程序，一个进程可以启动多个线程。对于计算机来而言，主要工作都在CUP和内存中完成。</li>
+<li><code>线程</code>是指进程中的一个执行流程，线程总是属于某个进程，进程中的多个线程<strong>共享进程的内存空间</strong>。</li>
+<li><code>注意</code>：程序，由指令+数据组成。</li>
+</ol>
+</blockquote>
+<h4 id="程序的运行"><a href="#程序的运行" class="headerlink" title="程序的运行"></a>程序的运行</h4><ul>
+<li>一个命令的运行</li>
+</ul>
+<p><em><code>内存是由内存环的，内核运行在0环（内核空间），用户进程运行在3环（用户空间），当执行一些敏感信息的时候都是由内核完成</code></em>。比如运行一个mkdir命令，发起这个命令就启动mkdir这个进程，当按下“Enter”键的时候，程序就会被装载到内存，在内存中会划分一个区域（保存这该进程的数据和指令），这就表示启动一个进程了。当运行起来的时候，就需要创建一个目录，发现需要去操作硬盘，mkdir这个进程通过系统调用会向内核发送操作硬盘的申请。内核接收到申请后,就转入内核模式，mkdir就从cpu中退出了（归队）,退出时会保存进程信息（保存在内核中，内核会追踪每一个进程信息，内核里面有一个<code>（task structure）数据结构</code>；会维护每一个进程信息<strong>ID,NAME,PID,PPID</strong>等）内核持有CPU，接受到命令读取内存信息并修改，完成后同步到硬盘，该命令执行完成。</p>
+<ul>
+<li>多个进程的运行</li>
+</ul>
+<p><em><code>CPU要么由进程所持有，要么由内核所持有，进程的执行信息保存在内存当中，描述信息在内核当中</code></em>。<em>当多个程序同时运行的时候（以为同时），<strong>多个进程和内核就会轮流的去持有CPU资源</strong>。<strong>进程所有数据就会加载到内存当中</strong>（在内存修改的数据可以同步到硬盘IO设备）</em>，CPU就会管理着内存当中的进程（<code>户口本</code>，该那个进程运行，运行的时间，下一个是谁运行）。CPU只有一个的情况下，当一个进程所持有CPU的时间到了，但没有执行完，内核就会持有CPU保存进程的描述信息（<code>寄存器</code>，记录执行到哪儿）这个过程叫做<code>保存现场</code>，进程归队。CPU会调度下一个进程，执行完成后之前的进程如果被唤醒，内核信息里面就会给出之前执行到哪儿的信息，让该进程继续执行，这个过程就叫<code>恢复现场</code>。 当执行完成之后，该进程就退出了，内存空间就释放了，内核也会销毁这个进程信息。</p>
+<h3 id="相关管理工具"><a href="#相关管理工具" class="headerlink" title="相关管理工具"></a>相关管理工具</h3><h4 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h4><ul>
+<li>基本命令</li>
+</ul>
+<pre><code class="bash">ps        <span class="comment">#查看静态的进程统计信息（processes statistic），当前控制台下该属于该用户的进程</span>
+            <span class="comment">#ps -ef #可以显示出所有用户的进程</span>
+top       <span class="comment">#查看进程动态信息</span>
+htop      <span class="comment">#查看进程动态信息，top的升级版</span>
+pgrep     <span class="comment">#查询进程信息</span>
+pstree    <span class="comment">#查看进程</span>
+</code></pre>
+<ul>
+<li>ps</li>
+</ul>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319112646.png" alt=""></p>
+<p>说明：</p>
+<blockquote>
+<p>PID ：    #进程号<br>PPLD：    #父进程的进程号<br>TTY：     #进程启动的终端<br>STAT：    #进程当前状态（S休眠状态，D不可中断的休眠状态，R运行状态，Z僵死状态，T停止）<br>NI ：     #进程优先级<br>TIME：    #进程自从启动以后启用CPU的总时间<br>COMMAND/CMD：#进程的命令名<br>USER：    #用户名<br>%CPU：    #占用CPU时间和总时间的百分比<br>%MEM：    #占用内存与系统内存总量的百分比</p>
+</blockquote>
+<ul>
+<li>pstree</li>
+</ul>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160319115428.png" alt=""></p>
+<p>除init进程以外，其他进程都有父进程，init是伴随着系统的启动。</p>
+<h4 id="管理进程"><a href="#管理进程" class="headerlink" title="管理进程"></a>管理进程</h4><ul>
+<li>启动进程</li>
+</ul>
+<blockquote>
+<ol>
+<li>前台启动：使用<code>service 程序 start</code>，eg：service network start。</li>
+<li>后台程序：使用<code>service 程序 start $</code>，eg：service network start $。</li>
+<li>前台启动，放入后台：正在运行的程序，按Ctrl+Z组合键。</li>
+<li>后台进程，调回前台：使用job -l”选项显示进程的PID，后通过fg或fg PID 命令讲后台进程调入前台执行。</li>
+</ol>
+</blockquote>
+<ul>
+<li>杀掉进程</li>
+</ul>
+<blockquote>
+<ol>
+<li>kill -1 PID  #终端断线</li>
+<li>kill -2 PID  #中断正在执行的程序,等于Ctrl + c</li>
+<li>kill -3 PID  #退出（同 Ctrl + \）</li>
+<li>kill -9 PID  #强制、尽快终止进程</li>
+<li>kill -15 PID #终止进程</li>
+<li>kill -18 PID #继续（与STOP相反， fg/bg命令）</li>
+<li>kill -19 PID #暂停（同 Ctrl + Z）</li>
+</ol>
+</blockquote>
+
       
     </div>
     
@@ -295,7 +362,7 @@
         <p><span>本文标题:</span><a href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月18日 - 14时15分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 17时33分</p>
+        <p><span>最后更新:</span>2016年03月19日 - 11时57分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/18/Linux-系统进程管理/" title="Linux--系统进程管理">http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/18/Linux-系统进程管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -331,7 +398,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统进程"><span class="toc-number">1.</span> <span class="toc-text">系统进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关管理工具"><span class="toc-number">2.</span> <span class="toc-text">相关管理工具</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统进程"><span class="toc-number">1.</span> <span class="toc-text">系统进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本概念"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#程序的运行"><span class="toc-number">1.2.</span> <span class="toc-text">程序的运行</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关管理工具"><span class="toc-number">2.</span> <span class="toc-text">相关管理工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看进程"><span class="toc-number">2.1.</span> <span class="toc-text">查看进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#管理进程"><span class="toc-number">2.2.</span> <span class="toc-text">管理进程</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

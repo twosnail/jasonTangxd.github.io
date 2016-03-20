@@ -5,32 +5,17 @@
   
   <title>Linux--压缩及归档 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="压缩常见压缩格式bz2，gz，zip，Z，xz
-
-bz2：bzip2工具，采用Burrows-Wheeler块排序文本压缩算法和霍夫曼编码。
-gz ：gzip工具，GNU压缩工具，用Lempel-Ziv编码。
-zip：zip工具，Windows上PKZIP工具的Unix实现。
-Z  ：compress工具，原始的Unix文件压缩工具，现在已不常用。">
+  <meta name="description" content="对于压缩和解压缩，在Micrsoft windows下的zip格式，我想大家都很熟悉，可以很好的用来管理我们的文件及文件夹。在Linux中压缩工具和命令也是是我们必须掌握的，常用于解压我们下载的文件，下面来看看常见的压缩格式和命令。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux--压缩及归档">
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/17/Linux-压缩及归档/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="压缩常见压缩格式bz2，gz，zip，Z，xz
-
-bz2：bzip2工具，采用Burrows-Wheeler块排序文本压缩算法和霍夫曼编码。
-gz ：gzip工具，GNU压缩工具，用Lempel-Ziv编码。
-zip：zip工具，Windows上PKZIP工具的Unix实现。
-Z  ：compress工具，原始的Unix文件压缩工具，现在已不常用。">
+<meta property="og:description" content="对于压缩和解压缩，在Micrsoft windows下的zip格式，我想大家都很熟悉，可以很好的用来管理我们的文件及文件夹。在Linux中压缩工具和命令也是是我们必须掌握的，常用于解压我们下载的文件，下面来看看常见的压缩格式和命令。">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317195305.png">
-<meta property="og:updated_time" content="2016-03-17T16:31:42.539Z">
+<meta property="og:updated_time" content="2016-03-20T05:51:47.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--压缩及归档">
-<meta name="twitter:description" content="压缩常见压缩格式bz2，gz，zip，Z，xz
-
-bz2：bzip2工具，采用Burrows-Wheeler块排序文本压缩算法和霍夫曼编码。
-gz ：gzip工具，GNU压缩工具，用Lempel-Ziv编码。
-zip：zip工具，Windows上PKZIP工具的Unix实现。
-Z  ：compress工具，原始的Unix文件压缩工具，现在已不常用。">
+<meta name="twitter:description" content="对于压缩和解压缩，在Micrsoft windows下的zip格式，我想大家都很熟悉，可以很好的用来管理我们的文件及文件夹。在Linux中压缩工具和命令也是是我们必须掌握的，常用于解压我们下载的文件，下面来看看常见的压缩格式和命令。">
 <meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160317195305.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
@@ -301,14 +286,16 @@ Z  ：compress工具，原始的Unix文件压缩工具，现在已不常用。">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a><strong>压缩</strong></h2><h3 id="常见压缩格式"><a href="#常见压缩格式" class="headerlink" title="常见压缩格式"></a><strong>常见压缩格式</strong></h3><p><code>bz2</code>，<code>gz</code>，<code>zip</code>，<code>Z</code>，<code>xz</code></p>
+        <hr>
+<p>对于压缩和解压缩，在<em>Micrsoft windows</em>下的zip格式，我想大家都很熟悉，可以很好的用来管理我们的文件及文件夹。在Linux中压缩工具和命令也是是我们必须掌握的，常用于解压我们下载的文件，下面来看看常见的压缩格式和命令。</p>
+<a id="more"></a>
+<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a><strong>压缩</strong></h2><h3 id="常见压缩格式"><a href="#常见压缩格式" class="headerlink" title="常见压缩格式"></a><strong>常见压缩格式</strong></h3><p><code>bz2</code>，<code>gz</code>，<code>zip</code>，<code>Z</code>，<code>xz</code></p>
 <ul>
 <li><code>bz2</code>：<code>bzip2</code>工具，采用Burrows-Wheeler块排序文本压缩算法和霍夫曼编码。</li>
 <li><code>gz</code> ：<code>gzip</code>工具，GNU压缩工具，用Lempel-Ziv编码。</li>
 <li><code>zip</code>：<code>zip</code>工具，Windows上PKZIP工具的Unix实现。</li>
 <li><code>Z</code>  ：<code>compress</code>工具，原始的Unix文件压缩工具，现在已不常用。</li>
 </ul>
-<a id="more"></a>
 <h3 id="压缩工具"><a href="#压缩工具" class="headerlink" title="压缩工具"></a><strong>压缩工具</strong></h3><ul>
 <li>bzip2工具</li>
 </ul>
@@ -353,7 +340,7 @@ Z  ：compress工具，原始的Unix文件压缩工具，现在已不常用。">
         <p><span>本文标题:</span><a href="/2016/03/17/Linux-压缩及归档/">Linux--压缩及归档</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月17日 - 19时12分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 00时31分</p>
+        <p><span>最后更新:</span>2016年03月20日 - 13时51分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/17/Linux-压缩及归档/" title="Linux--压缩及归档">http://blog.xiaoxiaomo.com/2016/03/17/Linux-压缩及归档/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/17/Linux-压缩及归档/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

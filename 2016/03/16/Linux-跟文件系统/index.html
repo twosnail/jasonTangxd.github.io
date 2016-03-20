@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="小小默's Blog">
 <meta property="og:description" content="根文件系统rootfs(Root File System),而Linux是一种树形结构组织文件FHS（FileSystem Hierarchy Standard）。“/”是所有文件的跟。">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Frootfs.jpg">
-<meta property="og:updated_time" content="2016-03-20T04:05:51.688Z">
+<meta property="og:updated_time" content="2016-03-20T04:36:07.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--跟文件系统">
 <meta name="twitter:description" content="根文件系统rootfs(Root File System),而Linux是一种树形结构组织文件FHS（FileSystem Hierarchy Standard）。“/”是所有文件的跟。">
@@ -286,91 +286,119 @@
 <a id="more"></a>
 <h3 id="一、Linux目录简介"><a href="#一、Linux目录简介" class="headerlink" title="一、Linux目录简介"></a><strong>一、Linux目录简介</strong></h3><p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Frootfs.jpg" alt="rootfs，基本树结构截图"></p>
 <ul>
-<li><p><strong>/boot</strong>：</p>
+<li><strong>/boot</strong>：</li>
+</ul>
 <blockquote>
 <p>存放引导系统启动的相关文件，如内核，initrd ， 以及grub(bootloader)。</p>
 </blockquote>
-</li>
-<li><p><strong>/dev</strong>：</p>
+<ul>
+<li><strong>/dev</strong>：</li>
+</ul>
 <blockquote>
 <p>设备文件,存放着相关配置的<br>1、设备文件：<br>2、块设备：随机访问，数据块<br>3、字符设备：线性访问，按字符为单位。<br>4、设备号：主设备号（major）和次设备号（minor）</p>
 </blockquote>
-</li>
-<li><p><strong>/etc</strong>：</p>
+<ul>
+<li><strong>/etc</strong>：</li>
+</ul>
 <blockquote>
 <p>配置文件</p>
 </blockquote>
-</li>
-<li><strong>/home</strong>：<blockquote>
+<ul>
+<li><strong>/home</strong>：</li>
+</ul>
+<blockquote>
 <p>存放普通用户的相关文件</p>
 </blockquote>
-</li>
-<li><strong>/root</strong>：<blockquote>
+<ul>
+<li><strong>/root</strong>：</li>
+</ul>
+<blockquote>
 <p>存放root用户的相关文件</p>
 </blockquote>
-</li>
-<li><p><strong>/lib</strong>：</p>
+<ul>
+<li><strong>/lib</strong>：</li>
+</ul>
 <blockquote>
 <p>库文件<br>1、静态库， .a<br>2、动态库， .dll , .so(shared object)</p>
 </blockquote>
-</li>
-<li><p><strong>/lib/modules</strong>：</p>
+<ul>
+<li><strong>/lib/modules</strong>：</li>
+</ul>
 <blockquote>
 <p>内核模块文件</p>
 </blockquote>
-</li>
-<li><strong>/media</strong>：<blockquote>
+<ul>
+<li><strong>/media</strong>：</li>
+</ul>
+<blockquote>
 <p>挂载点目录 ， 移动设备（u盘，光盘）</p>
 </blockquote>
-</li>
-<li><strong>/mnt</strong>：<blockquote>
+<ul>
+<li><strong>/mnt</strong>：</li>
+</ul>
+<blockquote>
 <p>默认挂在公区或软驱的，额外的临时文件系统，（第二块硬盘）</p>
 </blockquote>
-</li>
-<li><strong>/misc</strong>：<blockquote>
+<ul>
+<li><strong>/misc</strong>：</li>
+</ul>
+<blockquote>
 <p>杂项</p>
 </blockquote>
-</li>
-<li><strong>/opt</strong>  ：<blockquote>
+<ul>
+<li><strong>/opt</strong>  ：</li>
+</ul>
+<blockquote>
 <p>可选目录，（早期安装第三方程序的安装目录）</p>
 </blockquote>
-</li>
-<li><strong>/proc</strong>：<blockquote>
+<ul>
+<li><strong>/proc</strong>：</li>
+</ul>
+<blockquote>
 <p>伪文件系统，内核映射文件。（以后的相关优化等）</p>
 </blockquote>
-</li>
-<li><strong>/sys</strong>：<blockquote>
+<ul>
+<li><strong>/sys</strong>：</li>
+</ul>
+<blockquote>
 <p>伪文件系统，跟硬件设备相关的属性映射（例如修改磁盘调度队列IO）</p>
 </blockquote>
-</li>
-<li><strong>/tmp</strong>：<blockquote>
+<ul>
+<li><strong>/tmp</strong>：</li>
+</ul>
+<blockquote>
 <p>临时文件系统，（一个月未使用的清掉）还有一个目录/var/tmp</p>
 </blockquote>
-</li>
-<li><strong>/var</strong>：<blockquote>
+<ul>
+<li><strong>/var</strong>：</li>
+</ul>
+<blockquote>
 <p>存放经常变动的文件</p>
 </blockquote>
-</li>
-<li><strong>/bin</strong>：<blockquote>
+<ul>
+<li><strong>/bin</strong>：</li>
+</ul>
+<blockquote>
 <p>可执行文件，用户命令</p>
 </blockquote>
-</li>
-<li><p><strong>/sbin</strong>：</p>
+<ul>
+<li><strong>/sbin</strong>：</li>
+</ul>
 <blockquote>
 <p>管理命令</p>
 </blockquote>
-</li>
-<li><p><strong>/usr</strong>：shared , read-only(共享的只读文件)。</p>
+<ul>
+<li><strong>/usr</strong>：shared , read-only(共享的只读文件)</li>
+</ul>
 <blockquote>
 <p>1、(跟目录存着系统启动时依赖的bin,sbin,lib)<br>2、(下面存放着系统启动后功能所需要的bin,sbin,lib)，/usr/bin，/usr/sbin，/usr/lib</p>
 </blockquote>
-</li>
-<li><p><strong>/usr/local</strong>：</p>
+<ul>
+<li><strong>/usr/local</strong>：</li>
+</ul>
 <blockquote>
 <p>（下面存放着第三方软件的bin,sbin,lib）<br>1、/usr/local/bin<br>2、/usr/local/sbin<br>3、/usr/local/lib</p>
 </blockquote>
-</li>
-</ul>
 <h3 id="二、命令规则"><a href="#二、命令规则" class="headerlink" title="二、命令规则"></a><strong>二、命令规则</strong></h3><ul>
 <li>长度不能操作255个字符；</li>
 <li>不能使用“/”当文件名；</li>
@@ -396,7 +424,7 @@
         <p><span>本文标题:</span><a href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月16日 - 09时24分</p>
-        <p><span>最后更新:</span>2016年03月20日 - 12时05分</p>
+        <p><span>最后更新:</span>2016年03月20日 - 12时36分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/16/Linux-跟文件系统/" title="Linux--跟文件系统">http://blog.xiaoxiaomo.com/2016/03/16/Linux-跟文件系统/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/16/Linux-跟文件系统/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

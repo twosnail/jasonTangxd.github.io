@@ -5,45 +5,33 @@
   
   <title>VMware--网络配置 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、三种网络连接模式
+  <meta name="description" content="三种网络连接模式
 Host-only连接方式
 
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。
 
-
-Bridge（桥接）连接方式
-
-让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保">
+ 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VMware--网络配置">
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/15/VMware-网络配置/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="一、三种网络连接模式
+<meta property="og:description" content="三种网络连接模式
 Host-only连接方式
 
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。
 
-
-Bridge（桥接）连接方式
-
-让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保">
+ 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png">
-<meta property="og:updated_time" content="2016-03-17T16:31:34.954Z">
+<meta property="og:updated_time" content="2016-03-20T04:45:18.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VMware--网络配置">
-<meta name="twitter:description" content="一、三种网络连接模式
+<meta name="twitter:description" content="三种网络连接模式
 Host-only连接方式
 
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。
 
-
-Bridge（桥接）连接方式
-
-让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保">
+ 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。">
 <meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
@@ -310,62 +298,55 @@ Bridge（桥接）连接方式
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="一、三种网络连接模式"><a href="#一、三种网络连接模式" class="headerlink" title="一、三种网络连接模式"></a><strong>一、三种网络连接模式</strong></h3><ol>
-<li><p>Host-only连接方式</p>
+        <h3 id="三种网络连接模式"><a href="#三种网络连接模式" class="headerlink" title="三种网络连接模式"></a><strong>三种网络连接模式</strong></h3><ul>
+<li><strong>Host-only连接方式</strong></li>
+</ul>
 <blockquote>
-<p> 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。</p>
+<p> <code>相当于新建了一个由所有虚机与宿主主机所构成的局域网</code>，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。</p>
 </blockquote>
-</li>
-<li><p>Bridge（桥接）连接方式</p>
-<blockquote>
-<p>让虚机具有与宿主机不同的各自独立IP地址，但与宿主机保持在同一网段，最终结果是所有虚机都加入宿主主机所在的局域网，这与在该局域网中添加入其他宿主主机在效果上没什么区别。</p>
-</blockquote>
-</li>
-</ol>
 <a id="more"></a>
-<ol>
-<li>NAT连接方式<blockquote>
-<p>虽然从表面现象看，虚机无自己的IP地址，而是共享宿主主机的IP地址，使得虚拟局域网内的虚机在对外访问时，完全“冒用”宿主主机的IP地址，这样从外部网络来看，只能看到宿主主机，完全看不到新建的虚拟局域网。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="二、常见连接模式"><a href="#二、常见连接模式" class="headerlink" title="二、常见连接模式"></a><strong>二、常见连接模式</strong></h3><ol>
-<li><p>Bridge模式</p>
 <ul>
-<li><p>①、设置虚拟机网络为桥接<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png" alt="桥接"></p>
-</li>
-<li><p>②、修改网卡地址</p>
-<blockquote>
-<p>①、ONBOOT  修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO   删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR    设置为192.168.1.*（注：修改为本机网卡同段落IP地址，不要配置ip冲突）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-<p>⑤、设置GATEWAY 192,168.1.1(本机相同网关)</p>
-</blockquote>
-</li>
-<li><p>③、重启<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png" alt="重启"></p>
-</li>
-<li><p>④、ping 本机网关、本机ip、baiduIP(域名一般是无法解析的)</p>
-</li>
+<li><strong>Bridge（桥接）连接方式</strong></li>
 </ul>
-</li>
-<li><p>自定义模式</p>
+<blockquote>
+<p><code>让虚机具有与宿主机不同的各自独立IP地址</code>，但与宿主机保持在同一网段，最终结果是所有虚机都加入宿主主机所在的局域网，<code>这与在该局域网中添加入其他宿主主机在效果上没什么区别</code>。</p>
+</blockquote>
 <ul>
-<li><p>①、通过虚拟网卡，然后修改虚拟网卡VMnet1<br>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png" alt=""></p>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png" alt=""></p>
-<p>  只需要添加IP地址和子网掩码。 登录虚拟机，修改网卡ip地址</p>
-<blockquote>
-<p>①、ONBOOT 修改为yes(表示一直生效，不然下次启动，就会无效)</p>
-<p>②、BOOTPROTO 删除或者修改为static（删除后默认static）</p>
-<p>③、设置IPADDR 设置为192.168.8.*（注：修改为虚拟网卡同段落IP地址）</p>
-<p>④、设置NETMASK 225.225.225.0</p>
-</blockquote>
-<p>  <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png" alt=""></p>
-<p>重启网络：service network restart。</p>
-</li>
+<li><strong>NAT连接方式</strong></li>
 </ul>
-</li>
-</ol>
+<blockquote>
+<p>虽然从表面现象看，虚机无自己的IP地址，而是共享宿主主机的IP地址，使得虚拟局域网内的虚机在对外访问时，<code>完全“冒用”宿主主机的IP地址，这样从外部网络来看，只能看到宿主主机，完全看不到新建的虚拟局域网</code>。</p>
+</blockquote>
+<h3 id="常见连接模式"><a href="#常见连接模式" class="headerlink" title="常见连接模式"></a><strong>常见连接模式</strong></h3><h4 id="Bridge模式"><a href="#Bridge模式" class="headerlink" title="Bridge模式"></a><strong>Bridge模式</strong></h4><ul>
+<li>①、设置虚拟机网络为桥接</li>
+</ul>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png" alt="桥接"></p>
+<ul>
+<li>②、修改网卡地址</li>
+</ul>
+<blockquote>
+<p>①、<strong>ONBOOT</strong>          #修改为yes(表示一直生效，不然下次启动，就会无效)<br>②、<strong>BOOTPROTO</strong>      #删除或者修改为static（删除后默认static）<br>③、<strong>设置IPADDR</strong>      #设置为192.168.1.*（注：修改为本机网卡同段落IP地址，不要配置ip冲突）<br>④、<strong>设置NETMASK</strong>     #225.225.225.0<br>⑤、<strong>设置GATEWAY</strong>     #192,168.1.1(本机相同网关)</p>
+</blockquote>
+<ul>
+<li>③、重启</li>
+</ul>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png" alt="重启"></p>
+<ul>
+<li>④、ping 本机网关、本机ip、baiduIP(域名一般是无法解析的)</li>
+</ul>
+<h4 id="自定义模式"><a href="#自定义模式" class="headerlink" title="自定义模式"></a><strong>自定义模式</strong></h4><ul>
+<li>①、通过虚拟网卡，然后修改虚拟网卡VMnet1</li>
+</ul>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png" alt=""></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png" alt=""></p>
+<p>只需要添加IP地址和子网掩码。 登录虚拟机，修改网卡ip地址</p>
+<blockquote>
+<p>①、<strong>ONBOOT</strong>     #修改为yes(表示一直生效，不然下次启动，就会无效)<br>②、<strong>BOOTPROTO</strong>  #删除或者修改为static（删除后默认static）<br>③、<strong>设置IPADDR</strong>  #设置为192.168.8.*（注：修改为虚拟网卡同段落IP地址）<br>④、<strong>设置NETMASK</strong> #225.225.225.0</p>
+</blockquote>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png" alt=""></p>
+<blockquote>
+<p>重启网络：<code>service network restart</code>。</p>
+</blockquote>
 
       
     </div>
@@ -377,7 +358,7 @@ Bridge（桥接）连接方式
         <p><span>本文标题:</span><a href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月15日 - 15时59分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 00时31分</p>
+        <p><span>最后更新:</span>2016年03月20日 - 12时45分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/15/VMware-网络配置/" title="VMware--网络配置">http://blog.xiaoxiaomo.com/2016/03/15/VMware-网络配置/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/15/VMware-网络配置/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -413,7 +394,7 @@ Bridge（桥接）连接方式
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、三种网络连接模式"><span class="toc-number">1.</span> <span class="toc-text">一、三种网络连接模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、常见连接模式"><span class="toc-number">2.</span> <span class="toc-text">二、常见连接模式</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三种网络连接模式"><span class="toc-number">1.</span> <span class="toc-text">三种网络连接模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见连接模式"><span class="toc-number">2.</span> <span class="toc-text">常见连接模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bridge模式"><span class="toc-number">2.1.</span> <span class="toc-text">Bridge模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义模式"><span class="toc-number">2.2.</span> <span class="toc-text">自定义模式</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

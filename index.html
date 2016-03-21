@@ -283,35 +283,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　RPM(RedHat Package Manager)红帽包管理，之前是有红帽公司研发和管理的。由于它的优秀逐渐被其他公司所接受，于是就开始在各个版本的Linux系统中流行起来。</p>
-<h3 id="RPM的简介"><a href="#RPM的简介" class="headerlink" title="RPM的简介"></a>RPM的简介</h3><p>　　RPM,可以来对软件进行查询、验证、安装、升级及卸载等。比如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apache-1.7.5-17.i386.rpm</span><br><span class="line">1.7.5-17　　<span class="comment">#软件的版本号，主版本和此版本.</span></span><br><span class="line">i386　　<span class="comment">#表示用于Intel x86平台.</span></span><br><span class="line">后缀名为<span class="string">".rpm"</span>　　<span class="comment">#表示rpm包。</span></span><br></pre></td></tr></table></figure>
-<h3 id="PRM的安装"><a href="#PRM的安装" class="headerlink" title="PRM的安装"></a>PRM的安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">rpm [option] rpm软件包</span><br><span class="line">-i <span class="comment">#表示安装</span></span><br><span class="line">-v <span class="comment">#显示安装过程</span></span><br><span class="line">-h <span class="comment">#显示进度条，一般使用"-ivh"组合一起使用,eg：rpm -ivh apache-1.7.5-17.i386.rpm</span></span><br><span class="line">--force <span class="comment">#强制安装</span></span><br><span class="line">--nodeps <span class="comment">#忽略依赖包直接安装</span></span><br><span class="line">* <span class="comment">#可以使用通配符批量安装，eg：rpm -ivh http-* --force。</span></span><br><span class="line">-U <span class="comment">#升级软件包</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>注意</li>
-</ul>
-<blockquote>
-<ol>
-<li>当软件包已经安装，解决办法：一是先卸载后重新安装；二是使用–force选项强制安装。 </li>
-<li>当软件包出现依赖关系 –force也不行，可以使用–nodeps忽略。</li>
-<li>安装软件的时候，最常见的就是提示依赖关系，就必须先把最底层的依赖安装好。</li>
-</ol>
-</blockquote>
-<h3 id="PRM的查询"><a href="#PRM的查询" class="headerlink" title="PRM的查询"></a>PRM的查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa  <span class="comment">#查询系统中已安装的软件包,eg：rpm -qa apache-1.7.5-17.i386.rpm</span></span><br><span class="line">rpm -qi  <span class="comment"># 查询软件的相关信息</span></span><br><span class="line">rpm <span class="_">-l</span>  <span class="comment">#查询软件的安装位置，使用-l选项</span></span><br><span class="line">rpm <span class="_">-f</span>  <span class="comment">#查询文件归属, -qf该文件属于哪个软件包。 如果顺坏可重新安装。</span></span><br><span class="line">rpm -V  <span class="comment">#对系统中已经安装的软件包进行验证。</span></span><br></pre></td></tr></table></figure>
-<h3 id="RPM的卸载"><a href="#RPM的卸载" class="headerlink" title="RPM的卸载"></a>RPM的卸载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm <span class="_">-e</span> 软件名 <span class="comment">#软件名不可以有rpm后缀,rpm -e apache-1.7.5-17.i386,发现依赖关系-nodeps忽略</span></span><br></pre></td></tr></table></figure>
-<h3 id="RPM源码包"><a href="#RPM源码包" class="headerlink" title="RPM源码包"></a>RPM源码包</h3><p>对于一些软件包是以.src.rpm为扩展名的，这类软件包就是包含了源代码的rpm包，在安装<br>的时候需要进行编译，步骤如下：</p>
-<blockquote>
-<ol>
-<li>rpm -i apache-1.7.5-17.i386.src.rpm</li>
-<li>cd /usr/src/redhat/SPECS/     /切换到该目录</li>
-<li>rpmbuild -bb apache-1.7.5-17.i386.specs或者rpmbuild -bp apache-1.7.5-17.i386.specs</li>
-</ol>
-</blockquote>
-<ul>
-<li>注意：</li>
-</ul>
-<p>如果是如上的第一条命令，在/usr/src/redhat/RPMS/noarch/目录下生成一个新的rpm包，<br>直接使用rpm -ivh xx.rpm 进行安装搞定；<br>如果是如上的第二条命令，在/usr/src/redhat/BUILD/software/目录下生成此软件包<br>的源码包，可能通过脚本安装或编译源代码安装，具体不做说明</p>
-
+              <p>　　RPM(RedHat Package Manager)红帽包管理，之前是有红帽公司研发和管理的。由于它的优秀逐渐被其他公司所接受，于是就开始在各个版本的Linux系统中流行起来。</p>
+          
       
     </div>
     
@@ -324,6 +297,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/21/Linux-RPM软件包管理/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

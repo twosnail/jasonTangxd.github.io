@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F7bc033d1-cd37-49fa-8ba4-ec483e813db6.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F2243b2ad-c8e7-4bdf-9b34-70c32cf2549b.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F5ce9ebab-82bb-4a6f-aa4b-8a1224e4e6a4.png">
-<meta property="og:updated_time" content="2016-03-22T15:32:04.172Z">
+<meta property="og:updated_time" content="2016-03-22T16:15:28.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--软件安装之Mysql">
 <meta name="twitter:description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql都不确定。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
@@ -180,7 +180,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/VMware/" style="font-size: 10px;">VMware</a>
+                        <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Linux-Java/" style="font-size: 10px;">Linux Java</a> <a href="/tags/Linux-Mysql/" style="font-size: 10px;">Linux Mysql</a> <a href="/tags/VMware/" style="font-size: 15px;">VMware</a>
                     </div>
                 </section>
                 
@@ -290,7 +290,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-Mysql/">Linux Mysql</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -303,7 +303,7 @@
         <p>　　Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql都不确定。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：</p>
 <a id="more"></a>
 <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>可以去官网下载mysql数据库，我这里下载的是：mysql-5.7.9-1.el6.x86_64.rpm-bundle.tar，<a href="http://yun.baidu.com/share/link?shareid=1740266037&amp;uk=2971593620" target="_blank" rel="external">点击</a>这里可下载。</p>
-<h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><p>检测系统中是否存在mysql，存在就卸载</p>
+<p>检测系统中是否存在mysql，存在就卸载</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">命令：rpm -qa | grep mysql</span><br><span class="line">通过rpm安装mysql</span><br></pre></td></tr></table></figure>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3d24438d-fb81-407c-8b7a-fc2beeabe541.png" alt=""></p>
 <h3 id="卸载Mysql"><a href="#卸载Mysql" class="headerlink" title="卸载Mysql"></a>卸载Mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">【命令】：rpm <span class="_">-e</span> mysql // 普通删除模式（如有依赖无法卸载）</span><br><span class="line">【命令】：rpm <span class="_">-e</span> --nodeps mysql // 强力删除模式（可以忽略依赖）</span><br><span class="line">【命令】：yum -y remove mysql    // yum卸载可以卸载依赖包</span><br></pre></td></tr></table></figure>
@@ -371,7 +371,7 @@
         <p><span>本文标题:</span><a href="/2016/03/22/Linux-软件安装之Mysql/">Linux--软件安装之Mysql</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月22日 - 14时14分</p>
-        <p><span>最后更新:</span>2016年03月22日 - 23时32分</p>
+        <p><span>最后更新:</span>2016年03月23日 - 00时15分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/22/Linux-软件安装之Mysql/" title="Linux--软件安装之Mysql">http://blog.xiaoxiaomo.com/2016/03/22/Linux-软件安装之Mysql/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/22/Linux-软件安装之Mysql/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -401,7 +401,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测"><span class="toc-number">2.</span> <span class="toc-text">检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载Mysql"><span class="toc-number">3.</span> <span class="toc-text">卸载Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Mysql"><span class="toc-number">4.</span> <span class="toc-text">安装Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化mysql"><span class="toc-number">5.</span> <span class="toc-text">初始化mysql</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载Mysql"><span class="toc-number">2.</span> <span class="toc-text">卸载Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Mysql"><span class="toc-number">3.</span> <span class="toc-text">安装Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化mysql"><span class="toc-number">4.</span> <span class="toc-text">初始化mysql</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/21/Linux-RPM软件包管理/index.html">
 <meta property="og:site_name" content="小小默's Blog">
 <meta property="og:description" content="RPM(RedHat Package Manager)红帽包管理，之前是有红帽公司研发和管理的。由于它的优秀逐渐被其他公司所接受，于是就开始在各个版本的Linux系统中流行起来。">
-<meta property="og:updated_time" content="2016-03-21T15:17:08.121Z">
+<meta property="og:updated_time" content="2016-03-22T03:27:06.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--RPM软件包管理">
 <meta name="twitter:description" content="RPM(RedHat Package Manager)红帽包管理，之前是有红帽公司研发和管理的。由于它的优秀逐渐被其他公司所接受，于是就开始在各个版本的Linux系统中流行起来。">
@@ -284,7 +284,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　RPM(RedHat Package Manager)红帽包管理，之前是有红帽公司研发和管理的。由于它的优秀逐渐被其他公司所接受，于是就开始在各个版本的Linux系统中流行起来。</p>
+        <p>　　<code>RPM(RedHat Package Manager)红帽包管理</code>，之前是有红帽公司研发和管理的。由于它的优秀逐渐被其他公司所接受，于是就开始在各个版本的Linux系统中流行起来。</p>
 <a id="more"></a>
 <h3 id="RPM的简介"><a href="#RPM的简介" class="headerlink" title="RPM的简介"></a>RPM的简介</h3><p>　　RPM,可以来对软件进行查询、验证、安装、升级及卸载等。比如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apache-1.7.5-17.i386.rpm</span><br><span class="line">1.7.5-17　　<span class="comment">#软件的版本号，主版本和此版本.</span></span><br><span class="line">i386　　<span class="comment">#表示用于Intel x86平台.</span></span><br><span class="line">后缀名为<span class="string">".rpm"</span>　　<span class="comment">#表示rpm包。</span></span><br></pre></td></tr></table></figure>
@@ -299,8 +299,8 @@
 <li>安装软件的时候，最常见的就是提示依赖关系，就必须先把最底层的依赖安装好。</li>
 </ol>
 </blockquote>
-<h3 id="RPM的查询"><a href="#RPM的查询" class="headerlink" title="RPM的查询"></a>RPM的查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa  <span class="comment">#查询系统中已安装的软件包,eg：rpm -qa apache-1.7.5-17.i386.rpm</span></span><br><span class="line">rpm -qi  <span class="comment"># 查询软件的相关信息</span></span><br><span class="line">rpm <span class="_">-l</span>  <span class="comment">#查询软件的安装位置，使用-l选项</span></span><br><span class="line">rpm <span class="_">-f</span>  <span class="comment">#查询文件归属, -qf该文件属于哪个软件包。 如果顺坏可重新安装。</span></span><br><span class="line">rpm -V  <span class="comment">#对系统中已经安装的软件包进行验证。</span></span><br></pre></td></tr></table></figure>
-<h3 id="RPM的卸载"><a href="#RPM的卸载" class="headerlink" title="RPM的卸载"></a>RPM的卸载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm <span class="_">-e</span> 软件名 <span class="comment">#软件名不可以有rpm后缀,rpm -e apache-1.7.5-17.i386,发现依赖关系-nodeps忽略</span></span><br></pre></td></tr></table></figure>
+<h3 id="RPM的查询"><a href="#RPM的查询" class="headerlink" title="RPM的查询"></a>RPM的查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa  <span class="comment">#查询系统中已安装的软件包,eg：rpm -qa apache-1.7.5-17.i386.rpm</span></span><br><span class="line">rpm -qi  <span class="comment">#查询软件的相关信息</span></span><br><span class="line">rpm <span class="_">-l</span>  <span class="comment">#查询软件的安装位置，使用-l选项</span></span><br><span class="line">rpm <span class="_">-f</span>  <span class="comment">#查询文件归属, -qf该文件属于哪个软件包。 如果顺坏可重新安装。</span></span><br><span class="line">rpm -V  <span class="comment">#对系统中已经安装的软件包进行验证。</span></span><br></pre></td></tr></table></figure>
+<h3 id="RPM的卸载"><a href="#RPM的卸载" class="headerlink" title="RPM的卸载"></a>RPM的卸载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm <span class="_">-e</span> 软件名 <span class="comment">#软件名不可以有rpm后缀,依赖关系-nodeps忽略</span></span><br><span class="line">eg：rpm <span class="_">-e</span> --nodeps java-1.5.2-gcj-1.5.2.0-29.1.el8.x86_64 <span class="comment">#卸载jdk</span></span><br></pre></td></tr></table></figure>
 <h3 id="RPM源码包"><a href="#RPM源码包" class="headerlink" title="RPM源码包"></a>RPM源码包</h3><p>对于一些软件包是以.src.rpm为扩展名的，这类软件包就是包含了源代码的rpm包，在安装<br>的时候需要进行编译，步骤如下：</p>
 <blockquote>
 <ol>
@@ -324,7 +324,7 @@
         <p><span>本文标题:</span><a href="/2016/03/21/Linux-RPM软件包管理/">Linux--RPM软件包管理</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月21日 - 09时26分</p>
-        <p><span>最后更新:</span>2016年03月21日 - 23时17分</p>
+        <p><span>最后更新:</span>2016年03月22日 - 11时27分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/21/Linux-RPM软件包管理/" title="Linux--RPM软件包管理">http://blog.xiaoxiaomo.com/2016/03/21/Linux-RPM软件包管理/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/21/Linux-RPM软件包管理/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F813b6705-f50f-42d0-a2c9-c65c38d2c79b.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F2243b2ad-c8e7-4bdf-9b34-70c32cf2549b.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F5ce9ebab-82bb-4a6f-aa4b-8a1224e4e6a4.png">
-<meta property="og:updated_time" content="2016-03-22T07:22:41.776Z">
+<meta property="og:updated_time" content="2016-03-22T11:15:07.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--软件安装之Mysql">
 <meta name="twitter:description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql就不清楚。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
@@ -306,7 +306,8 @@
 <h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><p>检测系统中是否存在mysql，存在就卸载</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">命令：rpm -qa | grep mysql</span><br><span class="line">通过rpm安装mysql</span><br></pre></td></tr></table></figure>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3d24438d-fb81-407c-8b7a-fc2beeabe541.png" alt=""></p>
-<h3 id="卸载Mysql"><a href="#卸载Mysql" class="headerlink" title="卸载Mysql"></a>卸载Mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">【命令】：rpm <span class="_">-e</span> mysql           // 普通删除模式（如有依赖无法卸载）</span><br><span class="line">【命令】：rpm <span class="_">-e</span> --nodeps mysql // 强力删除模式（可以忽略依赖）</span><br><span class="line">【命令】：yum -y remove mysql    // yum卸载可以卸载依赖包</span><br></pre></td></tr></table></figure>
+<h3 id="卸载Mysql"><a href="#卸载Mysql" class="headerlink" title="卸载Mysql"></a>卸载Mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">【命令】：rpm <span class="_">-e</span> mysql // 普通删除模式（如有依赖无法卸载）</span><br><span class="line">【命令】：rpm <span class="_">-e</span> --nodeps mysql // 强力删除模式（可以忽略依赖）</span><br><span class="line">【命令】：yum -y remove mysql    // yum卸载可以卸载依赖包</span><br></pre></td></tr></table></figure>
+<p>如下信息，就需要–nodeps忽略依赖</p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F6143abdf-ad73-4820-98f2-94e838002ef5.png" alt=""></p>
 <h3 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h3><blockquote>
 <ol>
@@ -317,35 +318,24 @@
 </blockquote>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3513692b-9334-48f9-af70-48954f0ffd44.png" alt=""></p>
 <ul>
-<li><ol>
-<li>安装第一个，[] ，第一个顺利完成。</li>
-</ol>
-</li>
+<li>安装第一个mysql-community-common-5.7.9-1.el6.x86_64.rpm，第一个顺利完成。</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fa9d79ab9-3113-446a-baec-22357343b1a6.png" alt=""></p>
 <ul>
-<li><ol>
-<li>安装第二个，发现需要依赖包mysql-community-client</li>
-</ol>
-</li>
+<li>安装第二个mysql-community-server，发现需要依赖包mysql-community-client</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F93e5c0ff-bb41-4434-9924-c5895355deea.png" alt=""></p>
 <ul>
-<li><ol>
 <li>于是我们安装mysql-community-client，发现需要依赖包lib，</li>
-</ol>
-</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe2db2b30-08e2-4984-885d-79b5242fff45.png" alt="mysql-community-client"></p>
 <ul>
-<li><ol>
-<li>然后安装lib成功，安装client也成功了</li>
-</ol>
-</li>
+<li>然后安装lib成功，安装client也成功了,目前到这里还是比较顺利。</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F18932347-c250-49d0-8130-2825f1728e2b.png" alt=""></p>
 <ul>
-<li>然后再次尝试安装server,发现还需要很多的依赖包，在这里果断想放弃了，还是使用yum命令吧</li>
+<li>然后再次尝试安装server,发现还需要很多的依赖包。晕菜了，这么多，</li>
+<li>这个可以按照上面的方法逐步安装,是可以得，博客中就不讲解了，换成使用yum命令。</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fede8b13f-5c40-448c-a7f9-c118a6f65d29.png" alt=""></p>
 <ul>
@@ -384,7 +374,7 @@
         <p><span>本文标题:</span><a href="/2016/03/22/Linux-软件安装之Mysql/">Linux--软件安装之Mysql</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月22日 - 14时14分</p>
-        <p><span>最后更新:</span>2016年03月22日 - 15时22分</p>
+        <p><span>最后更新:</span>2016年03月22日 - 19时15分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/22/Linux-软件安装之Mysql/" title="Linux--软件安装之Mysql">http://blog.xiaoxiaomo.com/2016/03/22/Linux-软件安装之Mysql/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/22/Linux-软件安装之Mysql/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

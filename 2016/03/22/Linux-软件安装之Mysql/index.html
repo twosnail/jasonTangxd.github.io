@@ -5,12 +5,12 @@
   
   <title>Linux--软件安装之Mysql | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql就不清楚。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
+  <meta name="description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql都不确定。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux--软件安装之Mysql">
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/22/Linux-软件安装之Mysql/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql就不清楚。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
+<meta property="og:description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql都不确定。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3d24438d-fb81-407c-8b7a-fc2beeabe541.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F6143abdf-ad73-4820-98f2-94e838002ef5.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3513692b-9334-48f9-af70-48954f0ffd44.png">
@@ -20,16 +20,16 @@
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F18932347-c250-49d0-8130-2825f1728e2b.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fede8b13f-5c40-448c-a7f9-c118a6f65d29.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3275131b-9925-4135-8a6b-afc2669f9537.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160322231708.jpg">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff5507559-ea43-444b-b00a-653951f98d08.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F5776c6c1-3088-4228-9009-c85a555b0415.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F7bc033d1-cd37-49fa-8ba4-ec483e813db6.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F813b6705-f50f-42d0-a2c9-c65c38d2c79b.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F2243b2ad-c8e7-4bdf-9b34-70c32cf2549b.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F5ce9ebab-82bb-4a6f-aa4b-8a1224e4e6a4.png">
-<meta property="og:updated_time" content="2016-03-22T11:15:07.574Z">
+<meta property="og:updated_time" content="2016-03-22T15:32:04.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--软件安装之Mysql">
-<meta name="twitter:description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql就不清楚。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
+<meta name="twitter:description" content="Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql都不确定。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：">
 <meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3d24438d-fb81-407c-8b7a-fc2beeabe541.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
@@ -300,9 +300,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql就不清楚。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：</p>
+        <p>　　Mysql的安装，第一次自己去折腾的时候倒挺麻烦的，下载哪一个版本的mysql都不确定。之后在DBA的帮助下，很顺畅的就完成了，在这里呢总结一下安装流程：</p>
 <a id="more"></a>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>去官网下载mysql数据库，我这里下载的是：mysql-5.7.9-1.el6.x86_64.rpm-bundle.tar，<a href="http://yun.baidu.com/share/link?shareid=1740266037&amp;uk=2971593620" target="_blank" rel="external">点击</a>这里可下载。</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>可以去官网下载mysql数据库，我这里下载的是：mysql-5.7.9-1.el6.x86_64.rpm-bundle.tar，<a href="http://yun.baidu.com/share/link?shareid=1740266037&amp;uk=2971593620" target="_blank" rel="external">点击</a>这里可下载。</p>
 <h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><p>检测系统中是否存在mysql，存在就卸载</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">命令：rpm -qa | grep mysql</span><br><span class="line">通过rpm安装mysql</span><br></pre></td></tr></table></figure>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3d24438d-fb81-407c-8b7a-fc2beeabe541.png" alt=""></p>
@@ -339,15 +339,13 @@
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fede8b13f-5c40-448c-a7f9-c118a6f65d29.png" alt=""></p>
 <ul>
-<li>使用yum命令安装一下server</li>
+<li>使用yum命令安装一下server，最下图表示安装完成！</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F3275131b-9925-4135-8a6b-afc2669f9537.png" alt=""></p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160322231708.jpg" alt=""></p>
+<h3 id="初始化mysql"><a href="#初始化mysql" class="headerlink" title="初始化mysql"></a>初始化mysql</h3><p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff5507559-ea43-444b-b00a-653951f98d08.png" alt=""><br>mysql_install_db is deprecated. Please consider switching to mysqld –initialize，mysql_install_db已弃用，使用新命令。</p>
 <ul>
-<li>初始化mysql</li>
-</ul>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff5507559-ea43-444b-b00a-653951f98d08.png" alt=""></p>
-<ul>
-<li>去查看一下日志，这里面记录了mysql的初始密码</li>
+<li><code>mysqld --initialize</code>命令不现实任何信息，表示是个好的结果，去<code>var/log/mysqld.log</code>查看一下日志，这里面记录了mysql的初始密码</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F5776c6c1-3088-4228-9009-c85a555b0415.png" alt=""></p>
 <ul>
@@ -355,12 +353,11 @@
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F7bc033d1-cd37-49fa-8ba4-ec483e813db6.png" alt=""></p>
 <ul>
-<li>修改一下mysql的所属权限</li>
+<li>启动失败，这时候需要去<code>/var/lib</code>修改一下mysql的所属权限</li>
 </ul>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F813b6705-f50f-42d0-a2c9-c65c38d2c79b.png" alt=""></p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F2243b2ad-c8e7-4bdf-9b34-70c32cf2549b.png" alt=""></p>
 <ul>
-<li>启动mysql数据库，然后设置密码，就可以登陆了。</li>
+<li>重新启动mysql数据库，然后设置密码，就可以登陆了。</li>
 </ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F5ce9ebab-82bb-4a6f-aa4b-8a1224e4e6a4.png" alt=""></p>
 
@@ -374,7 +371,7 @@
         <p><span>本文标题:</span><a href="/2016/03/22/Linux-软件安装之Mysql/">Linux--软件安装之Mysql</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月22日 - 14时14分</p>
-        <p><span>最后更新:</span>2016年03月22日 - 19时15分</p>
+        <p><span>最后更新:</span>2016年03月22日 - 23时32分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/22/Linux-软件安装之Mysql/" title="Linux--软件安装之Mysql">http://blog.xiaoxiaomo.com/2016/03/22/Linux-软件安装之Mysql/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/22/Linux-软件安装之Mysql/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -404,7 +401,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测"><span class="toc-number">2.</span> <span class="toc-text">检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载Mysql"><span class="toc-number">3.</span> <span class="toc-text">卸载Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Mysql"><span class="toc-number">4.</span> <span class="toc-text">安装Mysql</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测"><span class="toc-number">2.</span> <span class="toc-text">检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载Mysql"><span class="toc-number">3.</span> <span class="toc-text">卸载Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Mysql"><span class="toc-number">4.</span> <span class="toc-text">安装Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化mysql"><span class="toc-number">5.</span> <span class="toc-text">初始化mysql</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

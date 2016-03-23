@@ -3,36 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>VMware--网络配置 | 小小默&#39;s Blog</title>
+  <title>Linux--软件安装之Redis | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三种网络连接模式
-Host-only连接方式
-
-
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。">
+  <meta name="description" content="Redis是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，事务等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VMware--网络配置">
-<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/15/VMware-网络配置/index.html">
+<meta property="og:title" content="Linux--软件安装之Redis">
+<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/23/Linux-软件安装之Redis/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="三种网络连接模式
-Host-only连接方式
-
-
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png">
-<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png">
-<meta property="og:updated_time" content="2016-03-20T04:45:18.251Z">
+<meta property="og:description" content="Redis是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，事务等。">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F0f8d10bb-a736-49b6-9c3e-1201ca161082.png">
+<meta property="og:updated_time" content="2016-03-23T01:53:36.243Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VMware--网络配置">
-<meta name="twitter:description" content="三种网络连接模式
-Host-only连接方式
-
-
- 相当于新建了一个由所有虚机与宿主主机所构成的局域网，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。">
-<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png">
+<meta name="twitter:title" content="Linux--软件安装之Redis">
+<meta name="twitter:description" content="Redis是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，事务等。">
+<meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F0f8d10bb-a736-49b6-9c3e-1201ca161082.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
   
@@ -264,11 +248,11 @@ Host-only连接方式
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-VMware-网络配置" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux-软件安装之Redis" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/15/VMware-网络配置/" class="article-date">
-      <time datetime="2016-03-15T07:59:17.000Z" itemprop="datePublished">2016-03-15</time>
+      <a href="/2016/03/23/Linux-软件安装之Redis/" class="article-date">
+      <time datetime="2016-03-23T01:16:23.000Z" itemprop="datePublished">2016-03-23</time>
 </a>
     </div>
   
@@ -281,7 +265,7 @@ Host-only连接方式
         
   
     <h1 class="article-title" itemprop="name">
-      VMware--网络配置
+      Linux--软件安装之Redis
     </h1>
   
 
@@ -292,7 +276,7 @@ Host-only连接方式
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VMware/">VMware</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,55 +286,33 @@ Host-only连接方式
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="三种网络连接模式"><a href="#三种网络连接模式" class="headerlink" title="三种网络连接模式"></a><strong>三种网络连接模式</strong></h3><ul>
-<li><strong>Host-only连接方式</strong></li>
-</ul>
-<blockquote>
-<p> <code>相当于新建了一个由所有虚机与宿主主机所构成的局域网</code>，但该局域网与宿主主机本身所处的现有局域网是相互独立的，如果不做额外路由设置，这两个局域网之间不会连通，因此新建的局域网可以认为是一个单独从属于当前宿主主机的私有网络.只能进行虚拟机和主机之间的网络通信。</p>
-</blockquote>
+        <p>　　<code>Redis</code>是一个开源（BSD许可）的，<code>内存中的数据结构存储系统</code>，它<code>可以用作数据库、缓存和消息中间件</code>。 它支持多种类型的数据结构，事务等。</p>
 <a id="more"></a>
-<ul>
-<li><strong>Bridge（桥接）连接方式</strong></li>
+<h3 id="下载-安装"><a href="#下载-安装" class="headerlink" title="下载/安装"></a>下载/安装</h3><ul>
+<li>1、官网下载：</li>
 </ul>
 <blockquote>
-<p><code>让虚机具有与宿主机不同的各自独立IP地址</code>，但与宿主机保持在同一网段，最终结果是所有虚机都加入宿主主机所在的局域网，<code>这与在该局域网中添加入其他宿主主机在效果上没什么区别</code>。</p>
+<p><a href="http://redis.io/download" target="_blank" rel="external">http://redis.io/download</a>  #官方下载<br><em>wget <a href="http://download.redis.io/releases/redis-3.0.6.tar.gz" target="_blank" rel="external">http://download.redis.io/releases/redis-3.0.6.tar.gz</a></em> #命令下载：（比较慢）</p>
 </blockquote>
 <ul>
-<li><strong>NAT连接方式</strong></li>
+<li>2、解压编译源码安装</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-3.0.6.tar.gz -C /usr/<span class="built_in">local</span>/src　　　<span class="comment">#解压缩到指定目录</span></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/redis-3.0.1/　　　<span class="comment">#到解压的目录去编译源码</span></span><br><span class="line">make PREFIX=/usr/<span class="built_in">local</span>/redis install　　　<span class="comment">#安装到指定目录</span></span><br></pre></td></tr></table></figure>
+<p><code>注</code>：如果make失败，一般是你们系统中还未安装gcc,那么可以通过yum安装：<code>yum install gcc</code></p>
+<h3 id="将redis做成服务"><a href="#将redis做成服务" class="headerlink" title="将redis做成服务"></a>将redis做成服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">####将redis_init_script复制到/etc/rc.d/init.d/同时改名为redis</span></span><br><span class="line">cp /usr/<span class="built_in">local</span>/src/redis-3.0.1/utils/redis_init_script /etc/rc.d/init.d/redis</span><br><span class="line">vim /etc/rc.d/init.d/redis</span><br><span class="line"></span><br><span class="line"><span class="comment">####修改3个地方</span></span><br><span class="line">&gt; <span class="comment">#chkconfig: 2345 80 90   ##这个在上面蓝色字体第二行</span></span><br><span class="line">&gt; EXEC=/usr/<span class="built_in">local</span>/redis/bin/redis-server　　<span class="comment">##第七行</span></span><br><span class="line">&gt; CLIEXEC=/usr/<span class="built_in">local</span>/redis/bin/redis-cli　　<span class="comment">##第八行</span></span><br><span class="line">&gt; <span class="variable">$EXEC</span> <span class="variable">$CONF</span> &amp;　　　　<span class="comment">##第二十行</span></span><br></pre></td></tr></table></figure>
+<p><code>注</code>：后面的那个“&amp;”，即是将服务转到后面运行的意思</p>
+<p>修改后，文件如下</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F0f8d10bb-a736-49b6-9c3e-1201ca161082.png" alt=""></p>
+<h3 id="配置redis"><a href="#配置redis" class="headerlink" title="配置redis"></a>配置redis</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###配置文件拷贝到/etc/redis/$&#123;REDISPORT&#125;.conf </span></span><br><span class="line">mkdir /etc/redis   </span><br><span class="line">cp /usr/<span class="built_in">local</span>/src/redis/redis.conf /etc/redis/6379.conf</span><br><span class="line"><span class="comment">###这样，redis服务脚本指定的CONF就存在了。</span></span><br><span class="line"><span class="comment">###默认情况下，Redis未启用认证，可以通过开启6379.conf的requirepass 指定一个验证密码。</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>虽然从表面现象看，虚机无自己的IP地址，而是共享宿主主机的IP地址，使得虚拟局域网内的虚机在对外访问时，<code>完全“冒用”宿主主机的IP地址，这样从外部网络来看，只能看到宿主主机，完全看不到新建的虚拟局域网</code>。</p>
+<p>注册redis服务：</p>
 </blockquote>
-<h3 id="常见连接模式"><a href="#常见连接模式" class="headerlink" title="常见连接模式"></a><strong>常见连接模式</strong></h3><h4 id="Bridge模式"><a href="#Bridge模式" class="headerlink" title="Bridge模式"></a><strong>Bridge模式</strong></h4><ul>
-<li>①、设置虚拟机网络为桥接</li>
-</ul>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fd3788963-06e6-4082-a96b-af631fd28b04.png" alt="桥接"></p>
-<ul>
-<li>②、修改网卡地址</li>
-</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --add redis</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>①、<strong>ONBOOT</strong>          #修改为yes(表示一直生效，不然下次启动，就会无效)<br>②、<strong>BOOTPROTO</strong>      #删除或者修改为static（删除后默认static）<br>③、<strong>设置IPADDR</strong>      #设置为192.168.1.*（注：修改为本机网卡同段落IP地址，不要配置ip冲突）<br>④、<strong>设置NETMASK</strong>     #225.225.225.0<br>⑤、<strong>设置GATEWAY</strong>     #192,168.1.1(本机相同网关)</p>
+<p>然后将Redis的命令所在目录添加到系统参数PATH中</p>
 </blockquote>
-<ul>
-<li>③、重启</li>
-</ul>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F9ea7330f-5a14-4542-b6cb-336ab1b3670f.png" alt="重启"></p>
-<ul>
-<li>④、ping 本机网关、本机ip、baiduIP(域名一般是无法解析的)</li>
-</ul>
-<h4 id="自定义模式"><a href="#自定义模式" class="headerlink" title="自定义模式"></a><strong>自定义模式</strong></h4><ul>
-<li>①、通过虚拟网卡，然后修改虚拟网卡VMnet1</li>
-</ul>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F63e07f20-743a-4138-82d5-b3dd77aaed12.png" alt=""></p>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F55c77f0e-3d67-45f6-8da8-a1c22d731d35.png" alt=""></p>
-<p>只需要添加IP地址和子网掩码。 登录虚拟机，修改网卡ip地址</p>
-<blockquote>
-<p>①、<strong>ONBOOT</strong>     #修改为yes(表示一直生效，不然下次启动，就会无效)<br>②、<strong>BOOTPROTO</strong>  #删除或者修改为static（删除后默认static）<br>③、<strong>设置IPADDR</strong>  #设置为192.168.8.*（注：修改为虚拟网卡同段落IP地址）<br>④、<strong>设置NETMASK</strong> #225.225.225.0</p>
-</blockquote>
-<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Fe0792daa-ed88-4f62-bbef-beddb98e6bc2.png" alt=""></p>
-<blockquote>
-<p>重启网络：<code>service network restart</code>。</p>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile　　　　＃编辑环境变量</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/redis/bin"</span>　＃添加环境变量（记得指定到自己的目录）</span><br><span class="line"><span class="built_in">source</span>  /etc/profile　　　<span class="comment">#重启配置</span></span><br></pre></td></tr></table></figure>
+<p>redis安装就完成了！</p>
 
       
     </div>
@@ -359,13 +321,13 @@ Host-only连接方式
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/23/Linux-软件安装之Redis/">Linux--软件安装之Redis</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
-        <p><span>发布时间:</span>2016年03月15日 - 15时59分</p>
-        <p><span>最后更新:</span>2016年03月20日 - 12时45分</p>
+        <p><span>发布时间:</span>2016年03月23日 - 09时16分</p>
+        <p><span>最后更新:</span>2016年03月23日 - 09时53分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/15/VMware-网络配置/" title="VMware--网络配置">http://blog.xiaoxiaomo.com/2016/03/15/VMware-网络配置/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/15/VMware-网络配置/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/23/Linux-软件安装之Redis/" title="Linux--软件安装之Redis">http://blog.xiaoxiaomo.com/2016/03/23/Linux-软件安装之Redis/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/23/Linux-软件安装之Redis/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -378,16 +340,10 @@ Host-only连接方式
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/">
-                    VMware--克隆虚拟机后网络问题
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/15/hello-world/">
-                    Hello World
+                <a href="/2016/03/22/Linux-软件安装之Mysql/">
+                    Linux--软件安装之Mysql
                 </a>
             </div>
         
@@ -398,7 +354,7 @@ Host-only连接方式
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三种网络连接模式"><span class="toc-number">1.</span> <span class="toc-text">三种网络连接模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见连接模式"><span class="toc-number">2.</span> <span class="toc-text">常见连接模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bridge模式"><span class="toc-number">2.1.</span> <span class="toc-text">Bridge模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义模式"><span class="toc-number">2.2.</span> <span class="toc-text">自定义模式</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载-安装"><span class="toc-number">1.</span> <span class="toc-text">下载/安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将redis做成服务"><span class="toc-number">2.</span> <span class="toc-text">将redis做成服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置redis"><span class="toc-number">3.</span> <span class="toc-text">配置redis</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -460,7 +416,7 @@ Host-only连接方式
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/15/VMware-网络配置/" data-title="VMware--网络配置" data-url="http://blog.xiaoxiaomo.com/2016/03/15/VMware-网络配置/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/23/Linux-软件安装之Redis/" data-title="Linux--软件安装之Redis" data-url="http://blog.xiaoxiaomo.com/2016/03/23/Linux-软件安装之Redis/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -484,15 +440,13 @@ Host-only连接方式
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/15/VMware-克隆虚拟机后网络问题/" title="上一篇: VMware--克隆虚拟机后网络问题">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/15/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/03/22/Linux-软件安装之Mysql/" title="下一篇: Linux--软件安装之Mysql">
                 <i class="fa fa-angle-right"></i>
             </a>
         

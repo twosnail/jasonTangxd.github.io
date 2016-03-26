@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Scala--映射和元祖 | 小小默&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="映射,就是键值对偶的集合，元祖就是n个对象的聚集，所以对偶就是n=2的元祖。简单来说就相当于java中的Map。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scala--映射和元祖">
+<meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/26/Scala-映射和元祖/index.html">
+<meta property="og:site_name" content="小小默's Blog">
+<meta property="og:description" content="映射,就是键值对偶的集合，元祖就是n个对象的聚集，所以对偶就是n=2的元祖。简单来说就相当于java中的Map。">
+<meta property="og:updated_time" content="2016-03-26T10:00:55.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scala--映射和元祖">
+<meta name="twitter:description" content="映射,就是键值对偶的集合，元祖就是n个对象的聚集，所以对偶就是n=2的元祖。简单来说就相当于java中的Map。">
+  
+    <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+      <link href="//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?c39286257e6dc9497b062fa87c997849";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Favatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">小小默</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">路途遥远 | 勿忘初心</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/tangxuandong/profile/" title="新浪微博"></a></li>
+                            
+                                <li id="github"><a class="github" target="_blank" href="https://github.com/jasonTangxd/jasonTangxd.github.io/" title="github"></a></li>
+                            
+                                <li id="知乎"><a class="知乎" target="_blank" href="https://www.zhihu.com/" title="知乎"></a></li>
+                            
+                                <li id="豆瓣"><a class="豆瓣" target="_blank" href="https://www.douban.com/people/66126412/" title="豆瓣"></a></li>
+                            
+                                <li id="网易云音乐"><a class="网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=47563431" title="网易云音乐"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Scala/" style="font-size: 16.67px;">Scala</a> <a href="/tags/VMware/" style="font-size: 13.33px;">VMware</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.crxy.cn/">超人学院</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://my.oschina.net/twosnail">开源中国</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">跑步，登山，向上，旅游，自由开发者</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">小小默</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Favatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">小小默</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">路途遥远 | 勿忘初心</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/tangxuandong/profile/" title="新浪微博"></a></li>
+                            
+                                <li id="github"><a class="github" target="_blank" href="https://github.com/jasonTangxd/jasonTangxd.github.io/" title="github"></a></li>
+                            
+                                <li id="知乎"><a class="知乎" target="_blank" href="https://www.zhihu.com/" title="知乎"></a></li>
+                            
+                                <li id="豆瓣"><a class="豆瓣" target="_blank" href="https://www.douban.com/people/66126412/" title="豆瓣"></a></li>
+                            
+                                <li id="网易云音乐"><a class="网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=47563431" title="网易云音乐"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Scala-映射和元祖" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/26/Scala-映射和元祖/" class="article-date">
+      <time datetime="2016-03-26T07:33:53.000Z" itemprop="datePublished">2016-03-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Scala--映射和元祖
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Scala/">Scala</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　　<code>映射</code>,就是键值对偶的集合，元祖就是n个对象的聚集，所以对偶就是n=2的元祖。简单来说就相当于java中的Map。</p>
+<a id="more"></a>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="keyword">val</span> map = <span class="type">Map</span>(<span class="string">"a"</span> -&gt; <span class="number">1</span> , <span class="string">"b"</span> -&gt; <span class="number">2</span> ,<span class="string">"c"</span> -&gt; <span class="number">3</span>) <span class="comment">//第一种定义方式</span></span><br><span class="line">map: scala.collection.immutable.<span class="type">Map</span>[<span class="type">String</span>,<span class="type">Int</span>] = <span class="type">Map</span>(a -&gt; <span class="number">1</span>, b -&gt; <span class="number">2</span>, c -&gt; <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">scala&gt; map(<span class="string">"d"</span>) = <span class="number">4</span>   <span class="comment">//赋值</span></span><br><span class="line">&lt;console&gt;:<span class="number">12</span>: error: value update is not a member of scala.collection.immutable.<span class="type">Map</span>[<span class="type">String</span>,<span class="type">Int</span>]</span><br><span class="line">       map(<span class="string">"d"</span>) = <span class="number">4</span></span><br><span class="line">       ^</span><br><span class="line">scala&gt; <span class="keyword">val</span> map2 = <span class="type">Map</span>((<span class="string">"a"</span>,<span class="number">1</span>),(<span class="string">"b"</span>,<span class="number">2</span>),(<span class="string">"c"</span>,<span class="number">3</span>))  <span class="comment">//第二种定义方式</span></span><br><span class="line">map2: scala.collection.immutable.<span class="type">Map</span>[<span class="type">String</span>,<span class="type">Int</span>] = <span class="type">Map</span>(a -&gt; <span class="number">1</span>, b -&gt; <span class="number">2</span>, c -&gt; <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>定义对偶：使用 “<code>-&gt;</code>“ 。</li>
+<li>直接使用Map是使用<code>immutable</code>下面的Map,此时这个map是<code>一个不可变的</code>。</li>
+<li>如果要定义一个<code>可变的Map</code>需要<code>scala.collection.mutable.Map</code>。</li>
+</ol>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="keyword">val</span> canchage = scala.collection.mutable.<span class="type">Map</span>(<span class="string">"a"</span> -&gt; <span class="number">1</span> , <span class="string">"b"</span> -&gt; <span class="number">2</span> ,<span class="string">"c"</span> -&gt; <span class="number">3</span>)</span><br><span class="line">canchage: scala.collection.mutable.<span class="type">Map</span>[<span class="type">String</span>,<span class="type">Int</span>] = <span class="type">Map</span>(b -&gt; <span class="number">2</span>, a -&gt; <span class="number">1</span>, c -&gt; <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">scala&gt; canchage(<span class="string">"d"</span>) = <span class="number">4</span>  <span class="comment">//能正常的修改值</span></span><br><span class="line"></span><br><span class="line">scala&gt; canchage(<span class="string">"d"</span>)   <span class="comment">//获取值</span></span><br><span class="line">res10: <span class="type">Int</span> = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<h2 id="获取值"><a href="#获取值" class="headerlink" title="获取值"></a>获取值</h2><h3 id="获取单个值"><a href="#获取单个值" class="headerlink" title="获取单个值"></a>获取单个值</h3><p>从上面的事例可以看出，获取值可以直接使用：<code>变量名(&quot;key&quot;)</code>。但如果没有改key怎么办？<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; map(<span class="string">"d"</span>)</span><br><span class="line">java.util.<span class="type">NoSuchElementException</span>: key not found: d</span><br><span class="line">  at scala.collection.<span class="type">MapLike</span>$<span class="class"><span class="keyword">class</span>.<span class="title">default</span>(<span class="params"><span class="type">MapLike</span>.scala:228</span>)</span></span><br><span class="line">  at scala.collection.<span class="type">AbstractMap</span>.<span class="keyword">default</span>(<span class="type">Map</span>.scala:<span class="number">59</span>)</span><br><span class="line">  at scala.collection.<span class="type">MapLike</span>$<span class="class"><span class="keyword">class</span>.<span class="title">apply</span>(<span class="params"><span class="type">MapLike</span>.scala:141</span>)</span></span><br><span class="line">  at scala.collection.<span class="type">AbstractMap</span>.apply(<span class="type">Map</span>.scala:<span class="number">59</span>)</span><br><span class="line">  ... <span class="number">33</span> elided</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>当不存在key时，直接会抛出异常，可以使用<code>contains</code>进行判断;</li>
+<li>或者直接使用，<code>getOrElse(&quot;key&quot;,如不存在的值)</code>;</li>
+</ol>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; map.contains(<span class="string">"d"</span>)</span><br><span class="line">res14: <span class="type">Boolean</span> = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">scala&gt; map.getOrElse(<span class="string">"d"</span>,<span class="number">66</span>)</span><br><span class="line">res15: <span class="type">Int</span> = <span class="number">66</span></span><br></pre></td></tr></table></figure>
+<h3 id="迭代映射"><a href="#迭代映射" class="headerlink" title="迭代映射"></a>迭代映射</h3><p>有for基础后，再来看迭代就很简单了，直接看事例吧：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="keyword">for</span>((k,v) &lt;- map) print(k+<span class="string">"-&gt;"</span>+v + <span class="string">", "</span>)	<span class="comment">//迭代键、值</span></span><br><span class="line">a-&gt;<span class="number">1</span>, b-&gt;<span class="number">2</span>, c-&gt;<span class="number">3</span>,</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="keyword">for</span>(k &lt;- map.keySet) print(k+ <span class="string">", "</span>)	<span class="comment">//迭代键</span></span><br><span class="line">a, b, c,</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="keyword">for</span>(v &lt;- map.values) print(v+ <span class="string">", "</span>)	<span class="comment">//迭代值</span></span><br><span class="line"><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</span><br></pre></td></tr></table></figure>
+<ol>
+<li>基本语法就是：<code>for((k ,v) &lt;- 映射 ) 处理k/v</code></li>
+<li>如果只想获取值就迭代<code>values</code>,只想获取键迭代<code>keySet</code></li>
+</ol>
+<h2 id="更新值"><a href="#更新值" class="headerlink" title="更新值"></a>更新值</h2><p>下面更新操作都是在可变的映射下完成，现在canchage中有key-&gt;a、b、c、d<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; canchage(<span class="string">"d"</span>) = <span class="number">7</span>  <span class="comment">//直接修改</span></span><br><span class="line">scala&gt; canchage(<span class="string">"e"</span>) = <span class="number">5</span>  <span class="comment">//不存在该值即添加该元祖</span></span><br><span class="line">scala&gt; canchage			<span class="comment">//查看一下map中的数据</span></span><br><span class="line">res23: scala.collection.mutable.<span class="type">Map</span>[<span class="type">String</span>,<span class="type">Int</span>]=<span class="type">Map</span>(e-&gt;<span class="number">5</span>,b-&gt;<span class="number">2</span>,d-&gt;<span class="number">7</span>,a-&gt;<span class="number">1</span>,c-&gt;<span class="number">3</span>)</span><br><span class="line">scala&gt; canchage += (<span class="string">"e"</span>-&gt; <span class="number">1</span> ,<span class="string">"f"</span>-&gt;<span class="number">6</span>) <span class="comment">//这样同样可以修改和增加</span></span><br><span class="line">res24: canchage.<span class="keyword">type</span> = <span class="type">Map</span>(e -&gt; <span class="number">1</span>, b -&gt; <span class="number">2</span>, d -&gt; <span class="number">7</span>, a -&gt; <span class="number">1</span>, c -&gt; <span class="number">3</span>, f -&gt; <span class="number">6</span>)</span><br><span class="line"></span><br><span class="line">scala&gt; canchage -= (<span class="string">"e"</span>,<span class="string">"a"</span>)		<span class="comment">//删除多个</span></span><br><span class="line">res25: canchage.<span class="keyword">type</span> = <span class="type">Map</span>(b -&gt; <span class="number">2</span>, d -&gt; <span class="number">7</span>, c -&gt; <span class="number">3</span>, f -&gt; <span class="number">6</span>)</span><br><span class="line">scala&gt; canchage -= <span class="string">"b"</span>	<span class="comment">//删除单个</span></span><br><span class="line">res26: canchage.<span class="keyword">type</span> = <span class="type">Map</span>(d -&gt; <span class="number">7</span>, c -&gt; <span class="number">3</span>, f -&gt; <span class="number">6</span>)</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>从上面的事例可以看出map的顺序在不断地改变，如果要创建一个不可变的Map使用：<code>scala.collection.mutable.LinkedHashMap</code></p>
+</li>
+<li><p>对于不可变的映射，可以重新再定义一个变量，后面添加需要修改和添加的值。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">scala&gt; map</span><br><span class="line">res43: scala.collection.immutable.Map[String,Int] = Map(a -&gt; 1, b -&gt; 2, c -&gt; 3)</span><br><span class="line"></span><br><span class="line">scala&gt; val mapch = map + (&quot;a&quot;-&gt;10 , &quot;d&quot;-&gt;14)		//mapch同样不可改变</span><br><span class="line">mapch: scala.collection.immutable.Map[String,Int] = Map(a -&gt; 10, b -&gt; 2, c -&gt; 3, d -&gt; 14)</span><br></pre></td></tr></table></figure>
+<h2 id="与java互转"><a href="#与java互转" class="headerlink" title="与java互转"></a>与java互转</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by xiaoxiaomo on 2016/3/26.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaMap</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String,Integer&gt; <span class="title">getMap</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Map&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String,Integer&gt;() ;</span><br><span class="line">        map.put(<span class="string">"a"</span>,<span class="number">1</span>);</span><br><span class="line">        map.put(<span class="string">"b"</span>, <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> map ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMap</span><span class="params">(Map&lt;String,String&gt; map)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span> ( Map.Entry&lt;String,String&gt; entry: map.entrySet() )</span><br><span class="line">            System.out.print(entry.getKey() + <span class="string">"-&gt;"</span> +entry.getValue()+<span class="string">","</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>scala转换代码<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.<span class="type">HashMap</span>;</span><br><span class="line"><span class="keyword">import</span> java.util.<span class="type">Map</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by xiaoxiaomo on 2016/3/26.</span><br><span class="line"> */</span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">JavaMap</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    public <span class="type">Map</span>&lt;<span class="type">String</span>,<span class="type">Integer</span>&gt; getMap()&#123;</span><br><span class="line">        <span class="type">Map</span>&lt;<span class="type">String</span>,<span class="type">Integer</span>&gt; map = <span class="keyword">new</span> <span class="type">HashMap</span>&lt;<span class="type">String</span>,<span class="type">Integer</span>&gt;() ;</span><br><span class="line">        map.put(<span class="string">"a"</span>,<span class="number">1</span>);</span><br><span class="line">        map.put(<span class="string">"b"</span>, <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> map ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setMap(<span class="type">Map</span>&lt;<span class="type">String</span>,<span class="type">String</span>&gt; map)&#123;</span><br><span class="line">        <span class="keyword">for</span> ( <span class="type">Map</span>.<span class="type">Entry</span>&lt;<span class="type">String</span>,<span class="type">String</span>&gt; entry: map.entrySet() )</span><br><span class="line">            <span class="type">System</span>.out.print(entry.getKey() + <span class="string">"-&gt;"</span> +entry.getValue()+<span class="string">","</span>);</span><br><span class="line">		<span class="type">System</span>.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scala转java</span><br><span class="line">a-&gt;1,b-&gt;2,c-&gt;3a,</span><br><span class="line">java转scala</span><br><span class="line">b-&gt;2,a-&gt;1,</span><br></pre></td></tr></table></figure></p>
+<h2 id="元祖"><a href="#元祖" class="headerlink" title="元祖"></a>元祖</h2><p><code>元祖</code>，就是不同类型值的聚集。<code>元祖的值是通过将单个的值包含在圆括号中构成的</code>。下面来看看元祖的一些使用（赋值、获取值）。</p>
+<pre><code class="scala">
+scala&gt; (<span class="string">"blog"</span>,<span class="string">"."</span>,<span class="string">"xiaoxiaomo"</span>,<span class="number">19</span>)
+res31: (<span class="type">String</span>, <span class="type">String</span>, <span class="type">String</span>, <span class="type">Int</span>) = (blog,.,xiaoxiaomo,<span class="number">19</span>)
+
+scala&gt; res31._1   <span class="comment">//可以看出元祖的下标是从1开始，获取值使用“._”</span>
+res32: <span class="type">String</span> = blog
+
+scala&gt; res31 _3    <span class="comment">//第二种获取元祖方法“ _”，注意中间有一个空格</span>
+warning: there was one feature warning; re-run <span class="keyword">with</span> -feature <span class="keyword">for</span> details
+res33: <span class="type">String</span> = xiaoxiaomo
+</code></pre>
+<p>还有另一种获取元祖的方式，叫做<code>模式匹配</code>。这种方式可使一个方法变相的返回<code>多个返回值</code>，事例如下：</p>
+<pre><code class="scala">
+scala&gt; <span class="keyword">val</span> (a,b,c,_) = res31 <span class="comment">//不想匹配的值使用“_”</span>
+a: <span class="type">String</span> = blog
+b: <span class="type">String</span> = .
+c: <span class="type">String</span> = xiaoxiaomo  
+
+scala&gt; a
+res34: <span class="type">String</span> = blog
+
+scala&gt; c
+res35: <span class="type">String</span> = xiaoxiaomo
+</code></pre>
+<h2 id="拉链操作"><a href="#拉链操作" class="headerlink" title="拉链操作"></a>拉链操作</h2><p><code>元祖</code>可以把很多值关联起来，以便统一处理。<code>对于这种链式处理，我们还可以使用zip</code>,还<strong>可以让两个数组组合成一个对偶数组</strong>，然后对偶数组可以<code>toMap</code>转为映射。eg：</p>
+<pre><code class="scala">scala&gt; <span class="keyword">var</span> k = <span class="type">Array</span>(<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>)    <span class="comment">//数组1</span>
+k: <span class="type">Array</span>[<span class="type">String</span>] = <span class="type">Array</span>(a, b, c)
+
+scala&gt; <span class="keyword">var</span> v1 = <span class="type">Array</span>(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>)    <span class="comment">//数组2</span>
+v1: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)
+
+scala&gt; k.zip(v1)        <span class="comment">//两个数组组合成一个对偶数组</span>
+res37: <span class="type">Array</span>[(<span class="type">String</span>, <span class="type">Int</span>)] = <span class="type">Array</span>((a,<span class="number">7</span>), (b,<span class="number">8</span>), (c,<span class="number">9</span>))
+
+scala&gt; res37.toMap        <span class="comment">//对偶数组转为映射</span>
+res38: scala.collection.immutable.<span class="type">Map</span>[<span class="type">String</span>,<span class="type">Int</span>] = <span class="type">Map</span>(a -&gt; <span class="number">7</span>, b -&gt; <span class="number">8</span>, c -&gt; <span class="number">9</span>)
+</code></pre>
+<ul>
+<li>注 ：<br>如果两个数组的长度不一致，会以长度短的为准，长的数据会丢失。</li>
+</ul>
+<pre><code class="scala">scala&gt; <span class="keyword">var</span> v = <span class="type">Array</span>(<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>)
+v: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)
+
+scala&gt; k.zip(v)
+res39: <span class="type">Array</span>[(<span class="type">String</span>, <span class="type">Int</span>)] = <span class="type">Array</span>((a,<span class="number">7</span>), (b,<span class="number">8</span>), (c,<span class="number">9</span>))
+
+scala&gt; v.zip(k)
+res41: <span class="type">Array</span>[(<span class="type">Int</span>, <span class="type">String</span>)] = <span class="type">Array</span>((<span class="number">7</span>,a), (<span class="number">8</span>,b), (<span class="number">9</span>,c))
+</code></pre>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/03/26/Scala-映射和元祖/">Scala--映射和元祖</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
+        <p><span>发布时间:</span>2016年03月26日 - 15时33分</p>
+        <p><span>最后更新:</span>2016年03月26日 - 18时00分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/26/Scala-映射和元祖/" title="Scala--映射和元祖">http://blog.xiaoxiaomo.com/2016/03/26/Scala-映射和元祖/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/26/Scala-映射和元祖/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/26/Scala-数组/">
+                    Scala--数组
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取值"><span class="toc-number">2.</span> <span class="toc-text">获取值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取单个值"><span class="toc-number">2.1.</span> <span class="toc-text">获取单个值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代映射"><span class="toc-number">2.2.</span> <span class="toc-text">迭代映射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新值"><span class="toc-number">3.</span> <span class="toc-text">更新值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与java互转"><span class="toc-number">4.</span> <span class="toc-text">与java互转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元祖"><span class="toc-number">5.</span> <span class="toc-text">元祖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拉链操作"><span class="toc-number">6.</span> <span class="toc-text">拉链操作</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/26/Scala-映射和元祖/" data-title="Scala--映射和元祖" data-url="http://blog.xiaoxiaomo.com/2016/03/26/Scala-映射和元祖/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaoxiaomo"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/03/26/Scala-数组/" title="下一篇: Scala--数组">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/Scala-映射和元祖/">Scala--映射和元祖</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/Scala-数组/">Scala--数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/25/Scala-控制结构和函数/">Scala--控制结构和函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/25/Scala-基础入门/">Scala--基础入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/24/Linux-基本配置修改/">Linux--基本配置修改</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/Linux-软件安装之Redis/">Linux--软件安装之Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/Linux-软件安装之Mysql/">Linux--软件安装之Mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/Linux-软件安装之JDK/">Linux--软件安装之JDK</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/Linux-Yum源码安装配置/">Linux--Yum源码安装配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/Linux-RPM软件包管理/">Linux--RPM软件包管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/19/Linux-磁盘管理/">Linux--磁盘管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-用户和组管理/">Linux--用户和组管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-系统进程管理/">Linux--系统进程管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/Linux-常用VI-VIM命令/">Linux--常用VI/VIM命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-压缩及归档/">Linux--压缩及归档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/Linux-grep和正则表达式/">Linux--grep和正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-文本管理类命令/">Linux--文本管理类命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Linux-跟文件系统/">Linux--跟文件系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-克隆虚拟机后网络问题/">VMware--克隆虚拟机后网络问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/VMware-网络配置/">VMware--网络配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 小小默
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+    <script src="//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

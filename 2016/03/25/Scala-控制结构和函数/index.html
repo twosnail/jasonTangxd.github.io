@@ -21,7 +21,9 @@
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325202002.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326010934.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326010958.png">
-<meta property="og:updated_time" content="2016-03-25T17:11:17.985Z">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326093418.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326093708.png">
+<meta property="og:updated_time" content="2016-03-26T01:42:28.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scala--控制结构和函数">
 <meta name="twitter:description" content="本篇博客，将介绍scala的条件表达式，循环以及函数。主要是对这些表达式和语句结构的熟悉，需要多练习。在scala中表达式（3+4）和语句（if语句）是不同的概念，表达式有值，语句执行动作。记住，scala几乎所有构造出来的语法结构都有值。">
@@ -303,30 +305,55 @@
 <h2 id="块语句"><a href="#块语句" class="headerlink" title="块语句"></a>块语句</h2><p>在scala中“<code>{}</code>”包含的一系列表达式，叫做块语句，<code>块中最后一个表达式的值就是块的值</code>。<br><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325233121.png" alt=""></p>
 <h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p><code>while循环</code>，和java的while和do循环相同，这里就不过多讲解了，实例如下图所示。</p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325234700.png" alt=""></p>
+<p><strong>在”Repl”中写多行代码的时候</strong>，每写一行敲一下“回车键”然后它会自动去识别程序是否结束，直到你真正的写完代码，有时候不是很方便；<br>还有一种粘贴的方法，输入<code>:paste</code>然后就可以随意的写代码了，写完后<code>Ctrl+D</code>退出并运行代码，如上图所示。</p>
 <h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h3 id="for基础"><a href="#for基础" class="headerlink" title="for基础"></a>for基础</h3><p>语句结构：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( i &lt;- 表达式 )  <span class="comment">#让变量i遍历&lt;-右边的表达式的所有值，i具体执行取决于表达式</span></span><br><span class="line">　　循环体</span><br></pre></td></tr></table></figure>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325235656.png" alt=""></p>
 <p>在<code>for循环的变量之前没有val或var的指定，该变量的类型是集合的元素类型</code>。循环变量的作用域一直持续到循环结束。<br><code>until</code>：返回一个并不包含上线的区间。<br>scala中没有<strong>break</strong>和<strong>continue</strong>来退出循环，我们可以这样<strong>操作</strong>：</p>
 <blockquote>
-<p>使用Boolean的变量控制。<br>使用嵌套函数，可以从函数当中return。<br>使用Breaks对象的break方法。<br>breakable{<br> for(…){<br>  if（…） break ;//#退出breakable块<br> } }</p>
+<ol>
+<li>使用Boolean的变量控制。</li>
+<li>使用嵌套函数，可以从函数当中return。</li>
+<li>使用Breaks对象的break方法。</li>
+</ol>
 </blockquote>
-<h3 id="for进阶"><a href="#for进阶" class="headerlink" title="for进阶"></a>for进阶</h3><p>在for循环“（）”中可以使用多个生成器，用“；”隔开。可以使用变量，并且每一个生成器都可以带一个守卫（if开头的Boolean表达式），例如：</p>
+<ul>
+<li>eg：</li>
+</ul>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">breakable&#123;</span><br><span class="line"> <span class="keyword">for</span>(...)&#123;</span><br><span class="line">  <span class="keyword">if</span>（...） <span class="keyword">break</span> ;<span class="comment">//#退出breakable块</span></span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="for进阶"><a href="#for进阶" class="headerlink" title="for进阶"></a>for进阶</h3><ol>
+<li>在for循环“（）”中可以使用<strong>多个生成器</strong>， 用“；”隔开；</li>
+<li>并且每一个生成器都可以带一个<strong><code>守卫</code></strong>（<code>if开头的Boolean表达式</code>）；</li>
+<li><strong>可以使用变量</strong>，如下图所示：</li>
+</ol>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326003214.png" alt=""></p>
-<p>如果for循环的循环体以yield开始，该循环就会构造出一个集合，每次迭代就生成一个集合的值。</p>
+<ul>
+<li>如果for循环的循环体以yield开始，该循环就会构造出一个集合，每次迭代就生成一个集合的值。</li>
+</ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326003916.png" alt=""></p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>语法如图：</p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325202143.png" alt="">(图来源于：Scala编程)</p>
-<p>函数必须指定<code>参数的类型</code>。<br>函数只要不是递归的就不需要指定<code>返回值类型</code>（因为无法推断出递归函数的类型）。<br>在函数中，不需要使用return。</p>
+<ol>
+<li>函数必须指定<code>参数的类型</code>。</li>
+<li>函数只要不是递归的就不需要指定<code>返回值类型</code>（因为无法推断出递归函数的类型）。</li>
+<li>在函数中，不需要使用return。</li>
+</ol>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325202002.png" alt=""></p>
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>在函数中，我们可以使用默认参数。函数调用时：</p>
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>在函数中，我们可以使用<code>默认参数</code>。函数调用时：</p>
 <blockquote>
 <p>1、如果没用给出所有参数，函数会使用默认参数（后面不够的参数使用默认值）。<br>2、也可以指定参数名，参数名不需要按顺序排列。<br>3、如果混合使用（未名参数和带名参数），只要未名参数排在前面即可。</p>
 </blockquote>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326010934.png" alt=""></p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326010958.png" alt=""></p>
 <blockquote>
-<p>4、</p>
+<p>4、<strong>变长参数</strong>，可以接受多个参数</p>
 </blockquote>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span></span>(args:<span class="type">Int</span>*) = &#123;</span><br><span class="line"> <span class="keyword">var</span> result = <span class="number">0</span> ;</span><br><span class="line"> <span class="keyword">for</span>(arg &lt;- args) result+=arg</span><br><span class="line">  result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用函数，sum(3,4,6,23,3),函数得到的是一个Seq类型的参数，注意调用函数是传入的参数不能是一个区间，eg：<br>sum(2 to 9)是不可以的，应该为sum(2 to 9:_*);</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>在scala中，如果函数没有返回值，那么该返回值类型我们可以用<code>Unit</code>来表示，这种<code>没有返回值的函数我们称之为过程</code>。</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326093418.png" alt=""></p>
+<p>上面<strong>省略了Unit</strong>,由于没有返回值也可以<strong>省略“=”号</strong>，下面语句相同：</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326093708.png" alt=""></p>
 
       
     </div>
@@ -338,7 +365,7 @@
         <p><span>本文标题:</span><a href="/2016/03/25/Scala-控制结构和函数/">Scala--控制结构和函数</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月25日 - 22时04分</p>
-        <p><span>最后更新:</span>2016年03月26日 - 01时11分</p>
+        <p><span>最后更新:</span>2016年03月26日 - 09时42分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/25/Scala-控制结构和函数/" title="Scala--控制结构和函数">http://blog.xiaoxiaomo.com/2016/03/25/Scala-控制结构和函数/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/25/Scala-控制结构和函数/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -368,7 +395,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#条件表达式"><span class="toc-number">1.</span> <span class="toc-text">条件表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#块语句"><span class="toc-number">2.</span> <span class="toc-text">块语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while循环"><span class="toc-number">3.</span> <span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环"><span class="toc-number">4.</span> <span class="toc-text">for循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for基础"><span class="toc-number">4.1.</span> <span class="toc-text">for基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for进阶"><span class="toc-number">4.2.</span> <span class="toc-text">for进阶</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-number">5.1.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数"><span class="toc-number">5.2.</span> <span class="toc-text">函数参数</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#条件表达式"><span class="toc-number">1.</span> <span class="toc-text">条件表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#块语句"><span class="toc-number">2.</span> <span class="toc-text">块语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while循环"><span class="toc-number">3.</span> <span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环"><span class="toc-number">4.</span> <span class="toc-text">for循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for基础"><span class="toc-number">4.1.</span> <span class="toc-text">for基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for进阶"><span class="toc-number">4.2.</span> <span class="toc-text">for进阶</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">5.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-number">5.1.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数"><span class="toc-number">5.2.</span> <span class="toc-text">函数参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过程"><span class="toc-number">6.</span> <span class="toc-text">过程</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

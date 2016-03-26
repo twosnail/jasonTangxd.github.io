@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325214355.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325215114.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325214646.png">
-<meta property="og:updated_time" content="2016-03-26T00:55:16.522Z">
+<meta property="og:updated_time" content="2016-03-26T01:46:13.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scala--基础入门">
 <meta name="twitter:description" content="最近在看Scala，可能刚学不久的原因不是很习惯它的语法，总感觉怪怪的。自己也感觉一直飘着似的，所以想用写博客的形式来加深一下记忆，和大家一起学习。">
@@ -309,9 +309,10 @@
 <p>res0(res1,res2…)　　#为返回值名称<br>Int(Double,String….)　　#为返回值类型</p>
 </blockquote>
 <h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325194130.png" alt=""></p>
-<p>scala有两种声明变量的方式，<code>var</code>和<code>val</code>。<code>val类是于Java中的final变量</code>，一旦初始化就不能修改,例如上图中msg4;而var声明的变量就可以多次被赋值,scala建议声明为val。<br>在声明变量时也可以不指定类型，scala自己会进行<code>类型推断</code>，判断出“Word”为String类型（java.lang.String）。</p>
+<p><strong>scala有两种声明变量的方式</strong>，<code>var</code>和<code>val</code>。<code>val类是于Java中的final变量</code>，一旦初始化就不能修改,例如上图中msg4;而var声明的变量就可以多次被赋值,scala建议声明为val。<br>在声明变量时也可以不指定类型，scala自己会进行<code>类型推断</code>，判断出“Word”为String类型（java.lang.String）。</p>
+<p><strong><code>懒值</code></strong> ，当val被声明为lazy时。它的初始化将被推迟，直到我们首次使用它，eg：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lazy</span> <span class="keyword">val</span> words = scala.io.<span class="type">Source</span>.fromFile(<span class="string">"/use/word"</span>).mkString</span><br></pre></td></tr></table></figure></p>
 <h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><ol>
-<li>scala中有7种数值类型：<code>Byte</code>、<code>Char</code>、<code>Short</code>、<code>Int</code>、<code>Long</code>、<code>Float</code>、<code>Double</code>和<code>Boolean</code>，这类用法和java的基本类型类似。只是<code>scala这些类型是类</code>，它不区分引用类型和基本类型;</li>
+<li><strong>scala中有7种数值类型</strong>：<code>Byte</code>、<code>Char</code>、<code>Short</code>、<code>Int</code>、<code>Long</code>、<code>Float</code>、<code>Double</code>和<code>Boolean</code>，这类用法和java的基本类型类似。只是<code>scala这些类型是类</code>，它不区分引用类型和基本类型;</li>
 <li>对于字符串它使用的<code>java.lang.String</code>，但scala也有自己的扩展<code>StringOps</code>类；其他类型的一些扩展比如，RichInt、RichDouble、RichChar，还有java.math.BigIng、java.math.BigDecimal等;</li>
 <li>基本类型和包装类新之间的转换，这个scala编译器会自动完成，eg：创建一个Int[]数组，最后在虚拟机中得到的是int[];</li>
 <li>在scala中，数值类型之间的转换不是强制类型转换而是使用<code>方法</code>，eg：<code>toInt</code>、<code>toDouble</code>、<code>toChar等</code>。</li>
@@ -321,7 +322,6 @@
 <p>然后运行：</p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160325210612.png" alt=""></p>
 <p>args(n) , 就可以接受到后面的参数（这个和java很像，java中main方法args[]同样能接收到）（注意：数组java是”[]”而scala中是”()”）。</p>
-<p>在”Repl”中写多行代码的时候，每写一行敲一下“回车键”然后它会自动去识别程序是否结束，直到你真正的写完代码，如下图；<br>还有一种粘贴的方法，输入<code>:paste</code>然后就可以随意的写代码了，写完后<code>Ctrl+D</code>退出并运行代码。</p>
 <h2 id="扩展-Intellij使用"><a href="#扩展-Intellij使用" class="headerlink" title="扩展-Intellij使用"></a>扩展-Intellij使用</h2><p>这里顺便讲一下使用<code>Intellij IDEA</code>开发scala：</p>
 <blockquote>
 <p><a href="http://www.jetbrains.com/idea/" target="_blank" rel="external">下载</a>安装Intellij IDEA<br>安装Intellij的scala插件</p>
@@ -338,7 +338,7 @@
         <p><span>本文标题:</span><a href="/2016/03/25/Scala-基础入门/">Scala--基础入门</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月25日 - 18时34分</p>
-        <p><span>最后更新:</span>2016年03月26日 - 08时55分</p>
+        <p><span>最后更新:</span>2016年03月26日 - 09时46分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/25/Scala-基础入门/" title="Scala--基础入门">http://blog.xiaoxiaomo.com/2016/03/25/Scala-基础入门/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/25/Scala-基础入门/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

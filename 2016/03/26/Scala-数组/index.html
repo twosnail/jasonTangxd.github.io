@@ -17,7 +17,8 @@
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326112222.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326113707.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326115846.png">
-<meta property="og:updated_time" content="2016-03-26T04:06:07.560Z">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326131111.png">
+<meta property="og:updated_time" content="2016-03-26T07:07:02.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scala--数组">
 <meta name="twitter:description" content="数组，存储相同类型元素的连续集合。在JVM中，scala以java数组的方式实现，Array[Int],Array[String]等分别对应着java的基本类型数组int[]、String[]。">
@@ -302,20 +303,20 @@
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326104027.png" alt=""></p>
 <p>从上面的例子中可以看到：</p>
 <ol>
-<li>当我们定义数组时，如果没有初始化值它会根据数据的长度自动初始化；</li>
-<li>数组可以自己进行类型推断，当类型不一致时，会为Any类型；</li>
-<li>提供了初始值就不需要new;</li>
-<li>定常数组必须指定数组长度；</li>
+<li>当我们定义数组时，如果没有初始化值它会根据数据的长度<code>自动初始化</code>，设置默认参数；</li>
+<li>数组可以自己进行类型推断，当类型不一致时，会为<code>Any类型</code>；</li>
+<li><code>提供了初始值就不需要new</code>;</li>
+<li><code>定长数组必须指定数组长度</code>；</li>
 </ol>
-<p>还需要注意的是，如果数组声明为val那么该数组的值是可以改变的；只是该变量不能重新被赋值，即变量指定的数组对象地址不能改变，数组对象的值可以变。</p>
+<p>还需要注意的是，如果数组声明为val那么该数组的值是可以改变的；只是该变量不能重新被赋值，即<strong>变量指定的数组对象地址不能改变，数组对象的值可以变</strong>。</p>
 <ul>
 <li>变长数组</li>
 </ul>
-<p>变长数组，使用<code>ArrayBuffer</code>也叫数组缓冲。就是定义一个可以改变的数组，在定义时可以不指定数组长度。</p>
+<p>变长数组，使用<code>ArrayBuffer</code>也叫<code>数组缓冲</code>。就是定义一个可以改变的数组，在定义时<strong>可以不指定数组长度</strong>。</p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326111826.png" alt=""></p>
 <p>上图中，虽然是val定义的变量，但是我们还是可以修改值。</p>
 <ol>
-<li>定义变长数组时，“()”可以省略。记住省略“()”后就不能省略new,省略new就不能省略“()”在下图事例中，第一种定义就无效；</li>
+<li>定义变长数组时，“<strong>()</strong>”可以省略。记住<code>省略“()”后就不能省略new,省略new就不能省略“()”</code>在下图事例中，第一种定义就无效；</li>
 </ol>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326112222.png" alt=""></p>
 <ol>
@@ -323,19 +324,29 @@
 <li>赋值完成后，可以使用toArray方法转为数组，当然也可使用toArrayBuffer转回去；</li>
 <li>数组常用方法，remove(…),insert(…),trimEnd;</li>
 </ol>
-<h2 id="数值遍历"><a href="#数值遍历" class="headerlink" title="数值遍历"></a>数值遍历</h2><p>之前我们已经讲过for循环，使用上面定义的ab数组做一下遍历</p>
+<h2 id="数值遍历"><a href="#数值遍历" class="headerlink" title="数值遍历"></a>数值遍历</h2><p>之前我们已经讲过for循环，使用上面定义的<strong>ab</strong>数组做一下遍历</p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326113707.png" alt=""></p>
 <p>注意：</p>
 <ol>
-<li>数组的小标从0开始，所以最大下表为length-1，不然会越界；</li>
-<li>获取数组元素的时候使用“()”,和java不同；</li>
-<li>使用yield可以创建一个新的集合，原始集合并不受影响，注意yield在“{}”的后面，“{}”也可省略；</li>
-<li>当然同样可使用“带刀侍卫”(●’◡’●)，侍卫也能获取元素；</li>
+<li>数组的小标从0开始，所以最大小标为length-1，不然会越界，通常使用<code>unitl</code>；</li>
+<li>获取数组元素的时候使用“<code>()</code>”,和java不同；</li>
+<li><strong>使用yield可以创建一个新的集合，原始集合并不受影响</strong>，注意<strong>yield在“{}”的后面</strong>，“{}”也可省略；</li>
+<li>当然同样可使用“<strong>带刀侍卫</strong>”(●’◡’●)，侍卫也能获取元素；</li>
 </ol>
-<h2 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h2><p>具体内容可阅读scaladoc文档，这里简单的举例</p>
+<h2 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h2><p>具体内容可阅读<code>scaladoc</code>文档，这里简单的举例</p>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326115846.png" alt=""></p>
-<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>多位数组和java的数组类似</p>
-
+<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>多位数组和java的数组类似，里面也是使用了数组。二维数组使用关键只<code>ofDim</code>方法：</p>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160326131111.png" alt=""></p>
+<h2 id="于java互转"><a href="#于java互转" class="headerlink" title="于java互转"></a>于java互转</h2><p>于java互转操作，在后面应该会常用。在scala中<code>Scala.collection.JavaConversions</code>里的有隐式转换方法。下面来写一个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 一个简单的java代码demo</span><br><span class="line"> * Created by Jason on 2016/3/26.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaArraList</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">getListStr</span><span class="params">()</span></span>&#123; <span class="comment">//会返回一个List&lt;String&gt;类型的集合</span></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;() ;</span><br><span class="line">        list.add(<span class="string">"Hello"</span>);</span><br><span class="line">        list.add(<span class="string">"word"</span>);</span><br><span class="line">        <span class="keyword">return</span> list ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setListStr</span><span class="params">(List&lt;String&gt; arrList)</span></span>&#123;<span class="comment">//需要传递一个List集合</span></span><br><span class="line">        <span class="keyword">for</span> ( String str : arrList )</span><br><span class="line">            System.out.print(<span class="string">" "</span> + str);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>scala操作</li>
+</ul>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scala.collection.<span class="type">JavaConversions</span></span><br><span class="line"><span class="keyword">import</span> scala.collection.mutable.<span class="type">ArrayBuffer</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Jason on 2016/3/25.</span><br><span class="line"> */</span></span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]): <span class="type">Unit</span> = &#123;</span><br><span class="line">      <span class="keyword">val</span> sca = <span class="type">ArrayBuffer</span>(<span class="string">"Hl"</span>, <span class="string">"ooo"</span>, <span class="string">"woddd"</span>) ;</span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">      println(<span class="string">"scala转java"</span>)</span><br><span class="line">      <span class="keyword">new</span> <span class="type">JavaArraList</span>().setListStr(<span class="type">JavaConversions</span>.bufferAsJavaList(sca));</span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">      println(<span class="string">"java转scala"</span>)</span><br><span class="line">      <span class="keyword">val</span> j2s =<span class="type">JavaConversions</span>.asScalaBuffer(<span class="keyword">new</span> <span class="type">JavaArraList</span>().getListStr()) ;</span><br><span class="line">      <span class="keyword">for</span>( i &lt;- <span class="number">0</span> until j2s.length )  print( <span class="string">" "</span> + j2s(i) )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行结果</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scala转java</span><br><span class="line"> Hl ooo woddd</span><br><span class="line">java转scala</span><br><span class="line"> Hello word</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -346,7 +357,7 @@
         <p><span>本文标题:</span><a href="/2016/03/26/Scala-数组/">Scala--数组</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月26日 - 10时19分</p>
-        <p><span>最后更新:</span>2016年03月26日 - 12时06分</p>
+        <p><span>最后更新:</span>2016年03月26日 - 15时07分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/26/Scala-数组/" title="Scala--数组">http://blog.xiaoxiaomo.com/2016/03/26/Scala-数组/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/26/Scala-数组/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -376,7 +387,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组语法"><span class="toc-number">1.</span> <span class="toc-text">数组语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数值遍历"><span class="toc-number">2.</span> <span class="toc-text">数值遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用算法"><span class="toc-number">3.</span> <span class="toc-text">常用算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多维数组"><span class="toc-number">4.</span> <span class="toc-text">多维数组</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组语法"><span class="toc-number">1.</span> <span class="toc-text">数组语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数值遍历"><span class="toc-number">2.</span> <span class="toc-text">数值遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用算法"><span class="toc-number">3.</span> <span class="toc-text">常用算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多维数组"><span class="toc-number">4.</span> <span class="toc-text">多维数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#于java互转"><span class="toc-number">5.</span> <span class="toc-text">于java互转</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

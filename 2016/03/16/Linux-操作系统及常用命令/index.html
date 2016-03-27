@@ -5,30 +5,19 @@
   
   <title>Linux--操作系统及常用命令 | 小小默&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
-
-列出指定路径下的文件
-查看目录文件 ls：">
+  <meta name="description" content="主要介绍操作系统上一些常见命令，比如创建文件目录mkdir，查看目录下文件ls，系统环境变量，系统时间，帮助文档等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux--操作系统及常用命令">
 <meta property="og:url" content="http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/index.html">
 <meta property="og:site_name" content="小小默's Blog">
-<meta property="og:description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
-
-列出指定路径下的文件
-查看目录文件 ls：">
+<meta property="og:description" content="主要介绍操作系统上一些常见命令，比如创建文件目录mkdir，查看目录下文件ls，系统环境变量，系统时间，帮助文档等。">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png">
+<meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160327114247.png">
 <meta property="og:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png">
-<meta property="og:updated_time" content="2016-03-17T16:30:38.563Z">
+<meta property="og:updated_time" content="2016-03-27T03:53:12.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--操作系统及常用命令">
-<meta name="twitter:description" content="目录：文件，路径映射
-路径：从指定起始点到目的地的所经过的位置。文件系统：file system
-
-列出指定路径下的文件
-查看目录文件 ls：">
+<meta name="twitter:description" content="主要介绍操作系统上一些常见命令，比如创建文件目录mkdir，查看目录下文件ls，系统环境变量，系统时间，帮助文档等。">
 <meta name="twitter:image" content="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png">
   
     <link rel="alternative" href="/atom.xml" title="小小默&#39;s Blog" type="application/atom+xml">
@@ -299,28 +288,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="目录：文件，路径映射"><a href="#目录：文件，路径映射" class="headerlink" title="目录：文件，路径映射"></a><strong>目录：文件，路径映射</strong></h3><blockquote>
-<p>路径：从指定起始点到目的地的所经过的位置。<br>文件系统：file system</p>
-</blockquote>
-<h3 id="列出指定路径下的文件"><a href="#列出指定路径下的文件" class="headerlink" title="列出指定路径下的文件"></a><strong>列出指定路径下的文件</strong></h3><blockquote>
-<p>查看目录文件 ls：</p>
-</blockquote>
+        <p>　　主要介绍操作系统上一些<code>常见命令</code>，比如创建文件目录mkdir，查看目录下文件ls，系统环境变量，系统时间，帮助文档等。</p>
 <a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="_">-l</span> 长格式</span><br></pre></td></tr></table></figure>
+<h2 id="目录-文件简介"><a href="#目录-文件简介" class="headerlink" title="目录/文件简介"></a>目录/文件简介</h2><p>路径：从指定起始点到目的地的所经过的位置。<br>命令规则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">长度不能操作255个字符；</span><br><span class="line">不能使用“/”当文件名；</span><br><span class="line">严格区分大小写</span><br></pre></td></tr></table></figure></p>
+<h2 id="目录-文件查看"><a href="#目录-文件查看" class="headerlink" title="目录/文件查看"></a>目录/文件查看</h2><blockquote>
+<p>查看目录文件 <code>ls</code>：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="_">-l</span> <span class="comment">#长格式，可以简化为，ll；</span></span><br><span class="line">ls -h <span class="comment">#做单位换算，human can readable；</span></span><br><span class="line">ls <span class="_">-a</span> <span class="comment">#以点开头的文件（包括隐藏文件、.表示当前目录、..表示上级目录）；</span></span><br><span class="line">ls -A <span class="comment">#显示全部文件（不包括.和..）；</span></span><br><span class="line">ls <span class="_">-d</span> <span class="comment">#显示自身属性；</span></span><br><span class="line">ls -i <span class="comment">#index node，inode(显示文件唯一序号)；</span></span><br><span class="line">ls -r <span class="comment">#逆序显示；</span></span><br><span class="line">ls -R <span class="comment">#递归显示（recursive）；</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>eg：<code>ls -l</code></li>
+</ul>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Ff19aa739-0de8-499b-b978-bedd1bb1a849.png" alt=""></p>
 <ol>
-<li><p><strong>文件类型</strong></p>
-<ul>
-<li>-：普通文件（f）</li>
-<li>d：目录文件</li>
-<li>b：块设备文件（block）</li>
-<li>c：字节设备文件（character）</li>
-<li>l ：符号链接文件（sysbolic link ）</li>
-<li>p：管道命令（pipe）</li>
-<li>s：套接字文件（socket）</li>
-</ul>
+<li><p><strong>第一位,表示<code>文件类型</code></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- -：普通文件（f），如上图第二个文件；</span><br><span class="line">- d：目录文件，如上图第一为文件目录；</span><br><span class="line">- b：块设备文件（block）</span><br><span class="line">- c：字节设备文件（character）</span><br><span class="line">- l ：符号链接文件（sysbolic link ）</span><br><span class="line">- p：管道命令（pipe）</span><br><span class="line">- s：套接字文件（socket）</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>文件权限</strong>：9位，没三位一组，每一组（rwx）r：可读，w：可写：x:可执行</p>
+<li><p><strong>文件权限</strong>：紧接着后面9位，每三位一组，每一组（rwx）r：可读，w：可写：x:可执行</p>
 </li>
 <li><strong>文件硬链接次数</strong></li>
 <li><strong>文件的属主</strong>（owner）</li>
@@ -328,8 +311,28 @@
 <li><strong>文件的大小</strong>（size）,单位字节</li>
 <li><strong>时间戳</strong>（timestamp）:最近一次被修改的时间（文件内容）</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-h 做单位换算（human can readable）</span><br><span class="line"><span class="_">-a</span> 以点开头的文件（隐藏文件）</span><br><span class="line">	<span class="comment">#.  表示当前目录</span></span><br><span class="line">	<span class="comment">#.. 表示上级目录</span></span><br><span class="line"></span><br><span class="line">-A 显示全部文件（不包括.和..）</span><br><span class="line"><span class="_">-d</span> 显示自身属性</span><br><span class="line">-i  index node，inode(显示文件唯一序号)</span><br><span class="line">-r  逆序显示</span><br><span class="line">-R 递归显示（recursive）</span><br></pre></td></tr></table></figure>
-<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a><strong>环境变量</strong></h3><blockquote>
+<p>其他基本命令：</p>
+<blockquote>
+<p>pwd　　#显示目录路径<br>cd　　#切换目录，当前目录<br>tree　　#查看目录树<br>stat　　#查看状态</p>
+</blockquote>
+<h2 id="目录-文件操作"><a href="#目录-文件操作" class="headerlink" title="目录/文件操作"></a>目录/文件操作</h2><blockquote>
+<p><code>mkdir</code>：创建空目录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-p： <span class="comment">#递归创建，eg：mkdir -p test/test01/test02</span></span><br><span class="line">-m： <span class="comment">#创建文件夹时，指定权限。eg：mkdir -m 777 test03</span></span><br><span class="line">-v： <span class="comment">#创建文件夹时，展示详细信息。eg：mkdir -v test04</span></span><br><span class="line">&#123;&#125;： <span class="comment">#多级创建,eg：#mkdir -pv test05/a&#123;x/m,y&#125;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2F20160327114247.png" alt=""></p>
+<blockquote>
+<p><code>rmdir</code>：删除空目录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-p： <span class="comment">#删除多级非空目录</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>touch</code>：创建文件</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="_">-a</span>： <span class="comment">#修改访问你时间（默认修改为当前时间）atime=access time</span></span><br><span class="line">-m： <span class="comment">#只更改变动时间，mtime=modify time</span></span><br><span class="line">-t： <span class="comment">#修改某个时间</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>rm</code>：删除文件/目录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-i： <span class="comment">#--interactive，进行交互式删除</span></span><br><span class="line"><span class="_">-f</span>： <span class="comment">#--force，忽略不存在的文件，不给出提示</span></span><br><span class="line">-r： <span class="comment">#--recursive递归删除多级目录，eg:rm -rf /tmp #删除tem目录及其子目录全部文件</span></span><br><span class="line">-v： <span class="comment">#--verbose ，详细显示进行的步骤</span></span><br></pre></td></tr></table></figure>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><blockquote>
 <p>命令的内存空间，env<br>变量赋值<br>eg：NAME=Tom(在内存中着一段空间，起名叫NAME,空间放的数据叫Tom),申请变量的过程，就是申请内存使用的过程。<br>path：以冒号隔开的一对路径。<br>hash：查看缓存</p>
 </blockquote>
 <p><img src="http://7xrw5k.com1.z0.glb.clouddn.com/blog%2Fimg%2Facf4c7a3-9a2c-4ddf-aff9-5e78ee439f50.png" alt=""></p>
@@ -362,7 +365,7 @@
         <p><span>本文标题:</span><a href="/2016/03/16/Linux-操作系统及常用命令/">Linux--操作系统及常用命令</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 小小默 的个人博客">小小默</a></p>
         <p><span>发布时间:</span>2016年03月16日 - 14时10分</p>
-        <p><span>最后更新:</span>2016年03月18日 - 00时30分</p>
+        <p><span>最后更新:</span>2016年03月27日 - 11时53分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/16/Linux-操作系统及常用命令/" title="Linux--操作系统及常用命令">http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.xiaoxiaomo.com/2016/03/16/Linux-操作系统及常用命令/　　作者: 小小默" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -398,7 +401,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#目录：文件，路径映射"><span class="toc-number">1.</span> <span class="toc-text">目录：文件，路径映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出指定路径下的文件"><span class="toc-number">2.</span> <span class="toc-text">列出指定路径下的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-number">3.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间"><span class="toc-number">4.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取命令帮助-待整理"><span class="toc-number">5.</span> <span class="toc-text">获取命令帮助(待整理)</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录-文件简介"><span class="toc-number">1.</span> <span class="toc-text">目录/文件简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录-文件查看"><span class="toc-number">2.</span> <span class="toc-text">目录/文件查看</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录-文件操作"><span class="toc-number">3.</span> <span class="toc-text">目录/文件操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-number">4.</span> <span class="toc-text">环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时间"><span class="toc-number">4.1.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取命令帮助-待整理"><span class="toc-number">4.2.</span> <span class="toc-text">获取命令帮助(待整理)</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

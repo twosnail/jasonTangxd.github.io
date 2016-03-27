@@ -73,8 +73,3 @@ deploy:
   repository: git@github.com:jasonTangxd/jasonTangxd.github.io.git
   # 这里填写项目的地址 git@github.com:Git用户名/Git用户名.github.io.git 参照上面
   branch: master    # 分支选择 master
-
-backup:
-  type: git
-  theme: yelee,yilia
-  repository: git@git.oschina.net:twosnail/blog_back.git,master
